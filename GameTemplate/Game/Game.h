@@ -19,5 +19,6 @@ public:
 	Player* m_player = nullptr;
 	GameCameraPl* m_gameCameraPl = nullptr;
 	Stage* m_stage = nullptr;
+	CQuaternion m_rotation = CQuaternion::Identity;
 };
 

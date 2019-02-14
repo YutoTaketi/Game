@@ -24,6 +24,6 @@ bool Stage::Start()
 	m_skinModelRender->SetPosition(pos);
 	CVector3 scale = { 2.5f, 2.5f, 2.5f };
 	m_skinModelRender->SetScale(scale);
-	m_phyStaticObject.CreateMeshObject(m_skinModelRender, pos, qRot, scale);
+	m_phyStaticObject.CreateMesh(pos, qRot, scale, m_skinModelRender);
 	return true;
 }
