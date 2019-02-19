@@ -1762,6 +1762,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DemoCircle.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCameraPl.cpp" />
     <ClCompile Include="main.cpp" />
@@ -1789,6 +1790,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DemoCircle.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameCameraPl.h" />
     <ClInclude Include="Player.h" />
@@ -1799,6 +1801,7 @@
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\Demo.FBX" />
+    <MeshContentTask Include="Assets\modelData\DemoCircle.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
   </ItemGroup>
   <ItemGroup>

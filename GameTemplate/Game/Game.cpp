@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "GameCameraPl.h"
 #include "Stage.h"
+#include "DemoCircle.h"
 Game::Game()
 {
 }
@@ -20,6 +21,9 @@ bool Game::Start()
 	m_gameCameraPl = NewGO<GameCameraPl>(0, "GameCameraPl");
 	//ステージ
 	m_stage = NewGO<Stage>(0, "Stage");
+	//デモサークル
+	m_demoCircle = NewGO<DemoCircle>(0, "DemoCircle");
+
 	return true;
 }
 

@@ -23,7 +23,7 @@ bool GameCameraPl::Start()
 	//‚Î‚ËƒJƒƒ‰‚Ì‰Šú‰»
 	m_springCamera.Init(
 		MainCamera(),
-		1000.0f,
+		10000.0f,
 		true,
 		5.0f
 	);

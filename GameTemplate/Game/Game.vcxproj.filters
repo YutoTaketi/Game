@@ -25,6 +25,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="GameCameraPl.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="DemoCircle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -35,6 +36,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="GameCameraPl.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="DemoCircle.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -46,6 +48,9 @@
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\Demo.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\DemoCircle.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>

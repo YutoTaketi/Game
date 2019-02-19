@@ -7,6 +7,7 @@
 class Player;
 class GameCameraPl;
 class Stage;
+class DemoCircle;
 
 class Game : public IGameObject
 {
@@ -19,6 +20,7 @@ public:
 	Player* m_player = nullptr;
 	GameCameraPl* m_gameCameraPl = nullptr;
 	Stage* m_stage = nullptr;
+	DemoCircle* m_demoCircle = nullptr;
 	CQuaternion m_rotation = CQuaternion::Identity;
 };
 
