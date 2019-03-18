@@ -13,11 +13,12 @@ GameCameraPl::~GameCameraPl()
 
 bool GameCameraPl::Start()
 {
+	
 	//注視点から視点までのベクトル設定
-	m_toCameraPos.Set(0.0f, 50.0f, 100.0f);
+	m_toCameraPos.Set(0.0f, 200.0f, 300.0f);
 	m_player = FindGO<Player>("Player");
 
-	MainCamera().SetNear(5.0f);
+	MainCamera().SetNear(1.0f);
 	MainCamera().SetFar(10000.0f);
 
 	//ばねカメラの初期化
@@ -35,8 +36,8 @@ void GameCameraPl::Update()
 	//カメラ更新
 	//注視点計算
 	CVector3 target = m_player->m_position;
-	target.y += 200.0f;
-	target.z += 200.0f;
+	target.y += 80.0f;
+	
 
 	CVector3 toCameraPosOld = m_toCameraPos;
 	//右スティックでカメラを回す。

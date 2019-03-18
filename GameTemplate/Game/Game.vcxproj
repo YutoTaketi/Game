@@ -1762,6 +1762,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bee.cpp" />
+    <ClCompile Include="BeeBallet.cpp" />
+    <ClCompile Include="CircleCharge.cpp" />
+    <ClCompile Include="DemoBall.cpp" />
     <ClCompile Include="DemoCircle.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCameraPl.cpp" />
@@ -1788,8 +1792,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Preview_Middle|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Preview_Low|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Tama.cpp" />
+    <ClCompile Include="Tittle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bee.h" />
+    <ClInclude Include="BeeBallet.h" />
+    <ClInclude Include="CircleCharge.h" />
+    <ClInclude Include="DemoBall.h" />
     <ClInclude Include="DemoCircle.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameCameraPl.h" />
@@ -1797,11 +1807,20 @@
     <CLInclude Include="resource.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Tama.h" />
+    <ClInclude Include="Tittle.h" />
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <MeshContentTask Include="Assets\modelData\Bee.FBX" />
+    <MeshContentTask Include="Assets\modelData\BeeBallet.FBX" />
     <MeshContentTask Include="Assets\modelData\Demo.FBX" />
+    <MeshContentTask Include="Assets\modelData\DemoBall.FBX" />
+    <MeshContentTask Include="Assets\modelData\DemoBoll.FBX" />
     <MeshContentTask Include="Assets\modelData\DemoCircle.FBX" />
+    <MeshContentTask Include="Assets\modelData\Tama.FBX" />
+    <MeshContentTask Include="Assets\modelData\Tatemono.FBX" />
+    <MeshContentTask Include="Assets\modelData\Tatemono2.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
   </ItemGroup>
   <ItemGroup>
@@ -1815,6 +1834,18 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="Assets\animData\unityChan\run.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageContentTask Include="Assets\sprite\gauge.png" />
+    <ImageContentTask Include="Assets\sprite\waku.png" />
+    <ImageContentTask Include="Assets\sprite\DemoStart.png" />
+    <Image Include="Assets\sprite\sky.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\level\DemoStage.tkl" />
+    <CustomBuild Include="Assets\level\DemoStage2.tkl">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>

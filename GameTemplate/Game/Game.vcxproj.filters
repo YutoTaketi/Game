@@ -17,6 +17,9 @@
     <Filter Include="Assets\animData">
       <UniqueIdentifier>{2a4ed218-0a16-4670-89fb-89fbf0c8fa7c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets\level">
+      <UniqueIdentifier>{ec31e36b-68f9-44b9-920f-c67cb98234c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -26,6 +29,12 @@
     <ClCompile Include="GameCameraPl.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="DemoCircle.cpp" />
+    <ClCompile Include="DemoBall.cpp" />
+    <ClCompile Include="Tittle.cpp" />
+    <ClCompile Include="Tama.cpp" />
+    <ClCompile Include="Bee.cpp" />
+    <ClCompile Include="CircleCharge.cpp" />
+    <ClCompile Include="BeeBallet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -37,6 +46,12 @@
     <ClInclude Include="GameCameraPl.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="DemoCircle.h" />
+    <ClInclude Include="DemoBall.h" />
+    <ClInclude Include="Tittle.h" />
+    <ClInclude Include="Tama.h" />
+    <ClInclude Include="Bee.h" />
+    <ClInclude Include="CircleCharge.h" />
+    <ClInclude Include="BeeBallet.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -53,9 +68,39 @@
     <MeshContentTask Include="Assets\modelData\DemoCircle.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\DemoBoll.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\DemoBall.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Bee.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Tama.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\BeeBallet.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Tatemono.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Tatemono2.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\DemoStart.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\waku.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\gauge.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
   </ItemGroup>
@@ -69,5 +114,18 @@
     <CustomBuild Include="Assets\animData\unityChan\run.tka">
       <Filter>Assets\animData</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\level\DemoStage2.tkl">
+      <Filter>Assets\level</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\sprite\sky.jpg">
+      <Filter>Assets\sprite</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\level\DemoStage.tkl">
+      <Filter>Assets\level</Filter>
+    </None>
   </ItemGroup>
 </Project>
