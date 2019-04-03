@@ -15,7 +15,7 @@ bool GameCameraPl::Start()
 {
 	
 	//注視点から視点までのベクトル設定
-	m_toCameraPos.Set(0.0f, 200.0f, 300.0f);
+	m_toCameraPos.Set(0.0f, 190.0f, 290.0f);
 	m_player = FindGO<Player>("Player");
 
 	MainCamera().SetNear(1.0f);

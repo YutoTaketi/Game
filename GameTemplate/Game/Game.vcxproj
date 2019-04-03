@@ -1818,6 +1818,7 @@
     <MeshContentTask Include="Assets\modelData\DemoBall.FBX" />
     <MeshContentTask Include="Assets\modelData\DemoBoll.FBX" />
     <MeshContentTask Include="Assets\modelData\DemoCircle.FBX" />
+    <MeshContentTask Include="Assets\modelData\Sinden.FBX" />
     <MeshContentTask Include="Assets\modelData\Tama.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono2.FBX" />
@@ -1841,9 +1842,13 @@
     <ImageContentTask Include="Assets\sprite\gauge.png" />
     <ImageContentTask Include="Assets\sprite\waku.png" />
     <ImageContentTask Include="Assets\sprite\DemoStart.png" />
+    <ImageContentTask Include="Assets\sprite\hpmp_bar.png" />
     <Image Include="Assets\sprite\sky.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="Assets\effect\Burn.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
     <None Include="Assets\level\DemoStage.tkl" />
     <CustomBuild Include="Assets\level\DemoStage2.tkl">
       <FileType>Document</FileType>

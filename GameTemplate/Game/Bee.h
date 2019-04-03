@@ -1,4 +1,5 @@
 #pragma once
+#include "tkEngine/graphics/effect/tkEffect.h"
 class Player;
 
 
@@ -14,7 +15,10 @@ public:
 	void BeeAtack();
 	void Deth();
 	void Update();
-
+private:
+	const int balletCount = 3;
+	CAnimationClip m_animClip[1];
+public:
 	int m_timer = 0;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;
 	CVector3 m_position = CVector3::Zero;

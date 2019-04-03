@@ -23,14 +23,7 @@ bool Game::Start()
 	m_player = NewGO<Player>(0, "Player");
 	//ゲームカメラのインスタンスを生成
 	m_gameCameraPl = NewGO<GameCameraPl>(0, "GameCameraPl");
-	//ステージ
-	//m_stage = NewGO<Stage>(0, "Stage");
-	//デモサークル
-	//m_demoCircle = NewGO<DemoCircle>(0, "DemoCircle");
-
-	//デモボール
-	//m_demoBall = NewGO<DemoBall>(0, "DemoBall");
-
+	
 	//サークルチャージのインスタンスを生成
 	m_circleCharge = NewGO<CircleCharge>(0, "CircleCharge");
 	

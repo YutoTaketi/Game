@@ -20,6 +20,9 @@
     <Filter Include="Assets\level">
       <UniqueIdentifier>{ec31e36b-68f9-44b9-920f-c67cb98234c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets\effect">
+      <UniqueIdentifier>{9e4cb285-a2cd-4b26-bc5d-9b928a89628f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -89,6 +92,9 @@
     <MeshContentTask Include="Assets\modelData\Tatemono2.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Sinden.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
@@ -101,6 +107,9 @@
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
     <ImageContentTask Include="Assets\sprite\gauge.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\hpmp_bar.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
   </ItemGroup>
@@ -116,6 +125,9 @@
     </CustomBuild>
     <CustomBuild Include="Assets\level\DemoStage2.tkl">
       <Filter>Assets\level</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Burn.efk">
+      <Filter>Assets\effect</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

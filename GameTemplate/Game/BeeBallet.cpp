@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "BeeBallet.h"
+#include "Bee.h"
 
 
 BeeBallet::BeeBallet()
@@ -19,12 +20,21 @@ bool BeeBallet::Start()
 	return true;
 }
 
+void BeeBallet::Attack()
+{
+	bee = FindGO<Bee>("Bee");
+	CVector3 Beemae = { 0, 0, 1 };
+	bee->m_rotation.Apply(Beemae);
+	m_moveSpeed = Beemae * 10.0;
+}
+
 void BeeBallet::Update()
 {
+	Attack();
 	m_position += m_moveSpeed;
 	m_skinModelRender->SetPosition(m_position);
 	m_timer++;
-	if (m_timer == 3) {
+	if (m_timer == 30) {
 		DeleteGO(this);
 	}
 }
