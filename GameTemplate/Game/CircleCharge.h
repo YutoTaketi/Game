@@ -6,8 +6,11 @@ public:
 	~CircleCharge();
 	bool Start();
 	void Update();
-	prefab::CSpriteRender* m_spriteRender;
-	CVector3 m_position;
+	prefab::CSpriteRender* CircleWaku;
+	
+	prefab::CSpriteRender* CircleGage;
+	CVector3 GagePos;
+
 
 };
 
