@@ -11,7 +11,7 @@ public:
 	void Update();
 
 	int m_timer = 0;
-	Bee* bee = nullptr;
+	Bee* bee;
 	prefab::CSkinModelRender* m_skinModelRender;
 	CVector3 m_position = CVector3::Zero;
 	CVector3 m_moveSpeed = CVector3::Zero;

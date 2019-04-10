@@ -18,6 +18,7 @@ public:
 private:
 	const int balletCount = 3;
 	CAnimationClip m_animClip[1];
+
 public:
 	int m_timer = 0;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;
@@ -25,5 +26,7 @@ public:
 	CVector3 m_scale = CVector3::One;
 	CQuaternion m_rotation = CQuaternion::Identity;
 	Player* m_player;
+	prefab::CSoundSource* m_bgmSoundSource = nullptr;
+
 };
 

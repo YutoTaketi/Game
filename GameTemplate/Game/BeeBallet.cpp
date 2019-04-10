@@ -22,19 +22,33 @@ bool BeeBallet::Start()
 
 void BeeBallet::Attack()
 {
-	bee = FindGO<Bee>("Bee");
-	CVector3 Beemae = { 0, 0, 1 };
-	bee->m_rotation.Apply(Beemae);
-	m_moveSpeed = Beemae * 10.0;
+	bee = nullptr;
+	
+	if (bee == nullptr) {
+		bee = FindGO<Bee>("Bee");
+		CVector3 Beemae = { 0, 0, 1 };
+		bee->m_rotation.Apply(Beemae);
+		m_moveSpeed = Beemae * 10.0;
+	}
+	
 }
 
 void BeeBallet::Update()
 {
-	Attack();
+	if (bee == nullptr) {
+		Attack();
+		m_position += m_moveSpeed;
+		m_skinModelRender->SetPosition(m_position);
+		m_timer++;
+		if (m_timer == 30) {
+			DeleteGO(this);
+		}
+	}
+	/*Attack();
 	m_position += m_moveSpeed;
 	m_skinModelRender->SetPosition(m_position);
 	m_timer++;
 	if (m_timer == 30) {
 		DeleteGO(this);
-	}
+	}*/
 }
