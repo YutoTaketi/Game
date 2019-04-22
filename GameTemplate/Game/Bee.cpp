@@ -62,10 +62,13 @@ void Bee::BeeAtack()
 	
 	
 	
- 	if (m_timer = 50) {
+ 	if (m_timer == 20) {
 		
 		BeeBallet* beeBallet = NewGO<BeeBallet>(0, "BeeBallet");
 		beeBallet->m_position = m_position;
+		CVector3 Beemae = { 0, 0, 1 };
+		m_rotation.Apply(Beemae);
+		beeBallet->m_moveSpeed = Beemae * 20.0;
 		
 		m_timer = 0.0f;
 	}

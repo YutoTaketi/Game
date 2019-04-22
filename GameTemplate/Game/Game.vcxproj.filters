@@ -41,6 +41,7 @@
     <ClCompile Include="Bee.cpp" />
     <ClCompile Include="CircleCharge.cpp" />
     <ClCompile Include="BeeBallet.cpp" />
+    <ClCompile Include="GameClear.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -58,6 +59,7 @@
     <ClInclude Include="Bee.h" />
     <ClInclude Include="CircleCharge.h" />
     <ClInclude Include="BeeBallet.h" />
+    <ClInclude Include="GameClear.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -96,6 +98,12 @@
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\Sinden.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Capsule.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Boss.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>

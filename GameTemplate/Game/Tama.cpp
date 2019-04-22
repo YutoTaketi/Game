@@ -18,8 +18,8 @@ bool Tama::Start()
 {
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Tama.cmo");
-	m_scale = { 3.0f, 3.0f, 3.0f };
-	m_skinModelRender->SetScale(m_scale);
+	m_scale = { 0.5f, 0.5f, 0.5f };
+	//m_skinModelRender->SetScale(m_scale);
 	Attack();
 	return true;
 }
@@ -42,6 +42,7 @@ void Tama::Update()
 	//Attack();
 	m_position += m_moveSpeed;
 	m_skinModelRender->SetPosition(m_position);
+	m_skinModelRender->SetScale(m_scale);
 	if (m_timer == 50)
 	{
 		DeleteGO(this);

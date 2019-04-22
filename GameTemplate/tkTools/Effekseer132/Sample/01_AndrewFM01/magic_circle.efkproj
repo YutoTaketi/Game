@@ -562,7 +562,7 @@
       <Z>0.1</Z>
     </TargetLocation>
   </Behavior>
-  <ToolVersion>0.7CTP1</ToolVersion>
+  <ToolVersion>1.32</ToolVersion>
   <Version>3</Version>
   <StartFrame>0</StartFrame>
   <EndFrame>1000</EndFrame>

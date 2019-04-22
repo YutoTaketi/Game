@@ -12,7 +12,7 @@ public:
 	void Move();
 	void Turn();
 	void AnimationController();
-	void CircleSummon();
+	bool CircleSummon();
 	void Attack();
 	void Update();
 

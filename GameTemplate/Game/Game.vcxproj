@@ -1711,10 +1711,12 @@
       <ContentOutput>%(RelativeDir)/%(Filename).dds</ContentOutput>
     </ImageContentTask>
     <CustomBuild>
-      <Command>call $(ProjectDir)..\tkTools\tkContentTools.bat %(Identity) $(OutDir)</Command>
+      <Command>
+      </Command>
     </CustomBuild>
     <CustomBuild>
-      <Message>tkContentTools</Message>
+      <Message>
+      </Message>
     </CustomBuild>
     <CustomBuild>
       <Outputs>$(OutDir)\%(Identity)</Outputs>
@@ -1769,6 +1771,7 @@
     <ClCompile Include="DemoCircle.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCameraPl.cpp" />
+    <ClCompile Include="GameClear.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Stage.cpp" />
@@ -1803,6 +1806,7 @@
     <ClInclude Include="DemoCircle.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameCameraPl.h" />
+    <ClInclude Include="GameClear.h" />
     <ClInclude Include="Player.h" />
     <CLInclude Include="resource.h" />
     <ClInclude Include="Stage.h" />
@@ -1814,6 +1818,8 @@
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\Bee.FBX" />
     <MeshContentTask Include="Assets\modelData\BeeBallet.FBX" />
+    <MeshContentTask Include="Assets\modelData\Boss.FBX" />
+    <MeshContentTask Include="Assets\modelData\Capsule.FBX" />
     <MeshContentTask Include="Assets\modelData\Demo.FBX" />
     <MeshContentTask Include="Assets\modelData\DemoBall.FBX" />
     <MeshContentTask Include="Assets\modelData\DemoBoll.FBX" />

@@ -93,7 +93,7 @@ void Player::AnimationController()
 }
 
 //もしR2トリガーが押されたら、サークルを出す。
-void Player::CircleSummon()
+bool Player::CircleSummon()
 {
 	//もし４つ設置したら、設置できない
 	//もしR2トリガーが押されたら、サークルを出す。
@@ -104,6 +104,7 @@ void Player::CircleSummon()
 		m_demoCircle->m_position.z = m_position.z + 5.0f;
 		//m_demoCircle->m_skinModelRender->SetPosition(m_demoCircle->m_position);
 	}
+	return true;
 }
 
 void Player::Attack()
