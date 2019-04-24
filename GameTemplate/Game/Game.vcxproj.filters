@@ -126,6 +126,9 @@
     <ImageContentTask Include="Assets\sprite\circlegage.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\GameCrear.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\animData\unityChan\idle.tka">

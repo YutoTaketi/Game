@@ -28,16 +28,16 @@ bool Bee::Start()
 void Bee::Move()
 {
 	//プレイヤーを追っかける。
-	Player* player = FindGO<Player>("Player");
-	CVector3 playerBEE = player->m_position - m_position;
-	playerBEE.Normalize();
-	m_position += playerBEE * 2.0;
-	CVector3 oldPos = m_position;
-	if (m_position.y <= 100) {
-		m_position = oldPos;
-		m_position.y = 200;
-	}
-	
+	Player* player;
+		player = FindGO<Player>("Player");
+		CVector3 playerBEE = player->m_position - m_position;
+		playerBEE.Normalize();
+		m_position += playerBEE * 2.0;
+		CVector3 oldPos = m_position;
+		if (m_position.y <= 100) {
+			m_position = oldPos;
+			m_position.y = 200;
+		}
 }
 void Bee::Turn()
 {
@@ -45,14 +45,6 @@ void Bee::Turn()
 	CVector3 playerBEE = player->m_position - m_position;
 	float angle = atan2(playerBEE.x, playerBEE.z);
 	m_rotation.SetRotation(CVector3::AxisY, angle);
-
-	/*if (fabsf(m_position.x) < 0.001f
-		&& fabsf(m_position.z) < 0.001f) {
-		return;
-	}
-
-	float angle = atan2(m_position.x, m_position.z);
-	m_rotation.SetRotation(CVector3::AxisY, angle+90);*/
 	
 }
 
@@ -97,6 +89,7 @@ void Bee::Deth()
 				//ss = NewGO<prefab::CSoundSource>(0);
 				//ss->Init(L"sound/bakuhatu.wav");
 				//ss->Play(false);
+				beeDeth++;
 				DeleteGO(this);
 			}
 			

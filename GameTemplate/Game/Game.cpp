@@ -8,6 +8,7 @@
 #include "DemoBall.h"
 #include "Bee.h"
 #include "CircleCharge.h"
+#include "GameClear.h"
 
 Game::Game()
 {
@@ -16,6 +17,11 @@ Game::Game()
 
 Game::~Game()
 {
+	DeleteGO(m_player);
+	DeleteGO(m_gameCameraPl);
+	DeleteGO(m_circleCharge);
+	DeleteGO(m_bee);
+	
 }
 bool Game::Start()
 {
@@ -52,4 +58,10 @@ bool Game::Start()
 
 void Game::Update()
 {
+	
+	if (m_bee->beeDeth == 3)
+	{
+		NewGO<GameClear>(0, "GameClear");
+		DeleteGO(this);
+	}
 }

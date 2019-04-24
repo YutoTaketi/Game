@@ -22,20 +22,27 @@ bool CircleCharge::Start()
 	CircleWaku->SetPosition(m_position);
 
 	CircleGage = NewGO<prefab::CSpriteRender>(0);
-	CircleGage->Init(L"sprite/circlegage.dds", 284, 34);
-	GagePos = { 380.0, -250.0, 0.0 };
+	CircleGage->Init(L"sprite/circlegage.dds", w, 34);
+	GagePos = { 236.0, -250.0, 0.0 };
 	CircleGage->SetPosition(GagePos);
-	//CircleGage->Update(GagePos, { 0.0f, 0.0f, 0.0f, 1.0f }, { 1.0f, 1.0f, 1.0f }, {1.0f, 1.0f});
+	CircleGage->SetPivot({ 0.0, 0.5 });
 	return true;
 }
 
 void CircleCharge::GageGensyou()
 {
-	
+	//サークルを出すとゲージが減少する。
+	Player* player = FindGO<Player>("Player");
+	if (player->CircleSummon() == true)
+	{
+		w = w - 20;
+		CircleGage->Init(L"sprite/circlegage.dds", w, 34);
+	}
+
 
 }
 
 void CircleCharge::Update()
 {
-	
+	GageGensyou();
 }

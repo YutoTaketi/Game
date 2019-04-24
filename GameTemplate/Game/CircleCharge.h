@@ -12,6 +12,7 @@ public:
 	
 	prefab::CSpriteRender* CircleGage;
 	CVector3 GagePos;
+	float w = 286;
 
 
 };

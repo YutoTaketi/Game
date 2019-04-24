@@ -1850,6 +1850,7 @@
     <ImageContentTask Include="Assets\sprite\DemoStart.png" />
     <ImageContentTask Include="Assets\sprite\hpmp_bar.png" />
     <ImageContentTask Include="Assets\sprite\circlegage.png" />
+    <ImageContentTask Include="Assets\sprite\GameCrear.png" />
     <Image Include="Assets\sprite\sky.jpg" />
   </ItemGroup>
   <ItemGroup>
