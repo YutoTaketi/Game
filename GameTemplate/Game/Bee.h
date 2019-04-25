@@ -29,7 +29,7 @@ public:
 	CVector3 m_position = CVector3::Zero;
 	CVector3 m_scale = CVector3::One;
 	CQuaternion m_rotation = CQuaternion::Identity;
-	Player* player;
+	Player* m_player = nullptr;
 	prefab::CSoundSource* m_bgmSoundSource = nullptr;
 
 };

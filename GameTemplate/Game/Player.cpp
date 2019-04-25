@@ -127,21 +127,18 @@ void Player::Attack()
 		m_tama->m_position = m_position;
 		
 		m_tama->m_position.y += 70.0;
-		
-		
-
 	}
 }
 
 void Player::Deth()
 {
-	PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
+	/*PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	Game* game = FindGO<Game>("Game");
 	if (HpBer->w <= 0)
 	{
 		NewGO<GameOver>(0, "GameOver");
-		DeleteGO(game);
-	}
+		//DeleteGO(game);
+	}*/
 }
 
 
@@ -152,6 +149,7 @@ void Player::Update()
 	AnimationController();
 	CircleSummon();
 	Attack();
+	//Deth();
 	m_skinModelRender->SetPosition(m_position);
 	m_skinModelRender->SetRotation(m_rotation);
 }

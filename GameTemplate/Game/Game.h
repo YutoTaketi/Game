@@ -22,6 +22,7 @@ public:
 	bool Start();
 	void Update();
 	int dethCount = 0;
+	int DeleteHantei = false;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;		//スキンモデルレンダラー。
 	Player* m_player = nullptr;
 	GameCameraPl* m_gameCameraPl = nullptr;
@@ -30,7 +31,7 @@ public:
 	DemoBall* m_demoBall = nullptr;
 	CircleCharge* m_circleCharge = nullptr;
 	PlayerHpBer* m_HpBer = nullptr;
-	Bee* m_bee = nullptr;
+	/*Bee* m_bee = nullptr;*/
 	CQuaternion m_rotation = CQuaternion::Identity;
 	CLevel m_level;  //レベル
 };

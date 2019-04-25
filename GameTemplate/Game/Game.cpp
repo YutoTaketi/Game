@@ -10,6 +10,7 @@
 #include "CircleCharge.h"
 #include "PlayerHpBer.h"
 #include "GameClear.h"
+#include "GameOver.h"
 
 
 Game::Game()
@@ -25,6 +26,9 @@ Game::~Game()
 	DeleteGO(m_HpBer);
 	DeleteGOs("Bee");
 	
+	DeleteGOs("DemoCircle");
+	//DeleteGO(m_level);
+	
 }
 bool Game::Start()
 {
@@ -38,18 +42,18 @@ bool Game::Start()
 	//プレイヤーのHPバーを表示
 	m_HpBer = NewGO<PlayerHpBer>(0, "HpBer");
 
-	//蜂のインスタンスを生成
-	m_bee = NewGO<Bee>(0, "Bee");
+	////蜂のインスタンスを生成
+	//m_bee = NewGO<Bee>(0, "Bee");
 	//レベルを構築
 	m_level.Init(L"level/DemoStage2.tkl", [&](LevelObjectData& objData) {
 		
 		
 		if (objData.EqualObjectName(L"Bee") == true) {
            //蜂のオブジェクト
-			Bee* m_bee = NewGO<Bee>(0);
-			m_bee->m_position = objData.position;
-			m_bee->m_rotation = objData.rotation;
-			m_bee->m_scale = objData.scale;
+			Bee* bee = NewGO<Bee>(0,"Bee");
+			bee->m_position = objData.position;
+			bee->m_rotation = objData.rotation;
+			bee->m_scale = objData.scale;
 			return true;
 		}
 
@@ -65,9 +69,15 @@ void Game::Update()
 {
 	//m_bee = FindGO<Bee>("Bee");
 	//Game* game = FindGO<Game>("Game");
-	if (dethCount == 3)
+	if (dethCount == 2)
 	{
 		NewGO<GameClear>(0, "GameClear");
+		DeleteGO(this);
+	}
+	PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
+	if (HpBer->w <= 0)
+	{
+		NewGO<GameOver>(0, "GameOver");
 		DeleteGO(this);
 	}
 }
