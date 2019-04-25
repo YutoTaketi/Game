@@ -35,11 +35,15 @@ void CircleCharge::GageGensyou()
 	Player* player = FindGO<Player>("Player");
 	if (player->CircleSummon() == true)
 	{
-		w = w - 20;
+		w = w - 50;
 		CircleGage->Init(L"sprite/circlegage.dds", w, 34);
 	}
 
-
+}
+void CircleCharge::GageCharge()
+{
+	//ゲージが0以下のとき、サークルが出せない
+	//ゲージが復活するまでサークルが出せない
 }
 
 void CircleCharge::Update()

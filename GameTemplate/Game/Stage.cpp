@@ -9,6 +9,7 @@ Stage::Stage()
 
 Stage::~Stage()
 {
+	DeleteGO(m_skinModelRender);
 }
 
 bool Stage::Start()

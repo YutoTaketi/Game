@@ -2,6 +2,11 @@
 #include "Player.h"
 #include "DemoCircle.h"
 #include "Tama.h"
+#include "CircleCharge.h"
+#include "BeeBallet.h"
+#include "PlayerHpBer.h"
+#include "Game.h"
+#include "GameOver.h"
 
 Player::Player()
 {
@@ -10,6 +15,7 @@ Player::Player()
 
 Player::~Player()
 {
+	DeleteGO(m_skinModelRender);
 }
 
 bool Player::Start()
@@ -95,16 +101,21 @@ void Player::AnimationController()
 //もしR2トリガーが押されたら、サークルを出す。
 bool Player::CircleSummon()
 {
-	//もし４つ設置したら、設置できない
+	CircleCharge* ciclecharge = FindGO<CircleCharge>("CircleCharge");
+		//もし6つ設置したら、設置できない
 	//もしR2トリガーが押されたら、サークルを出す。
-	if (Pad(0).IsTrigger(enButtonB)) {
+	if ( ciclecharge->w > 0 && Pad(0).IsTrigger(enButtonB)) {
+
 		m_demoCircle = NewGO<DemoCircle>(0, "DemoCircle");
 		m_demoCircle->m_position.x = m_position.x + 5.0f;
 		m_demoCircle->m_position.y = m_position.y + 40.0f;
 		m_demoCircle->m_position.z = m_position.z + 5.0f;
-		//m_demoCircle->m_skinModelRender->SetPosition(m_demoCircle->m_position);
+		return true;
 	}
-	return true;
+	else {
+		return false;
+	}
+	
 }
 
 void Player::Attack()
@@ -117,12 +128,22 @@ void Player::Attack()
 		
 		m_tama->m_position.y += 70.0;
 		
-		//m_tama->m_moveSpeed = m_position * 5.0;
-		//m_tama->m_moveSpeed.x = 10.0f;
-		//m_tama->m_moveSpeed.z = 10.0f;
+		
 
 	}
 }
+
+void Player::Deth()
+{
+	PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
+	Game* game = FindGO<Game>("Game");
+	if (HpBer->w <= 0)
+	{
+		NewGO<GameOver>(0, "GameOver");
+		DeleteGO(game);
+	}
+}
+
 
 void Player::Update()
 {

@@ -12,6 +12,7 @@ class DemoBall;
 class Bee;
 class CircleCharge;
 class GameClear;
+class PlayerHpBer;
 
 class Game : public IGameObject
 {
@@ -20,7 +21,7 @@ public:
 	~Game();
 	bool Start();
 	void Update();
-	int dethCount;
+	int dethCount = 0;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;		//スキンモデルレンダラー。
 	Player* m_player = nullptr;
 	GameCameraPl* m_gameCameraPl = nullptr;
@@ -28,6 +29,7 @@ public:
 	DemoCircle* m_demoCircle = nullptr;
 	DemoBall* m_demoBall = nullptr;
 	CircleCharge* m_circleCharge = nullptr;
+	PlayerHpBer* m_HpBer = nullptr;
 	Bee* m_bee = nullptr;
 	CQuaternion m_rotation = CQuaternion::Identity;
 	CLevel m_level;  //レベル

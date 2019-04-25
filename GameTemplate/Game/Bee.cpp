@@ -89,8 +89,9 @@ void Bee::Deth()
 				//ss = NewGO<prefab::CSoundSource>(0);
 				//ss->Init(L"sound/bakuhatu.wav");
 				//ss->Play(false);
-				beeDeth++;
+				game->dethCount++;
 				DeleteGO(this);
+				return false;
 			}
 			
 			return true;

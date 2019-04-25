@@ -1772,8 +1772,10 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCameraPl.cpp" />
     <ClCompile Include="GameClear.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerHpBer.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -1807,7 +1809,9 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameCameraPl.h" />
     <ClInclude Include="GameClear.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerHpBer.h" />
     <CLInclude Include="resource.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="stdafx.h" />
@@ -1845,12 +1849,12 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ImageContentTask Include="Assets\sprite\gauge.png" />
-    <ImageContentTask Include="Assets\sprite\waku.png" />
     <ImageContentTask Include="Assets\sprite\DemoStart.png" />
     <ImageContentTask Include="Assets\sprite\hpmp_bar.png" />
     <ImageContentTask Include="Assets\sprite\circlegage.png" />
     <ImageContentTask Include="Assets\sprite\GameCrear.png" />
+    <ImageContentTask Include="Assets\sprite\Hp.png" />
+    <ImageContentTask Include="Assets\sprite\GameOver.png" />
     <Image Include="Assets\sprite\sky.jpg" />
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,7 @@ public:
 	~CircleCharge();
 	bool Start();
 	void GageGensyou();
+	void GageCharge();
 	void Update();
 	prefab::CSpriteRender* CircleWaku;
 	

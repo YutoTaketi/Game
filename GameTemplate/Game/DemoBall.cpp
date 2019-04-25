@@ -9,6 +9,7 @@ DemoBall::DemoBall()
 
 DemoBall::~DemoBall()
 {
+	DeleteGO(m_skinModelRender);
 }
 
 bool DemoBall::Start()

@@ -8,7 +8,9 @@
 #include "DemoBall.h"
 #include "Bee.h"
 #include "CircleCharge.h"
+#include "PlayerHpBer.h"
 #include "GameClear.h"
+
 
 Game::Game()
 {
@@ -20,7 +22,8 @@ Game::~Game()
 	DeleteGO(m_player);
 	DeleteGO(m_gameCameraPl);
 	DeleteGO(m_circleCharge);
-	DeleteGO(m_bee);
+	DeleteGO(m_HpBer);
+	DeleteGOs("Bee");
 	
 }
 bool Game::Start()
@@ -32,7 +35,9 @@ bool Game::Start()
 	
 	//サークルチャージのインスタンスを生成
 	m_circleCharge = NewGO<CircleCharge>(0, "CircleCharge");
-	
+	//プレイヤーのHPバーを表示
+	m_HpBer = NewGO<PlayerHpBer>(0, "HpBer");
+
 	//蜂のインスタンスを生成
 	m_bee = NewGO<Bee>(0, "Bee");
 	//レベルを構築
@@ -58,8 +63,9 @@ bool Game::Start()
 
 void Game::Update()
 {
-	
-	if (m_bee->beeDeth == 3)
+	//m_bee = FindGO<Bee>("Bee");
+	//Game* game = FindGO<Game>("Game");
+	if (dethCount == 3)
 	{
 		NewGO<GameClear>(0, "GameClear");
 		DeleteGO(this);
