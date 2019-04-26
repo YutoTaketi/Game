@@ -16,7 +16,7 @@ Tittle::~Tittle()
 bool Tittle::Start()
 {
 	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
-	m_spriteRender->Init(L"sprite/DemoStart.dds", 1800.0f, 1000.0f);
+	m_spriteRender->Init(L"sprite/Start.dds", 1600.0f, 1200.0f);
 	return true;
 }
 

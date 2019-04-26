@@ -1849,7 +1849,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ImageContentTask Include="Assets\sprite\DemoStart.png" />
+    <ImageContentTask Include="Assets\sprite\Start.png" />
     <ImageContentTask Include="Assets\sprite\hpmp_bar.png" />
     <ImageContentTask Include="Assets\sprite\circlegage.png" />
     <ImageContentTask Include="Assets\sprite\GameCrear.png" />
