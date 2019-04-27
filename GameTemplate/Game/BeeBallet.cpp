@@ -36,6 +36,7 @@ void BeeBallet::Update()
 	}*/
 	//Attack();
 	m_position += m_moveSpeed;
+	m_position.y -= 5.0;
 	m_skinModelRender->SetPosition(m_position);
 	m_timer++;
 	if (m_timer == 120) {

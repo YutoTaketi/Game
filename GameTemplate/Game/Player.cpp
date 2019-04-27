@@ -112,9 +112,11 @@ bool Player::CircleSummon()
 		m_demoCircle->m_position.z = m_position.z + 5.0f;
 		return true;
 	}
-	else {
+	else
+	{
 		return false;
 	}
+	
 	
 }
 
@@ -127,6 +129,7 @@ void Player::Attack()
 		m_tama->m_position = m_position;
 		
 		m_tama->m_position.y += 70.0;
+		
 	}
 }
 
