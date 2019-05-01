@@ -69,7 +69,7 @@ void Game::Update()
 {
 	//m_bee = FindGO<Bee>("Bee");
 	//Game* game = FindGO<Game>("Game");
-	if (dethCount == 2)
+	/*if (dethCount == 2)
 	{
 		NewGO<GameClear>(0, "GameClear");
 		DeleteGO(this);
@@ -79,5 +79,5 @@ void Game::Update()
 	{
 		NewGO<GameOver>(0, "GameOver");
 		DeleteGO(this);
-	}
+	}*/
 }

@@ -1828,7 +1828,11 @@
     <MeshContentTask Include="Assets\modelData\DemoBall.FBX" />
     <MeshContentTask Include="Assets\modelData\DemoBoll.FBX" />
     <MeshContentTask Include="Assets\modelData\DemoCircle.FBX" />
+    <MeshContentTask Include="Assets\modelData\Iseki2.FBX" />
+    <MeshContentTask Include="Assets\modelData\Iseki3.FBX" />
     <MeshContentTask Include="Assets\modelData\Sinden.FBX" />
+    <MeshContentTask Include="Assets\modelData\Sinden2.FBX" />
+    <MeshContentTask Include="Assets\modelData\Sinden3.FBX" />
     <MeshContentTask Include="Assets\modelData\Tama.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono2.FBX" />
