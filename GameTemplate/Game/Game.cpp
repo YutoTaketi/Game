@@ -7,6 +7,7 @@
 #include "DemoCircle.h"
 #include "DemoBall.h"
 #include "Bee.h"
+#include "Capsule.h"
 #include "CircleCharge.h"
 #include "PlayerHpBer.h"
 #include "GameClear.h"
@@ -25,7 +26,7 @@ Game::~Game()
 	DeleteGO(m_circleCharge);
 	DeleteGO(m_HpBer);
 	DeleteGOs("Bee");
-	
+	DeleteGOs("Capsule");
 	DeleteGOs("DemoCircle");
 	//DeleteGO(m_level);
 	
@@ -56,7 +57,14 @@ bool Game::Start()
 			bee->m_scale = objData.scale;
 			return true;
 		}
-
+		else if (objData.EqualObjectName(L"Capsule") == true) {
+			//カプセルのインスタンスを生成
+			Capsule* capsule = NewGO<Capsule>(0, "Capsule");
+			capsule->m_position = objData.position;
+			capsule->m_rotation = objData.rotation;
+			capsule->m_scale = objData.scale;
+			return true;
+		}
 
 		
 		return false;

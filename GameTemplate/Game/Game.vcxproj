@@ -1766,6 +1766,7 @@
   <ItemGroup>
     <ClCompile Include="Bee.cpp" />
     <ClCompile Include="BeeBallet.cpp" />
+    <ClCompile Include="Capsule.cpp" />
     <ClCompile Include="CircleCharge.cpp" />
     <ClCompile Include="DemoBall.cpp" />
     <ClCompile Include="DemoCircle.cpp" />
@@ -1803,6 +1804,7 @@
   <ItemGroup>
     <ClInclude Include="Bee.h" />
     <ClInclude Include="BeeBallet.h" />
+    <ClInclude Include="Capsule.h" />
     <ClInclude Include="CircleCharge.h" />
     <ClInclude Include="DemoBall.h" />
     <ClInclude Include="DemoCircle.h" />

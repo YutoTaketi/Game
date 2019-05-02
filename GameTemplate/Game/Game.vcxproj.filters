@@ -44,6 +44,7 @@
     <ClCompile Include="GameClear.cpp" />
     <ClCompile Include="PlayerHpBer.cpp" />
     <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="Capsule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -64,6 +65,7 @@
     <ClInclude Include="GameClear.h" />
     <ClInclude Include="PlayerHpBer.h" />
     <ClInclude Include="GameOver.h" />
+    <ClInclude Include="Capsule.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">

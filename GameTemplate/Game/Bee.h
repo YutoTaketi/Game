@@ -19,7 +19,7 @@ public:
 	void Update();
 private:
 	const int balletCount = 3;
-	CAnimationClip m_animClip[1];
+	//CAnimationClip m_animClip[1];
 
 public:
 	
