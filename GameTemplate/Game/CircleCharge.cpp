@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CircleCharge.h"
 #include "Player.h"
+#include "Capsule.h"
 
 
 CircleCharge::CircleCharge()
@@ -40,13 +41,24 @@ void CircleCharge::GageGensyou()
 	}
 
 }
+
 void CircleCharge::GageCharge()
 {
-	//ゲージが0以下のとき、サークルが出せない
-	//ゲージが復活するまでサークルが出せない
+	//カプセルを取るとゲージが復活
+	/*Capsule* capsule = nullptr;
+	if (capsule == nullptr) {
+		capsule = FindGO<Capsule>("Capsule");
+	}*/
+	if (w <= 286 && capsuleget == 1)
+	{
+		w = 286;
+		CircleGage->Init(L"sprite/circlegage.dds", w, 34);
+
+	}
 }
 
 void CircleCharge::Update()
 {
 	GageGensyou();
+	GageCharge();
 }
