@@ -53,7 +53,7 @@ void CircleCharge::GageCharge()
 	{
 		w = 286;
 		CircleGage->Init(L"sprite/circlegage.dds", w, 34);
-
+		capsuleget = 0;
 	}
 }
 

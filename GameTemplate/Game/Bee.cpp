@@ -62,7 +62,7 @@ void Bee::BeeAtack()
 	
 	
 	
- 	if (m_timer == 50) {
+ 	if (m_timer == 60) {
 		
 		BeeBallet* beeBallet = NewGO<BeeBallet>(0, "BeeBallet");
 		beeBallet->m_position = m_position;

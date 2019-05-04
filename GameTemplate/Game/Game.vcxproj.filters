@@ -135,9 +135,6 @@
     <ImageContentTask Include="Assets\sprite\circlegage.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
-    <ImageContentTask Include="Assets\sprite\GameCrear.png">
-      <Filter>Assets\sprite</Filter>
-    </ImageContentTask>
     <ImageContentTask Include="Assets\sprite\Hp.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
@@ -145,6 +142,9 @@
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
     <ImageContentTask Include="Assets\sprite\Start.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Game Clear.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
   </ItemGroup>

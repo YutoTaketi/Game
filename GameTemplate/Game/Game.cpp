@@ -77,12 +77,12 @@ void Game::Update()
 {
 	//m_bee = FindGO<Bee>("Bee");
 	//Game* game = FindGO<Game>("Game");
-	/*if (dethCount == 2)
+	if (dethCount == 4)
 	{
 		NewGO<GameClear>(0, "GameClear");
 		DeleteGO(this);
 	}
-	PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
+	/*PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	if (HpBer->w <= 0)
 	{
 		NewGO<GameOver>(0, "GameOver");

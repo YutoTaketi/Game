@@ -28,10 +28,12 @@ void Capsule::CapsuleGet()
 	if (game == nullptr)
 	{
 		game = FindGO<Game>("Game");
+		m_player = FindGO<Player>("Player");
+		m_charge = FindGO<CircleCharge>("CircleCharge");
 		if (m_player == nullptr)
 		{
-			m_player = FindGO<Player>("Player");
-			m_charge = FindGO<CircleCharge>("CircleCharge");
+			//m_player = FindGO<Player>("Player");
+			//m_charge = FindGO<CircleCharge>("CircleCharge");
 		}
 		else
 		{

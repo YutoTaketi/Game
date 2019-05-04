@@ -16,7 +16,7 @@ GameClear::~GameClear()
 bool GameClear::Start()
 {
 	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
-	m_spriteRender->Init(L"sprite/GameCrear.dds", 1800.0f, 1000.0f);
+	m_spriteRender->Init(L"sprite/Game Clear.dds", 1800.0f, 1000.0f);
 	return true;
 }
 

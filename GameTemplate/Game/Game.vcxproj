@@ -1858,9 +1858,9 @@
     <ImageContentTask Include="Assets\sprite\Start.png" />
     <ImageContentTask Include="Assets\sprite\hpmp_bar.png" />
     <ImageContentTask Include="Assets\sprite\circlegage.png" />
-    <ImageContentTask Include="Assets\sprite\GameCrear.png" />
     <ImageContentTask Include="Assets\sprite\Hp.png" />
     <ImageContentTask Include="Assets\sprite\GameOver.png" />
+    <ImageContentTask Include="Assets\sprite\Game Clear.png" />
     <Image Include="Assets\sprite\sky.jpg" />
   </ItemGroup>
   <ItemGroup>
