@@ -1,4 +1,6 @@
 #pragma once
+#include "tkEngine/graphics/effect/tkEffect.h"
+
 class Player;
 class Tama : public IGameObject
 {

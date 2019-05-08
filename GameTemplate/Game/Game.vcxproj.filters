@@ -45,6 +45,7 @@
     <ClCompile Include="PlayerHpBer.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Capsule.cpp" />
+    <ClCompile Include="Bee2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -66,6 +67,7 @@
     <ClInclude Include="PlayerHpBer.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Capsule.h" />
+    <ClInclude Include="Bee2.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -124,6 +126,9 @@
     <MeshContentTask Include="Assets\modelData\Sinden3.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Bee2.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
@@ -179,6 +184,9 @@
   <ItemGroup>
     <None Include="Assets\level\DemoStage.tkl">
       <Filter>Assets\level</Filter>
+    </None>
+    <None Include="Assets\effect\Tama.efk">
+      <Filter>Assets\effect</Filter>
     </None>
   </ItemGroup>
 </Project>

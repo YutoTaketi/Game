@@ -1765,6 +1765,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bee.cpp" />
+    <ClCompile Include="Bee2.cpp" />
     <ClCompile Include="BeeBallet.cpp" />
     <ClCompile Include="Capsule.cpp" />
     <ClCompile Include="CircleCharge.cpp" />
@@ -1803,6 +1804,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bee.h" />
+    <ClInclude Include="Bee2.h" />
     <ClInclude Include="BeeBallet.h" />
     <ClInclude Include="Capsule.h" />
     <ClInclude Include="CircleCharge.h" />
@@ -1823,6 +1825,7 @@
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\Bee.FBX" />
+    <MeshContentTask Include="Assets\modelData\Bee2.FBX" />
     <MeshContentTask Include="Assets\modelData\BeeBallet.FBX" />
     <MeshContentTask Include="Assets\modelData\Boss.FBX" />
     <MeshContentTask Include="Assets\modelData\Capsule.FBX" />
@@ -1867,6 +1870,7 @@
     <CustomBuild Include="Assets\effect\Burn.efk">
       <FileType>Document</FileType>
     </CustomBuild>
+    <None Include="Assets\effect\Tama.efk" />
     <None Include="Assets\level\DemoStage.tkl" />
     <CustomBuild Include="Assets\level\DemoStage2.tkl">
       <FileType>Document</FileType>

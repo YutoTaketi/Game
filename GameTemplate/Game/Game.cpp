@@ -7,6 +7,7 @@
 #include "DemoCircle.h"
 #include "DemoBall.h"
 #include "Bee.h"
+#include "Bee2.h"
 #include "Capsule.h"
 #include "CircleCharge.h"
 #include "PlayerHpBer.h"
@@ -26,6 +27,7 @@ Game::~Game()
 	DeleteGO(m_circleCharge);
 	DeleteGO(m_HpBer);
 	DeleteGOs("Bee");
+	DeleteGOs("Bee2");
 	DeleteGOs("Capsule");
 	DeleteGOs("DemoCircle");
 	//DeleteGO(m_level);
@@ -57,6 +59,16 @@ bool Game::Start()
 			bee->m_scale = objData.scale;
 			return true;
 		}
+
+		else if (objData.EqualObjectName(L"Bee2") == true) {
+			//蜂のオブジェクト
+			Bee2* bee2 = NewGO<Bee2>(0, "Bee2");
+			bee2->m_position = objData.position;
+			bee2->m_rotation = objData.rotation;
+			bee2->m_scale = objData.scale;
+			return true;
+		}
+		
 		else if (objData.EqualObjectName(L"Capsule") == true) {
 			//カプセルのインスタンスを生成
 			Capsule* capsule = NewGO<Capsule>(0, "Capsule");

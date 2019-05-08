@@ -18,8 +18,13 @@ bool Tama::Start()
 {
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Tama.cmo");
-	m_scale = { 0.5f, 0.5f, 0.5f };
+	m_scale = { 0.25f, 0.25f, 0.25f };
 	//m_skinModelRender->SetScale(m_scale);
+	/*prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
+	CVector3 emitPos = m_position;
+	CVector3 emitScale = {2.0, 2.0, 2.0};
+	effect->SetPosition(emitPos);
+	effect->SetScale(emitScale);*/
 	Attack();
 	return true;
 }
@@ -40,12 +45,21 @@ void Tama::Update()
 
 	m_timer++;
 	//Attack();
+	//エフェクトのインスタンスを生成
+	/*prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
+	effect->Play(L"effect/Tama.efk");
+	CVector3 emitPos = m_position;
+	CVector3 emitScale = {2.0, 2.0, 2.0};
+	effect->SetPosition(emitPos);
+	effect->SetScale(emitScale);*/
+
 	m_position += m_moveSpeed;
 	m_skinModelRender->SetPosition(m_position);
 	m_skinModelRender->SetScale(m_scale);
 	if (m_timer == 50)
 	{
 		DeleteGO(this);
+		//DeleteGO(effect);
 	}
 	
 }

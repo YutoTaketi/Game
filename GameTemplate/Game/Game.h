@@ -10,6 +10,7 @@ class Stage;
 class DemoCircle;
 class DemoBall;
 class Bee;
+class Bee2;
 class Capsule;
 class CircleCharge;
 class GameClear;
