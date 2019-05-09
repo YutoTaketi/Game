@@ -184,6 +184,9 @@
     <CustomBuild Include="Assets\sound\OverBGM.wav">
       <Filter>Assets\sound</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\sound\GameSoundDemo.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\sprite\sky.jpg">

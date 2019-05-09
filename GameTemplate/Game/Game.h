@@ -26,6 +26,8 @@ public:
 	int dethCount = 0;
 	int DeleteHantei = false;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;		//スキンモデルレンダラー。
+	prefab::CSoundSource* m_bgmSoundSource = nullptr;
+	prefab::CSoundSource* gameSS;
 	Player* m_player = nullptr;
 	GameCameraPl* m_gameCameraPl = nullptr;
 	Stage* m_stage = nullptr;

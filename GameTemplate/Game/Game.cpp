@@ -30,6 +30,7 @@ Game::~Game()
 	DeleteGOs("Bee2");
 	DeleteGOs("Capsule");
 	DeleteGOs("DemoCircle");
+	DeleteGO(m_bgmSoundSource);
 	//DeleteGO(m_level);
 	
 }
@@ -45,6 +46,9 @@ bool Game::Start()
 	//プレイヤーのHPバーを表示
 	m_HpBer = NewGO<PlayerHpBer>(0, "HpBer");
 
+	gameSS = NewGO<prefab::CSoundSource>(0);
+	gameSS->Init(L"sound/GameSoundDemo.wav");
+	gameSS->Play(true);
 	////蜂のインスタンスを生成
 	//m_bee = NewGO<Bee>(0, "Bee");
 	//レベルを構築
@@ -93,11 +97,13 @@ void Game::Update()
 	{
 		NewGO<GameClear>(0, "GameClear");
 		DeleteGO(this);
+		DeleteGO(gameSS);
 	}
 	PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	if (HpBer->w <= 0)
 	{
 		NewGO<GameOver>(0, "GameOver");
 		DeleteGO(this);
+		DeleteGO(gameSS);
 	}
 }
