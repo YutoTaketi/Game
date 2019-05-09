@@ -94,10 +94,10 @@ void Game::Update()
 		NewGO<GameClear>(0, "GameClear");
 		DeleteGO(this);
 	}
-	/*PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
+	PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	if (HpBer->w <= 0)
 	{
 		NewGO<GameOver>(0, "GameOver");
 		DeleteGO(this);
-	}*/
+	}
 }

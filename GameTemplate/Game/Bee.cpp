@@ -37,7 +37,7 @@ void Bee::Move()
 		playerBEE.Normalize();
 		playerBEE *= 2.0f;
 		m_position += playerBEE;
-		m_position.y += 200;
+		
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
 		if (m_position.y <= 100) {

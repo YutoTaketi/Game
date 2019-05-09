@@ -175,6 +175,15 @@
     <CustomBuild Include="Assets\sound\beeAtack.wav">
       <Filter>Assets\sound</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\sound\TitleSound.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\ClearBGM.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\OverBGM.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\sprite\sky.jpg">
