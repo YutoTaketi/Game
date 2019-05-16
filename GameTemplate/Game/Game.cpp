@@ -8,11 +8,13 @@
 #include "DemoBall.h"
 #include "Bee.h"
 #include "Bee2.h"
+#include "Boss.h"   //お試し
 #include "Capsule.h"
 #include "CircleCharge.h"
 #include "PlayerHpBer.h"
 #include "GameClear.h"
 #include "GameOver.h"
+
 
 
 Game::Game()
@@ -28,6 +30,7 @@ Game::~Game()
 	DeleteGO(m_HpBer);
 	DeleteGOs("Bee");
 	DeleteGOs("Bee2");
+	DeleteGOs("Boss");
 	DeleteGOs("Capsule");
 	DeleteGOs("DemoCircle");
 	DeleteGO(m_bgmSoundSource);
@@ -45,6 +48,9 @@ bool Game::Start()
 	m_circleCharge = NewGO<CircleCharge>(0, "CircleCharge");
 	//プレイヤーのHPバーを表示
 	m_HpBer = NewGO<PlayerHpBer>(0, "HpBer");
+	
+	//ボスのインスタンス//お試し
+	m_boss = NewGO<Boss>(0, "Boss");
 
 	gameSS = NewGO<prefab::CSoundSource>(0);
 	gameSS->Init(L"sound/GameSoundDemo.wav");
@@ -91,19 +97,22 @@ bool Game::Start()
 
 void Game::Update()
 {
+	//Beeを一定数倒したらBoss(カマキリ)出現
+
+
 	//m_bee = FindGO<Bee>("Bee");
 	//Game* game = FindGO<Game>("Game");
-	if (dethCount == 4)
+	if ( clearHantei == 1)
 	{
 		NewGO<GameClear>(0, "GameClear");
 		DeleteGO(this);
 		DeleteGO(gameSS);
 	}
-	PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
+	/*PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	if (HpBer->w <= 0)
 	{
 		NewGO<GameOver>(0, "GameOver");
 		DeleteGO(this);
 		DeleteGO(gameSS);
-	}
+	}*/
 }

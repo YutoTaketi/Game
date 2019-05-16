@@ -49,7 +49,7 @@ void Bee2::Move()
 
 void Bee2::Turn()
 {
-	/*Player**/ m_player = FindGO<Player>("Player");
+	m_player = FindGO<Player>("Player");
 	CVector3 playerBEE = m_player->m_position - m_position;
 	float angle = atan2(playerBEE.x, playerBEE.z);
 	m_rotation.SetRotation(CVector3::AxisY, angle);

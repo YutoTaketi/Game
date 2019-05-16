@@ -58,8 +58,8 @@ void Player::Move()
 	m_moveSpeed.x = 0.0f;
 	m_moveSpeed.z = 0.0f;
 	m_moveSpeed.y -= 980.0f * GameTime().GetFrameDeltaTime();
-	m_moveSpeed += cameraForward * lStick_y * 200.0f;
-	m_moveSpeed += cameraRight * lStick_x * 200.0f;
+	m_moveSpeed += cameraForward * lStick_y * 250.0f;
+	m_moveSpeed += cameraRight * lStick_x * 250.0f;
 
 	//ƒWƒƒƒ“ƒv
 	if (Pad(0).IsTrigger(enButtonA)

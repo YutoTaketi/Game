@@ -46,6 +46,7 @@
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Capsule.cpp" />
     <ClCompile Include="Bee2.cpp" />
+    <ClCompile Include="Boss.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -68,6 +69,7 @@
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Capsule.h" />
     <ClInclude Include="Bee2.h" />
+    <ClInclude Include="Boss.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -111,9 +113,6 @@
     <MeshContentTask Include="Assets\modelData\Capsule.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\Boss.FBX">
-      <Filter>Assets\modelData</Filter>
-    </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\Iseki2.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
@@ -127,6 +126,9 @@
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\Bee2.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Boss.fbx">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>
@@ -186,6 +188,12 @@
     </CustomBuild>
     <CustomBuild Include="Assets\sound\GameSoundDemo.wav">
       <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Boss\Boost.tka">
+      <Filter>Assets\animData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Boss\Atack.tka">
+      <Filter>Assets\animData</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

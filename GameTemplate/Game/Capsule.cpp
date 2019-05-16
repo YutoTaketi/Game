@@ -45,19 +45,7 @@ void Capsule::CapsuleGet()
 		}
 		}
 	}
-	/*if (m_player == nullptr)
-	{
-		m_player = FindGO<Player>("Player");
-	}
-	//else
-	//{
-		CVector3 Capsuleget = m_player->m_position - m_position;
-		Capsuleget.Length();
-		if (Capsuleget.Length() < 50.0) {
-			DeleteGO(this);
-			return true;
-		}
-	//}*/
+	
 }
 
 void Capsule::Update()
