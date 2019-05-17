@@ -18,10 +18,11 @@ Boss::~Boss()
 bool Boss::Start()
 {
 	//アニメーションクリップのロード
-	
+	m_animationClip[enAnimationClip_Idle].Load(L"animData/Boss/Idle.tka");
 	m_animationClip[enAnimationClip_Atack].Load(L"animData/Boss/Atack.tka");
 	m_animationClip[enAnimationClip_Boost].Load(L"animData/Boss/Boost.tka");
 	//アニメーションフラグ設定
+	m_animationClip[enAnimationClip_Idle].SetLoopFlag(true);
 	m_animationClip[enAnimationClip_Atack].SetLoopFlag(false);
 	m_animationClip[enAnimationClip_Boost].SetLoopFlag(false);
 
@@ -29,6 +30,7 @@ bool Boss::Start()
 	m_skinModelRender->Init(L"modelData/Boss.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisZ);
 	m_position.y = 800.0;
 	m_scale = { 2.0, 2.0, 2.0 };
+	StartEf();
 	return true;
 }
 //移動（バーンエフェクトを再生）
@@ -50,6 +52,7 @@ void Boss::Move()
 			m_position = oldPos;
 			m_position.y = 300;
 		}
+		
 	}
 
 
@@ -67,6 +70,41 @@ void Boss::Turn()
 		m_rotation.SetRotation(CVector3::AxisY, angle);
 	}
 }
+
+void Boss::StartEf()
+{
+	//エフェクトを作成
+	effect = NewGO<prefab::CEffect>(0);
+	effect->Play(L"effect/AfterBurn.efk");
+	emitPos = m_position;
+	emitPos.y += 110.0;
+	emitPos.z -= 130.0;
+	 emitScale = { 3.0, 3.0, 4.0 };
+	
+	
+	
+}
+
+//エフェクトの移動(AftarBurn)
+void Boss::MoveEf()
+{
+	CVector3 BurnEf = m_position - emitPos;
+	BurnEf.Normalize();
+	BurnEf *= 3.0f;
+	emitPos += BurnEf;
+	//emitPos.y += 110.0;
+	emitPos.y = m_position.y+110.0;
+	
+	//回転
+	emitRot.SetRotationDeg(CVector3::AxisY, 0.0);
+	CVector3 TurnEf = m_position - emitPos;
+	float angle = atan2(TurnEf.x, TurnEf.z);
+	emitRot.SetRotation(CVector3::AxisY, angle);
+
+	//effect->SetPosition(emitPos);
+	//effect->SetRotation(emitRot);
+}
+
 //攻撃
 void Boss::Atack()
 {
@@ -120,11 +158,16 @@ void Boss::Deth()
 
 void Boss::Update()
 {
-	//Move();
-	//Turn();
-	Hidan();
-	Deth();
-	m_skinModelRender->SetPosition(m_position);
+	Move();
+	Turn();
+	MoveEf();
+	//Hidan();
+	//Deth();
+	m_skinModelRender->SetPosition(m_position);//ボス
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);
+
+	effect->SetPosition(emitPos);    //エフェクト
+	effect->SetRotation(emitRot);
+	effect->SetScale(emitScale);
 }

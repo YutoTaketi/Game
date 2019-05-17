@@ -1,4 +1,6 @@
 #pragma once
+#include "tkEngine/graphics/effect/tkEffect.h"
+
 class Player;
 class Boss : public IGameObject
 {
@@ -9,6 +11,8 @@ public:
 	bool Start();
 	void Move();
 	void Turn();
+	void StartEf();
+	void MoveEf();
 	void Atack();
 	void Boost();
 	void Hidan();
@@ -17,6 +21,7 @@ public:
 
 	//アニメーションクリップ
 	enum EnAnimationClip {
+		enAnimationClip_Idle,
 		enAnimationClip_Atack,
 		enAnimationClip_Boost,
 		enAnimationClip_num,
@@ -28,6 +33,10 @@ public:
 	CVector3 m_position = CVector3::Zero;	//座標。
 	CQuaternion m_rotation = CQuaternion::Identity;	//回転。
 	CVector3 m_scale = CVector3::One;   //スケール
+	prefab::CEffect* effect = nullptr;
+	CVector3 emitPos = CVector3::Zero;    //エフェクトの座標
+	CQuaternion emitRot = CQuaternion::Identity;  //エフェクトの回転
+	CVector3 emitScale = CVector3::One;   //エフェクトのスケール
 	 int life = 200; //ボスのライフ
 	Player* m_player = nullptr;
 

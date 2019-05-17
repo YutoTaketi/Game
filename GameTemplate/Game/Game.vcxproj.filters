@@ -195,6 +195,15 @@
     <CustomBuild Include="Assets\animData\Boss\Atack.tka">
       <Filter>Assets\animData</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\effect\AfterBurn.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Boss\Idle.tka">
+      <Filter>Assets\animData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Slash.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\sprite\sky.jpg">

@@ -1878,6 +1878,15 @@
     <CustomBuild Include="Assets\animData\Boss\Boost.tka">
       <FileType>Document</FileType>
     </CustomBuild>
+    <CustomBuild Include="Assets\effect\AfterBurn.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Boss\Idle.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Slash.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
     <None Include="Assets\effect\Tama.efk" />
     <None Include="Assets\level\DemoStage.tkl" />
     <CustomBuild Include="Assets\level\DemoStage2.tkl">

@@ -5,12 +5,20 @@
     <Children>
       <Node>
         <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
             <Center>1000</Center>
             <Max>1000</Max>
             <Min>1000</Min>
           </Life>
         </CommonValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <RendererCommonValues>
           <ColorTexture>../../../tkTools/Effekseer132/Sample/01_AndrewFM01/Texture/drillshi.png</ColorTexture>
           <AlphaBlend>2</AlphaBlend>
@@ -81,12 +89,20 @@
       </Node>
       <Node>
         <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
             <Center>1000</Center>
             <Max>1000</Max>
             <Min>1000</Min>
           </Life>
         </CommonValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <RendererCommonValues>
           <ColorTexture>../../../tkTools/Effekseer132/Sample/01_AndrewFM01/Texture/drillshi.png</ColorTexture>
           <AlphaBlend>2</AlphaBlend>
@@ -157,6 +173,9 @@
         <Children />
       </Node>
       <Node>
+        <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+        </CommonValues>
         <LocationValues>
           <Type>1</Type>
           <Fixed>
@@ -167,20 +186,20 @@
           <PVA>
             <Location>
               <Z>
-                <Center>5</Center>
-                <Max>5</Max>
-                <Min>5</Min>
+                <Center>-5</Center>
+                <Max>-5</Max>
+                <Min>-5</Min>
               </Z>
             </Location>
-            <Velocity>
-              <Z>
-                <Center>-0.5</Center>
-                <Max>-0.5</Max>
-                <Min>-0.5</Min>
-              </Z>
-            </Velocity>
           </PVA>
         </LocationValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <ScalingValues>
           <Type>3</Type>
           <SinglePVA>
@@ -204,6 +223,7 @@
               <LocationEffectType>1</LocationEffectType>
               <RotationEffectType>0</RotationEffectType>
               <ScaleEffectType>1</ScaleEffectType>
+              <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
               <Life>
                 <Center>1000</Center>
                 <Max>1000</Max>
@@ -220,11 +240,6 @@
               </Fixed>
               <PVA>
                 <Rotation>
-                  <Y>
-                    <Center>-20</Center>
-                    <Max>-20</Max>
-                    <Min>-20</Min>
-                  </Y>
                   <DrawnAs>0</DrawnAs>
                 </Rotation>
                 <Velocity>
@@ -291,12 +306,20 @@
       </Node>
       <Node>
         <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
             <Center>1000</Center>
             <Max>1000</Max>
             <Min>1000</Min>
           </Life>
         </CommonValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <RendererCommonValues>
           <ColorTexture>../../../tkTools/Effekseer132/Sample/01_AndrewFM01/Texture/drillshi.png</ColorTexture>
           <AlphaBlend>2</AlphaBlend>
@@ -369,12 +392,20 @@
       </Node>
       <Node>
         <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
             <Center>1000</Center>
             <Max>1000</Max>
             <Min>1000</Min>
           </Life>
         </CommonValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <RendererCommonValues>
           <ColorTexture>../../../tkTools/Effekseer132/Sample/01_AndrewFM01/Texture/Shock_wave_ring002.png</ColorTexture>
           <AlphaBlend>3</AlphaBlend>
@@ -446,12 +477,20 @@
       </Node>
       <Node>
         <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
             <Center>1000</Center>
             <Max>1000</Max>
             <Min>1000</Min>
           </Life>
         </CommonValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <RendererCommonValues>
           <ColorTexture>../../../tkTools/Effekseer132/Sample/01_AndrewFM01/Texture/drillshi.png</ColorTexture>
           <AlphaBlend>2</AlphaBlend>
@@ -526,6 +565,7 @@
           <MaxGeneration>
             <Infinite>True</Infinite>
           </MaxGeneration>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
             <Center>20</Center>
             <Max>20</Max>
@@ -536,37 +576,45 @@
           <Type>1</Type>
           <PVA>
             <Location>
-              <Y>
-                <Center>1</Center>
-                <Max>1</Max>
-                <Min>1</Min>
-              </Y>
               <DrawnAs>0</DrawnAs>
             </Location>
             <Velocity>
               <Y>
-                <Center>2</Center>
-                <Max>2.75</Max>
-                <Min>1.25</Min>
+                <Center>-8</Center>
+                <Max>-8</Max>
+                <Min>-8</Min>
               </Y>
+              <Z>
+                <Center>-1</Center>
+                <Max>-1</Max>
+                <Min>-1</Min>
+              </Z>
             </Velocity>
           </PVA>
         </LocationValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <ScalingValues>
           <Type>2</Type>
           <Easing>
             <Start>
               <Y>
-                <Center>2.25</Center>
-                <Max>3.5</Max>
+                <Center>-1</Center>
+                <Max>-1</Max>
+                <Min>-1</Min>
               </Y>
               <DrawnAs>0</DrawnAs>
             </Start>
             <End>
               <Y>
-                <Center>5</Center>
-                <Max>5</Max>
-                <Min>5</Min>
+                <Center>-1</Center>
+                <Max>-1</Max>
+                <Min>-1</Min>
               </Y>
               <DrawnAs>0</DrawnAs>
             </End>
@@ -643,6 +691,7 @@
           <MaxGeneration>
             <Infinite>True</Infinite>
           </MaxGeneration>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
             <Center>10</Center>
             <Max>10</Max>
@@ -658,43 +707,40 @@
           <Type>1</Type>
           <PVA>
             <Location>
-              <Y>
-                <Center>1</Center>
-                <Max>1</Max>
-                <Min>1</Min>
-              </Y>
               <DrawnAs>0</DrawnAs>
             </Location>
             <Velocity>
-              <Y>
-                <Center>4</Center>
-                <Max>5.5</Max>
-                <Min>2.5</Min>
-              </Y>
+              <Z>
+                <Center>-4</Center>
+                <Max>-4</Max>
+                <Min>-4</Min>
+              </Z>
             </Velocity>
           </PVA>
         </LocationValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <ScalingValues>
           <Type>2</Type>
           <Easing>
             <Start>
               <Y>
-                <Center>3.75</Center>
-                <Max>5</Max>
-                <Min>2.5</Min>
+                <Center>0</Center>
+                <Max>0</Max>
+                <Min>0</Min>
               </Y>
               <DrawnAs>0</DrawnAs>
             </Start>
             <End>
-              <X>
+              <Y>
                 <Center>0</Center>
                 <Max>0</Max>
                 <Min>0</Min>
-              </X>
-              <Y>
-                <Center>10</Center>
-                <Max>10</Max>
-                <Min>10</Min>
               </Y>
               <DrawnAs>0</DrawnAs>
             </End>
@@ -770,12 +816,20 @@
       </Node>
       <Node>
         <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
             <Center>1000</Center>
             <Max>1000</Max>
             <Min>1000</Min>
           </Life>
         </CommonValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <RendererCommonValues>
           <ColorTexture>../../../tkTools/Effekseer132/Sample/01_AndrewFM01/Texture/Shock_wave_ring001_long.png</ColorTexture>
           <AlphaBlend>2</AlphaBlend>
@@ -835,12 +889,20 @@
       </Node>
       <Node>
         <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
             <Center>1000</Center>
             <Max>1000</Max>
             <Min>1000</Min>
           </Life>
         </CommonValues>
+        <RotationValues>
+          <Fixed>
+            <Rotation>
+              <Y>180</Y>
+            </Rotation>
+          </Fixed>
+        </RotationValues>
         <RendererCommonValues>
           <ColorTexture>../../../tkTools/Effekseer132/Sample/01_AndrewFM01/Texture/Shock_wave_ring001_long.png</ColorTexture>
           <AlphaBlend>2</AlphaBlend>

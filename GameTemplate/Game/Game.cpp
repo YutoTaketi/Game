@@ -98,7 +98,10 @@ bool Game::Start()
 void Game::Update()
 {
 	//Beeを一定数倒したらBoss(カマキリ)出現
-
+	/*if (dethCount == 4) {
+		m_boss = NewGO<Boss>(0, "Boss");
+		
+	}*/
 
 	//m_bee = FindGO<Bee>("Bee");
 	//Game* game = FindGO<Game>("Game");
