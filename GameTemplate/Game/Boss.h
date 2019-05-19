@@ -2,6 +2,7 @@
 #include "tkEngine/graphics/effect/tkEffect.h"
 
 class Player;
+class BossSlash;
 class Boss : public IGameObject
 {
 public:
@@ -13,7 +14,7 @@ public:
 	void Turn();
 	void StartEf();
 	void MoveEf();
-	void Atack();
+	void Attack();
 	void Boost();
 	void Hidan();
 	void Deth();
@@ -38,6 +39,7 @@ public:
 	CQuaternion emitRot = CQuaternion::Identity;  //エフェクトの回転
 	CVector3 emitScale = CVector3::One;   //エフェクトのスケール
 	 int life = 200; //ボスのライフ
+	 int AttackTime = 0;
 	Player* m_player = nullptr;
 
 

@@ -2,6 +2,7 @@
 #include "Boss.h"
 #include "Player.h"
 #include "Tama.h"
+#include "BossSlash.h"
 #include "Game.h"
 
 
@@ -106,10 +107,22 @@ void Boss::MoveEf()
 }
 
 //攻撃
-void Boss::Atack()
+void Boss::Attack()
 {
+	AttackTime++;
 	//攻撃のリキャストタイム
 	//m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
+	if (AttackTime == 60) {
+		m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
+		BossSlash* slash = NewGO<BossSlash>(0, "BossSlash");
+		slash->m_position = m_position;
+		slash->m_position.y += 100.0;
+		CVector3 Bossmae = { 0, 0, 1 };
+		m_rotation.Apply(Bossmae);
+		slash->m_moveSpeed = Bossmae * 20.0;
+
+		AttackTime = 0.0f;
+	}
 }
 
 //特定条件でターボ（タイマー制御にするかは未定 バーンエフェクト（青））
@@ -158,9 +171,10 @@ void Boss::Deth()
 
 void Boss::Update()
 {
-	Move();
-	Turn();
-	MoveEf();
+	//Move();
+	//Turn();
+	//MoveEf();
+	Attack();
 	//Hidan();
 	//Deth();
 	m_skinModelRender->SetPosition(m_position);//ボス

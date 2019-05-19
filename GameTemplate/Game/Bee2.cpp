@@ -67,7 +67,7 @@ void Bee2::BeeAtack()
 		m_rotation.Apply(Beemae);
 		beeBallet->m_moveSpeed = Beemae * 20.0;
 
-		m_timer = 0.0f;
+		m_timer = 0;
 	}
 }
 
