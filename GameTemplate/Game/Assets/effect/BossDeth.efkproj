@@ -387,15 +387,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>34</Center>
+                                <Max>54</Max>
+                                <Min>14</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>37</Center>
+                                <Max>54</Max>
+                                <Min>20</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>194</Center>
+                                <Max>252</Max>
+                                <Min>137</Min>
                               </B>
                               <A>
                                 <Center>215</Center>
@@ -521,15 +526,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>182</Center>
+                                <Max>182</Max>
+                                <Min>182</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>72</Center>
+                                <Max>117</Max>
+                                <Min>28</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>128</Center>
+                                <Max>234</Max>
+                                <Min>22</Min>
                               </B>
                               <A>
                                 <Center>215</Center>
@@ -655,15 +665,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>234</Center>
+                                <Max>245</Max>
+                                <Min>224</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>199</Center>
+                                <Max>199</Max>
+                                <Min>199</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>135</Center>
+                                <Max>254</Max>
+                                <Min>16</Min>
                               </B>
                               <A>
                                 <Center>215</Center>
@@ -790,15 +805,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>241</Center>
+                                <Max>241</Max>
+                                <Min>241</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>15</Center>
+                                <Max>15</Max>
+                                <Min>15</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>3</Center>
+                                <Max>3</Max>
+                                <Min>3</Min>
                               </B>
                               <A>
                                 <Center>215</Center>
@@ -890,8 +910,9 @@
                 <DrawingValues>
                   <Sprite>
                     <ColorAll_Fixed>
-                      <G>192</G>
-                      <B>112</B>
+                      <R>252</R>
+                      <G>66</G>
+                      <B>27</B>
                       <A>192</A>
                     </ColorAll_Fixed>
                   </Sprite>
@@ -1002,15 +1023,20 @@
                       <A>128</A>
                     </ColorAll_Fixed>
                     <ColorAll_Random>
+                      <R>
+                        <Center>44</Center>
+                        <Max>44</Max>
+                        <Min>44</Min>
+                      </R>
                       <G>
-                        <Center>192</Center>
-                        <Max>192</Max>
-                        <Min>192</Min>
+                        <Center>82</Center>
+                        <Max>85</Max>
+                        <Min>80</Min>
                       </G>
                       <B>
-                        <Center>128</Center>
-                        <Max>128</Max>
-                        <Min>128</Min>
+                        <Center>137</Center>
+                        <Max>252</Max>
+                        <Min>22</Min>
                       </B>
                       <A>
                         <Center>96</Center>
@@ -1459,15 +1485,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>253</Center>
+                                <Max>253</Max>
+                                <Min>253</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>49</Center>
+                                <Max>98</Max>
+                                <Min>0</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>126</Center>
+                                <Max>253</Max>
+                                <Min>0</Min>
                               </B>
                               <A>
                                 <Center>160</Center>
@@ -1602,15 +1633,19 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>159</Center>
+                                <Min>64</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
+                                <Center>133</Center>
                                 <Max>160</Max>
-                                <Min>160</Min>
+                                <Min>106</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>251</Center>
+                                <Max>251</Max>
+                                <Min>251</Min>
                               </B>
                               <A>
                                 <Center>160</Center>
@@ -1745,15 +1780,19 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>163</Center>
+                                <Min>71</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
+                                <Center>111</Center>
                                 <Max>160</Max>
-                                <Min>160</Min>
+                                <Min>63</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>222</Center>
+                                <Max>222</Max>
+                                <Min>222</Min>
                               </B>
                               <A>
                                 <Center>160</Center>
@@ -1889,15 +1928,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>94</Center>
+                                <Max>94</Max>
+                                <Min>94</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>34</Center>
+                                <Max>47</Max>
+                                <Min>21</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>127</Center>
+                                <Max>253</Max>
+                                <Min>2</Min>
                               </B>
                               <A>
                                 <Center>160</Center>
@@ -2002,15 +2046,20 @@
                               <A>64</A>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>131</Center>
+                                <Max>165</Max>
+                                <Min>98</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>176</Max>
-                                <Min>144</Min>
+                                <Center>81</Center>
+                                <Max>150</Max>
+                                <Min>13</Min>
                               </G>
                               <B>
-                                <Center>80</Center>
-                                <Max>96</Max>
-                                <Min>64</Min>
+                                <Center>245</Center>
+                                <Max>245</Max>
+                                <Min>245</Min>
                               </B>
                               <A>
                                 <Center>40</Center>
@@ -2281,19 +2330,19 @@
                             </ColorAll_Fixed>
                             <ColorAll_Random>
                               <R>
-                                <Center>80</Center>
-                                <Max>84</Max>
-                                <Min>76</Min>
+                                <Center>74</Center>
+                                <Max>91</Max>
+                                <Min>57</Min>
                               </R>
                               <G>
-                                <Center>76</Center>
-                                <Max>78</Max>
-                                <Min>74</Min>
+                                <Center>69</Center>
+                                <Max>91</Max>
+                                <Min>48</Min>
                               </G>
                               <B>
-                                <Center>72</Center>
-                                <Max>72</Max>
-                                <Min>72</Min>
+                                <Center>86</Center>
+                                <Max>94</Max>
+                                <Min>78</Min>
                               </B>
                               <A>
                                 <Center>48</Center>
@@ -2567,19 +2616,19 @@
                             </ColorAll_Fixed>
                             <ColorAll_Random>
                               <R>
-                                <Center>80</Center>
+                                <Center>70</Center>
                                 <Max>84</Max>
-                                <Min>76</Min>
+                                <Min>56</Min>
                               </R>
                               <G>
-                                <Center>76</Center>
+                                <Center>50</Center>
                                 <Max>78</Max>
-                                <Min>74</Min>
+                                <Min>22</Min>
                               </G>
                               <B>
-                                <Center>72</Center>
-                                <Max>72</Max>
-                                <Min>72</Min>
+                                <Center>126</Center>
+                                <Max>126</Max>
+                                <Min>126</Min>
                               </B>
                               <A>
                                 <Center>48</Center>
@@ -2853,9 +2902,9 @@
                             </ColorAll_Fixed>
                             <ColorAll_Random>
                               <R>
-                                <Center>80</Center>
+                                <Center>54</Center>
                                 <Max>84</Max>
-                                <Min>76</Min>
+                                <Min>24</Min>
                               </R>
                               <G>
                                 <Center>76</Center>
@@ -2863,9 +2912,9 @@
                                 <Min>74</Min>
                               </G>
                               <B>
-                                <Center>72</Center>
-                                <Max>72</Max>
-                                <Min>72</Min>
+                                <Center>124</Center>
+                                <Max>124</Max>
+                                <Min>124</Min>
                               </B>
                               <A>
                                 <Center>48</Center>
@@ -3140,19 +3189,19 @@
                             </ColorAll_Fixed>
                             <ColorAll_Random>
                               <R>
-                                <Center>80</Center>
-                                <Max>84</Max>
-                                <Min>76</Min>
+                                <Center>115</Center>
+                                <Max>115</Max>
+                                <Min>115</Min>
                               </R>
                               <G>
-                                <Center>76</Center>
+                                <Center>52</Center>
                                 <Max>78</Max>
-                                <Min>74</Min>
+                                <Min>27</Min>
                               </G>
                               <B>
-                                <Center>72</Center>
-                                <Max>72</Max>
-                                <Min>72</Min>
+                                <Center>122</Center>
+                                <Max>122</Max>
+                                <Min>122</Min>
                               </B>
                               <A>
                                 <Center>48</Center>
@@ -3411,15 +3460,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>12</Center>
+                                <Max>12</Max>
+                                <Min>12</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>16</Center>
+                                <Max>33</Max>
+                                <Min>0</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>122</Center>
+                                <Max>222</Max>
+                                <Min>23</Min>
                               </B>
                               <A>
                                 <Center>128</Center>
@@ -3543,15 +3597,19 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>253</Center>
+                                <Min>252</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
+                                <Center>112</Center>
                                 <Max>160</Max>
-                                <Min>160</Min>
+                                <Min>64</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
+                                <Center>60</Center>
                                 <Max>96</Max>
-                                <Min>96</Min>
+                                <Min>24</Min>
                               </B>
                               <A>
                                 <Center>128</Center>
@@ -3676,14 +3734,14 @@
                             </ColorAll_Fixed>
                             <ColorAll_Random>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>47</Center>
+                                <Max>47</Max>
+                                <Min>47</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>17</Center>
+                                <Max>17</Max>
+                                <Min>17</Min>
                               </B>
                               <A>
                                 <Center>128</Center>
@@ -3807,15 +3865,19 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>175</Center>
+                                <Min>95</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
+                                <Center>86</Center>
                                 <Max>160</Max>
-                                <Min>160</Min>
+                                <Min>12</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>220</Center>
+                                <Max>220</Max>
+                                <Min>220</Min>
                               </B>
                               <A>
                                 <Center>128</Center>
@@ -3920,15 +3982,20 @@
                               <A>64</A>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>240</Center>
+                                <Max>250</Max>
+                                <Min>231</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>176</Max>
-                                <Min>144</Min>
+                                <Center>130</Center>
+                                <Max>240</Max>
+                                <Min>20</Min>
                               </G>
                               <B>
-                                <Center>80</Center>
-                                <Max>96</Max>
-                                <Min>64</Min>
+                                <Center>26</Center>
+                                <Max>50</Max>
+                                <Min>3</Min>
                               </B>
                               <A>
                                 <Center>48</Center>
@@ -4163,15 +4230,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>190</Center>
+                                <Max>190</Max>
+                                <Min>190</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>80</Center>
+                                <Max>80</Max>
+                                <Min>80</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>233</Center>
+                                <Max>233</Max>
+                                <Min>233</Min>
                               </B>
                               <A>
                                 <Center>215</Center>
@@ -4298,14 +4370,14 @@
                             </ColorAll_Fixed>
                             <ColorAll_Random>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>129</Center>
+                                <Max>249</Max>
+                                <Min>9</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>17</Center>
+                                <Max>26</Max>
+                                <Min>9</Min>
                               </B>
                               <A>
                                 <Center>215</Center>
@@ -4431,15 +4503,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>56</Center>
+                                <Max>56</Max>
+                                <Min>56</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>16</Center>
+                                <Max>16</Max>
+                                <Min>16</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>98</Center>
+                                <Max>197</Max>
+                                <Min>0</Min>
                               </B>
                               <A>
                                 <Center>215</Center>
@@ -4566,15 +4643,20 @@
                               <B>96</B>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>180</Center>
+                                <Max>180</Max>
+                                <Min>180</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>160</Max>
-                                <Min>160</Min>
+                                <Center>7</Center>
+                                <Max>7</Max>
+                                <Min>7</Min>
                               </G>
                               <B>
-                                <Center>96</Center>
-                                <Max>96</Max>
-                                <Min>96</Min>
+                                <Center>157</Center>
+                                <Max>245</Max>
+                                <Min>69</Min>
                               </B>
                               <A>
                                 <Center>215</Center>
@@ -4664,15 +4746,20 @@
                               <A>64</A>
                             </ColorAll_Fixed>
                             <ColorAll_Random>
+                              <R>
+                                <Center>131</Center>
+                                <Max>242</Max>
+                                <Min>21</Min>
+                              </R>
                               <G>
-                                <Center>160</Center>
-                                <Max>176</Max>
-                                <Min>144</Min>
+                                <Center>172</Center>
+                                <Max>254</Max>
+                                <Min>91</Min>
                               </G>
                               <B>
-                                <Center>80</Center>
-                                <Max>96</Max>
-                                <Min>64</Min>
+                                <Center>221</Center>
+                                <Max>221</Max>
+                                <Min>221</Min>
                               </B>
                               <A>
                                 <Center>48</Center>
@@ -4862,8 +4949,9 @@
                     <DrawingValues>
                       <Sprite>
                         <ColorAll_Fixed>
-                          <G>224</G>
-                          <B>192</B>
+                          <R>85</R>
+                          <G>24</G>
+                          <B>211</B>
                         </ColorAll_Fixed>
                       </Sprite>
                     </DrawingValues>
@@ -4909,8 +4997,9 @@
                         <DrawingValues>
                           <Sprite>
                             <ColorAll_Fixed>
-                              <G>160</G>
-                              <B>96</B>
+                              <R>101</R>
+                              <G>28</G>
+                              <B>210</B>
                               <A>128</A>
                             </ColorAll_Fixed>
                           </Sprite>
@@ -4991,8 +5080,9 @@
                 <DrawingValues>
                   <Sprite>
                     <ColorAll_Fixed>
-                      <G>224</G>
-                      <B>160</B>
+                      <R>249</R>
+                      <G>4</G>
+                      <B>4</B>
                     </ColorAll_Fixed>
                   </Sprite>
                 </DrawingValues>
@@ -5068,8 +5158,9 @@
                 <DrawingValues>
                   <Sprite>
                     <ColorAll_Fixed>
-                      <G>224</G>
-                      <B>160</B>
+                      <R>43</R>
+                      <G>87</G>
+                      <B>242</B>
                     </ColorAll_Fixed>
                   </Sprite>
                 </DrawingValues>
