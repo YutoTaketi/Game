@@ -4,6 +4,9 @@
     <Name>Root</Name>
     <Children>
       <Node>
+        <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+        </CommonValues>
         <RotationValues>
           <Fixed>
             <Rotation>
@@ -45,6 +48,9 @@
         <Children />
       </Node>
       <Node>
+        <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+        </CommonValues>
         <RotationValues>
           <Fixed>
             <Rotation>
@@ -88,6 +94,9 @@
         <Children />
       </Node>
       <Node>
+        <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+        </CommonValues>
         <LocationValues>
           <Type>2</Type>
           <Easing>
@@ -150,6 +159,9 @@
         <Children />
       </Node>
       <Node>
+        <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+        </CommonValues>
         <LocationValues>
           <Type>2</Type>
           <Easing>
@@ -220,6 +232,9 @@
         <Children />
       </Node>
       <Node>
+        <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+        </CommonValues>
         <LocationValues>
           <Fixed>
             <Location>
@@ -255,6 +270,9 @@
         <Children />
       </Node>
       <Node>
+        <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+        </CommonValues>
         <LocationValues>
           <Fixed>
             <Location>
