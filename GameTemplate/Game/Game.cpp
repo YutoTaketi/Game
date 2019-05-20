@@ -105,12 +105,12 @@ void Game::Update()
 
 	//m_bee = FindGO<Bee>("Bee");
 	//Game* game = FindGO<Game>("Game");
-	if ( clearHantei == 1)
+	/*if ( clearHantei == 1)
 	{
 		NewGO<GameClear>(0, "GameClear");
 		DeleteGO(this);
 		DeleteGO(gameSS);
-	}
+	}*/
 	/*PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	if (HpBer->w <= 0)
 	{

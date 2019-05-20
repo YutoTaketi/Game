@@ -141,6 +141,7 @@ void Boss::Attack()
 //プレイヤーとの距離が一定以上離れたら
 void Boss::Boost()
 {
+
 }
 //被弾判定
 void Boss::Hidan()
@@ -178,8 +179,10 @@ void Boss::Deth()
 			//デスエフェクトを再生。
 			effect->Play(L"effect/BossDeth.efk");
 			CVector3 DethEfPos = m_position;
+			CVector3 DethEfscale = { 0.5, 0.5, 0.5 };
 			DethEfPos.y += 10.0f;
 			effect->SetPosition(DethEfPos);
+			effect->SetScale(DethEfPos);
 			DeleteGO(this);
 		}
 		
@@ -193,8 +196,8 @@ void Boss::Update()
 	//Turn();
 	//MoveEf();
 	Attack();
-	//Hidan();
-	//Deth();
+	Hidan();
+	Deth();
 	m_skinModelRender->SetPosition(m_position);//ボス
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);
