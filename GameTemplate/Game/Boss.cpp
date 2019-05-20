@@ -27,10 +27,22 @@ bool Boss::Start()
 	m_animationClip[enAnimationClip_Atack].SetLoopFlag(false);
 	m_animationClip[enAnimationClip_Boost].SetLoopFlag(false);
 
+	//スポーンエフェクトを作成
+	//スポーンエフェクトを再生
+	prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
+	//エフェクトを再生。
+	effect->Play(L"effect/BossSporn.efk");
+	CVector3 SpornEfPos = m_position;
+	CVector3 SpornEfscale = { 7.0, 7.0, 7.0 };
+	SpornEfPos.y += 800.0f;
+	effect->SetPosition(SpornEfPos);
+	effect->SetScale(SpornEfscale);
+
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Boss.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisZ);
 	m_position.y = 800.0;
 	m_scale = { 2.0, 2.0, 2.0 };
+
 	StartEf();
 	return true;
 }
@@ -162,6 +174,12 @@ void Boss::Deth()
 		if (life == 0)
 		{
 			game->clearHantei = 1;
+			prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
+			//デスエフェクトを再生。
+			effect->Play(L"effect/BossDeth.efk");
+			CVector3 DethEfPos = m_position;
+			DethEfPos.y += 10.0f;
+			effect->SetPosition(DethEfPos);
 			DeleteGO(this);
 		}
 		

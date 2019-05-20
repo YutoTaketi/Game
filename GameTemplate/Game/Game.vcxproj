@@ -1889,6 +1889,12 @@
     <CustomBuild Include="Assets\effect\Slash.efk">
       <FileType>Document</FileType>
     </CustomBuild>
+    <CustomBuild Include="Assets\effect\BossDeth.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\BossSporn.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
     <None Include="Assets\effect\Tama.efk" />
     <None Include="Assets\level\DemoStage.tkl" />
     <CustomBuild Include="Assets\level\DemoStage2.tkl">

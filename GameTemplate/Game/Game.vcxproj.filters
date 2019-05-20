@@ -47,6 +47,7 @@
     <ClCompile Include="Capsule.cpp" />
     <ClCompile Include="Bee2.cpp" />
     <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="BossSlash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -70,6 +71,7 @@
     <ClInclude Include="Capsule.h" />
     <ClInclude Include="Bee2.h" />
     <ClInclude Include="Boss.h" />
+    <ClInclude Include="BossSlash.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -202,6 +204,12 @@
       <Filter>Assets\animData</Filter>
     </CustomBuild>
     <CustomBuild Include="Assets\effect\Slash.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\BossDeth.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\BossSporn.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
   </ItemGroup>
