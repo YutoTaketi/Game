@@ -183,6 +183,11 @@ void Boss::Deth()
 			DethEfPos.y += 10.0f;
 			effect->SetPosition(DethEfPos);
 			effect->SetScale(DethEfPos);
+			//ƒfƒXBGM‚ğÄ¶
+			prefab::CSoundSource* BossDethS;
+				BossDethS = NewGO<prefab::CSoundSource>(0);
+				BossDethS->Init(L"sound/BossDeth.wav");
+				BossDethS->Play(false);
 			DeleteGO(this);
 		}
 		

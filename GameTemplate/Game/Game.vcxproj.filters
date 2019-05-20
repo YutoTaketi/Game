@@ -212,6 +212,9 @@
     <CustomBuild Include="Assets\effect\BossSporn.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\sound\BossDeth.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\sprite\sky.jpg">

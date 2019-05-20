@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PlayerHpBer.h"
 #include "BeeBallet.h"
+#include "BossSlash.h"
 #include "Player.h"
 #include "Game.h"
 
@@ -38,15 +39,26 @@ void PlayerHpBer::GageGensyou()
 	Player* player = FindGO<Player>("Player");
 	//PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	if (player != nullptr) {
-		QueryGOs<BeeBallet>("BeeBallet", [&](BeeBallet* beeBallet)->bool {
+		/*QueryGOs<BeeBallet>("BeeBallet", [&](BeeBallet* beeBallet)->bool {
 			BalletPlayer = beeBallet->m_position - player->m_position;
 			if (BalletPlayer.Length() < 100.0f) {
-				w = w - 10;
+				w = w - 5;
 				HpGage->Init(L"sprite/Hp.dds", w, 34);
 			
 			}
 			return true;
-	     });
+	     });*/
+		
+		//É{ÉXÇÃçUåÇÇ…Ç†Ç¡ÇΩÇÁHPÉQÅ[ÉWå∏è≠
+		QueryGOs<BossSlash>("BossSlash", [&](BossSlash* bossSlash)->bool {
+			SlashPlayer = bossSlash->m_position - player->m_position;
+			if (SlashPlayer.Length() < 100.0f) {
+				w = w - 10;
+				HpGage->Init(L"sprite/Hp.dds", w, 34);
+
+			}
+			return true;
+			});
 	}
 }
 

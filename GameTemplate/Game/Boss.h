@@ -41,6 +41,7 @@ public:
 	 int life = 200; //ボスのライフ
 	 int AttackTime = 0;
 	Player* m_player = nullptr;
+	prefab::CSoundSource* m_bgmSoundSource = nullptr;	//BGM用のサウンドソース。
 
 
 };
