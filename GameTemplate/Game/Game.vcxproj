@@ -1768,6 +1768,7 @@
     <ClCompile Include="Bee2.cpp" />
     <ClCompile Include="BeeBallet.cpp" />
     <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="BossAfterBurn.cpp" />
     <ClCompile Include="BossSlash.cpp" />
     <ClCompile Include="Capsule.cpp" />
     <ClCompile Include="CircleCharge.cpp" />
@@ -1809,6 +1810,7 @@
     <ClInclude Include="Bee2.h" />
     <ClInclude Include="BeeBallet.h" />
     <ClInclude Include="Boss.h" />
+    <ClInclude Include="BossAfterBurn.h" />
     <ClInclude Include="BossSlash.h" />
     <ClInclude Include="Capsule.h" />
     <ClInclude Include="CircleCharge.h" />
@@ -1893,6 +1895,9 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="Assets\effect\BossSporn.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\AftarBurnB.efk">
       <FileType>Document</FileType>
     </CustomBuild>
     <None Include="Assets\effect\Tama.efk" />

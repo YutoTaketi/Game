@@ -4,6 +4,7 @@
 #include "Tama.h"
 #include "BossSlash.h"
 #include "Game.h"
+#include "BossAfterBurn.h"
 
 
 Boss::Boss()
@@ -14,6 +15,7 @@ Boss::Boss()
 Boss::~Boss()
 {
 	DeleteGO(m_skinModelRender);
+	DeleteGO(BurnEf);
 }
 
 bool Boss::Start()
@@ -43,7 +45,8 @@ bool Boss::Start()
 	m_position.y = 800.0;
 	m_scale = { 2.0, 2.0, 2.0 };
 
-	StartEf();
+	BurnEf = NewGO<BossAfterBurn>(0, "AfterBurn");
+	//StartEf();
 	return true;
 }
 //移動（バーンエフェクトを再生）
@@ -101,7 +104,7 @@ void Boss::StartEf()
 //エフェクトの移動(AftarBurn)
 void Boss::MoveEf()
 {
-	CVector3 BurnEf = m_position - emitPos;
+	/*CVector3 BurnEf = m_position - emitPos;
 	BurnEf.Normalize();
 	BurnEf *= 3.0f;
 	emitPos += BurnEf;
@@ -112,7 +115,7 @@ void Boss::MoveEf()
 	emitRot.SetRotationDeg(CVector3::AxisY, 0.0);
 	CVector3 TurnEf = m_position - emitPos;
 	float angle = atan2(TurnEf.x, TurnEf.z);
-	emitRot.SetRotation(CVector3::AxisY, angle);
+	emitRot.SetRotation(CVector3::AxisY, angle);*/
 
 	//effect->SetPosition(emitPos);
 	//effect->SetRotation(emitRot);
@@ -197,8 +200,8 @@ void Boss::Deth()
 
 void Boss::Update()
 {
-	//Move();
-	//Turn();
+	Move();
+	Turn();
 	//MoveEf();
 	Attack();
 	Hidan();
@@ -207,7 +210,7 @@ void Boss::Update()
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);
 
-	effect->SetPosition(emitPos);    //エフェクト
-	effect->SetRotation(emitRot);
-	effect->SetScale(emitScale);
+	//effect->SetPosition(emitPos);    //エフェクト
+	//effect->SetRotation(emitRot);
+	//effect->SetScale(emitScale);
 }

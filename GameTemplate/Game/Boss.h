@@ -3,6 +3,7 @@
 
 class Player;
 class BossSlash;
+class BossAfterBurn;
 class Boss : public IGameObject
 {
 public:
@@ -38,9 +39,10 @@ public:
 	CVector3 emitPos = CVector3::Zero;    //エフェクトの座標
 	CQuaternion emitRot = CQuaternion::Identity;  //エフェクトの回転
 	CVector3 emitScale = CVector3::One;   //エフェクトのスケール
-	 int life = 200; //ボスのライフ
+	 int life = 500; //ボスのライフ
 	 int AttackTime = 0;
 	Player* m_player = nullptr;
+	BossAfterBurn* BurnEf = nullptr;
 	prefab::CSoundSource* m_bgmSoundSource = nullptr;	//BGM用のサウンドソース。
 
 

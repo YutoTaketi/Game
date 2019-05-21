@@ -48,6 +48,7 @@
     <ClCompile Include="Bee2.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossSlash.cpp" />
+    <ClCompile Include="BossAfterBurn.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -72,6 +73,7 @@
     <ClInclude Include="Bee2.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="BossSlash.h" />
+    <ClInclude Include="BossAfterBurn.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -214,6 +216,9 @@
     </CustomBuild>
     <CustomBuild Include="Assets\sound\BossDeth.wav">
       <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\AftarBurnB.efk">
+      <Filter>Assets\effect</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
