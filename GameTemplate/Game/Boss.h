@@ -39,7 +39,7 @@ public:
 	CVector3 emitPos = CVector3::Zero;    //エフェクトの座標
 	CQuaternion emitRot = CQuaternion::Identity;  //エフェクトの回転
 	CVector3 emitScale = CVector3::One;   //エフェクトのスケール
-	 int life = 1000; //ボスのライフ
+	 int life = 600; //ボスのライフ
 	 int AttackTime = 0;
 	 int boostHantei = 0; //
 	Player* m_player = nullptr;

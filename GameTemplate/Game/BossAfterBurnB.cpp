@@ -29,7 +29,7 @@ void BossAfterBurnB::Move()
 	}
 	else {
 		m_position = boss->m_position;
-		m_position.y += 110.0;
+		m_position.y += 150.0;
 		m_rotation = boss->m_rotation;
 	}
 }

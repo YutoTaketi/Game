@@ -16,6 +16,7 @@ Player::Player()
 Player::~Player()
 {
 	DeleteGO(m_skinModelRender);
+	DeleteGOs("Tama");
 }
 
 bool Player::Start()

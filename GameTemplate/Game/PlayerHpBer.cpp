@@ -40,7 +40,7 @@ void PlayerHpBer::GageGensyou()
 	Player* player = FindGO<Player>("Player");
 	//PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	if (player != nullptr) {
-		/*QueryGOs<BeeBallet>("BeeBallet", [&](BeeBallet* beeBallet)->bool {
+		QueryGOs<BeeBallet>("BeeBallet", [&](BeeBallet* beeBallet)->bool {
 			BalletPlayer = beeBallet->m_position - player->m_position;
 			if (BalletPlayer.Length() < 100.0f) {
 				w = w - 5;
@@ -48,7 +48,7 @@ void PlayerHpBer::GageGensyou()
 			
 			}
 			return true;
-	     });*/
+	     });
 		
 		//ƒ{ƒX‚ÌUŒ‚‚É‚ ‚Á‚½‚çHPƒQ[ƒWŒ¸­
 		//‘æˆê’iŠK

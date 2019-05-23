@@ -42,5 +42,7 @@ public:
 	/*Bee* m_bee = nullptr;*/
 	CQuaternion m_rotation = CQuaternion::Identity;
 	CLevel m_level;  //レベル
+
+	int gameEndTimer = 0;  //ボスが死んで数秒後にクリア画面
 };
 

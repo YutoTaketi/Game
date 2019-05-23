@@ -50,7 +50,7 @@ bool Game::Start()
 	m_HpBer = NewGO<PlayerHpBer>(0, "HpBer");
 	
 	//ボスのインスタンス//お試し
-	m_boss = NewGO<Boss>(0, "Boss");
+	//m_boss = NewGO<Boss>(0, "Boss");
 
 	gameSS = NewGO<prefab::CSoundSource>(0);
 	gameSS->Init(L"sound/GameSoundDemo.wav");
@@ -98,19 +98,25 @@ bool Game::Start()
 void Game::Update()
 {
 	//Beeを一定数倒したらBoss(カマキリ)出現
-	/*if (dethCount == 4) {
+	if (dethCount == 4) {
+	  if (BossFlag == 0) {
 		m_boss = NewGO<Boss>(0, "Boss");
-		
-	}*/
+		BossFlag = 1;
+		}
+	}
 
 	//m_bee = FindGO<Bee>("Bee");
-	//Game* game = FindGO<Game>("Game");
-	/*if ( clearHantei == 1)
-	{
-		NewGO<GameClear>(0, "GameClear");
-		DeleteGO(this);
-		DeleteGO(gameSS);
-	}*/
+	
+	if ( clearHantei == 1)
+	{ 
+		gameEndTimer++;
+		if (gameEndTimer == 500) {
+			NewGO<GameClear>(0, "GameClear");
+			DeleteGO(this);
+			DeleteGO(gameSS);
+		}
+		
+	}
 	/*PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	if (HpBer->w <= 0)
 	{

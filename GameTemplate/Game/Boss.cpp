@@ -51,7 +51,7 @@ bool Boss::Start()
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Boss.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisZ);
 	m_position.y = 800.0;
-	m_scale = { 2.0, 2.0, 2.0 };
+	m_scale = { 2.5, 2.5, 2.5 };
 
 	BurnEf = NewGO<BossAfterBurn>(0, "AfterBurn");
 	
@@ -101,7 +101,7 @@ void Boss::Attack()
 	AttackTime++;
 	//攻撃のリキャストタイム
 	//m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
-	if (life >= 900) {
+	if (life >= 500) {
 		if (AttackTime == 60) {
 			m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
 			BossSlash* slash = NewGO<BossSlash>(0, "BossSlash");
@@ -117,7 +117,7 @@ void Boss::Attack()
 	}
 
 	//ライフが一定以下だと攻撃が変わる。
-	if (life <= 900) {
+	if (life <= 500) {
 		if (AttackTime == 60) {
 			CVector3 Bossmae = { 0, 0, 1 };
 			m_rotation.Apply(Bossmae);
@@ -154,7 +154,7 @@ void Boss::Attack()
 //アフターバーナーの色が変わる。
 void Boss::Boost()
 {
-	if (life <= 900)
+	if (life <= 500)
 	{
 		if (boostHantei == 0) {
 			DeleteGOs("AfterBurn");
@@ -192,7 +192,7 @@ void Boss::Deth()
 	if (game == nullptr)
 	{
 		game = FindGO<Game>("Game");
-		if (life == 0)
+		if (life <= 0)
 		{
 			game->clearHantei = 1;
 			prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
@@ -222,7 +222,7 @@ void Boss::Update()
 	Attack();
 	Boost();
 	Hidan();
-	//Deth();
+	Deth();
 	m_skinModelRender->SetPosition(m_position);//ボス
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);
