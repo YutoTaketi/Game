@@ -3,7 +3,9 @@
 
 class Player;
 class BossSlash;
+class BossBall;
 class BossAfterBurn;
+class BossAfterBurnB;
 class Boss : public IGameObject
 {
 public:
@@ -13,8 +15,6 @@ public:
 	bool Start();
 	void Move();
 	void Turn();
-	void StartEf();
-	void MoveEf();
 	void Attack();
 	void Boost();
 	void Hidan();
@@ -39,10 +39,13 @@ public:
 	CVector3 emitPos = CVector3::Zero;    //エフェクトの座標
 	CQuaternion emitRot = CQuaternion::Identity;  //エフェクトの回転
 	CVector3 emitScale = CVector3::One;   //エフェクトのスケール
-	 int life = 500; //ボスのライフ
+	 int life = 1000; //ボスのライフ
 	 int AttackTime = 0;
+	 int boostHantei = 0; //
 	Player* m_player = nullptr;
-	BossAfterBurn* BurnEf = nullptr;
+	BossAfterBurn* BurnEf = nullptr;  //赤いアフターバーナー
+	BossAfterBurnB* BurnEfB = nullptr; //青いアフターバーナー
+	BossBall* bossBall[4] = { nullptr }; //ボール攻撃
 	prefab::CSoundSource* m_bgmSoundSource = nullptr;	//BGM用のサウンドソース。
 
 

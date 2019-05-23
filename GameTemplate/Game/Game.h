@@ -25,6 +25,7 @@ public:
 	bool Start();
 	void Update();
 	int dethCount = 0;
+	int BossFlag = 0;    //ボススポーンフラグ
 	int clearHantei = 0;
 	int DeleteHantei = false;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;		//スキンモデルレンダラー。

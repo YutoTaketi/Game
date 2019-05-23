@@ -5,6 +5,8 @@
 #include "BossSlash.h"
 #include "Game.h"
 #include "BossAfterBurn.h"
+#include "BossAfterBurnB.h"
+#include "BossBall.h"
 
 
 Boss::Boss()
@@ -15,7 +17,13 @@ Boss::Boss()
 Boss::~Boss()
 {
 	DeleteGO(m_skinModelRender);
-	DeleteGO(BurnEf);
+	DeleteGOs("AfterBurn");
+	DeleteGOs("AfterBurnB");
+	DeleteGOs("Ball");
+	//DeleteGOs("Ball2");
+	//DeleteGOs("Ball3");
+	//DeleteGOs("Ball4");
+	
 }
 
 bool Boss::Start()
@@ -46,7 +54,7 @@ bool Boss::Start()
 	m_scale = { 2.0, 2.0, 2.0 };
 
 	BurnEf = NewGO<BossAfterBurn>(0, "AfterBurn");
-	//StartEf();
+	
 	return true;
 }
 //移動（バーンエフェクトを再生）
@@ -87,64 +95,73 @@ void Boss::Turn()
 	}
 }
 
-void Boss::StartEf()
-{
-	//エフェクトを作成
-	effect = NewGO<prefab::CEffect>(0);
-	effect->Play(L"effect/AfterBurn.efk");
-	emitPos = m_position;
-	emitPos.y += 110.0;
-	emitPos.z -= 130.0;
-	 emitScale = { 3.0, 3.0, 4.0 };
-	
-	
-	
-}
-
-//エフェクトの移動(AftarBurn)
-void Boss::MoveEf()
-{
-	/*CVector3 BurnEf = m_position - emitPos;
-	BurnEf.Normalize();
-	BurnEf *= 3.0f;
-	emitPos += BurnEf;
-	//emitPos.y += 110.0;
-	emitPos.y = m_position.y+110.0;
-	
-	//回転
-	emitRot.SetRotationDeg(CVector3::AxisY, 0.0);
-	CVector3 TurnEf = m_position - emitPos;
-	float angle = atan2(TurnEf.x, TurnEf.z);
-	emitRot.SetRotation(CVector3::AxisY, angle);*/
-
-	//effect->SetPosition(emitPos);
-	//effect->SetRotation(emitRot);
-}
-
 //攻撃
 void Boss::Attack()
 {
 	AttackTime++;
 	//攻撃のリキャストタイム
 	//m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
-	if (AttackTime == 60) {
-		m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
-		BossSlash* slash = NewGO<BossSlash>(0, "BossSlash");
-		slash->m_position = m_position;
-		slash->m_position.y += 100.0;
-		CVector3 Bossmae = { 0, 0, 1 };
-		m_rotation.Apply(Bossmae);
-		slash->m_moveSpeed = Bossmae * 20.0;
+	if (life >= 900) {
+		if (AttackTime == 60) {
+			m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
+			BossSlash* slash = NewGO<BossSlash>(0, "BossSlash");
+			slash->m_position = m_position;
+			slash->m_position.y += 100.0;
+			slash->m_rotation = m_rotation;
+			CVector3 Bossmae = { 0, 0, 1 };
+			m_rotation.Apply(Bossmae);
+			slash->m_moveSpeed = Bossmae * 20.0;
 
-		AttackTime = 0.0f;
+			AttackTime = 0;
+		}
 	}
+
+	//ライフが一定以下だと攻撃が変わる。
+	if (life <= 900) {
+		if (AttackTime == 60) {
+			CVector3 Bossmae = { 0, 0, 1 };
+			m_rotation.Apply(Bossmae);
+			bossBall[0] = NewGO<BossBall>(0, "Ball");
+			bossBall[0]->m_position = m_position;
+			bossBall[0]->m_position.y += 50.0;
+			bossBall[0]->m_moveSpeed = Bossmae * 20.0;
+
+			bossBall[1] = NewGO<BossBall>(0, "Ball");
+			bossBall[1]->m_position = m_position;
+			bossBall[1]->m_position.y += 170.0;
+			bossBall[1]->m_moveSpeed = Bossmae * 20.0;
+
+			bossBall[2] = NewGO<BossBall>(0, "Ball");
+			bossBall[2]->m_position = m_position;
+			bossBall[2]->m_position.x += 60.0;
+			bossBall[2]->m_position.y += 100.0;
+			bossBall[2]->m_moveSpeed = Bossmae * 20.0;
+
+			bossBall[3] = NewGO<BossBall>(0, "Ball");
+			bossBall[3]->m_position = m_position;
+			bossBall[3]->m_position.x -= 60.0;
+			bossBall[3]->m_position.y += 100.0;
+			bossBall[3]->m_moveSpeed = Bossmae * 20.0;
+			AttackTime = 0;
+		}
+	}
+	
+	
 }
 
-//特定条件でターボ（タイマー制御にするかは未定 バーンエフェクト（青））
-//プレイヤーとの距離が一定以上離れたら
+//特定条件でブースト
+//ボスのライフが一定以下になったら、
+//アフターバーナーの色が変わる。
 void Boss::Boost()
 {
-
+	if (life <= 900)
+	{
+		if (boostHantei == 0) {
+			DeleteGOs("AfterBurn");
+			BurnEfB = NewGO<BossAfterBurnB>(0, "AfterBurnB");
+			boostHantei = 1;
+		}
+	}
 }
 //被弾判定
 void Boss::Hidan()
@@ -200,17 +217,14 @@ void Boss::Deth()
 
 void Boss::Update()
 {
-	Move();
-	Turn();
-	//MoveEf();
+	//Move();
+	//Turn();
 	Attack();
+	Boost();
 	Hidan();
-	Deth();
+	//Deth();
 	m_skinModelRender->SetPosition(m_position);//ボス
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);
 
-	//effect->SetPosition(emitPos);    //エフェクト
-	//effect->SetRotation(emitRot);
-	//effect->SetScale(emitScale);
 }

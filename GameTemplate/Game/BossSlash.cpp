@@ -2,6 +2,7 @@
 #include "BossSlash.h"
 
 
+
 BossSlash::BossSlash()
 {
 }
@@ -26,6 +27,7 @@ void BossSlash::Update()
 	m_position += m_moveSpeed;
 	effect->SetPosition(m_position);
 	effect->SetScale(m_scale);
+	effect->SetRotation(m_rotation);
 	m_timer++;
 	if (m_timer == 120) {
 		DeleteGO(this);

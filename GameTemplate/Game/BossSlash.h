@@ -1,4 +1,5 @@
 #pragma once
+
 class BossSlash : public IGameObject
 {
 public:
@@ -13,5 +14,6 @@ public:
 	CVector3 m_scale = CVector3::One;
 	CVector3 m_moveSpeed = CVector3::Zero;
 	CQuaternion m_rotation = CQuaternion::Identity;
+	
 };
 

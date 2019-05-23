@@ -11,15 +11,15 @@ BossAfterBurn::BossAfterBurn()
 
 BossAfterBurn::~BossAfterBurn()
 {
-	DeleteGO(effect);
+	DeleteGOs("AfterBurn");
+	
 }
 
 bool BossAfterBurn::Start()
 {
 	
-	effect = NewGO<prefab::CEffect>(0);
+	effect = NewGO<prefab::CEffect>(0, "AfterBurn");
 	effect->Play(L"effect/AfterBurn.efk");
-	m_position;
 	m_scale = { 3.0, 3.0, 4.0 };
 	return true;
 }
@@ -33,28 +33,18 @@ void BossAfterBurn::Move()
 	else {
 		m_position = boss->m_position;
 		m_position.y += 110.0;
-
-
 		m_rotation = boss->m_rotation;
 	}
-	
-	 /*game = FindGO<Game>("Game");
-	 boss = FindGO<Boss>("Boss");
-	m_position = boss->m_position;
-	m_position.y += 110.0;
-	m_position.z -= 130.0;
-
-	m_rotation = boss->m_rotation;*/
-	//CVector3 TurnEf = m_position - boss->m_position;
-	//float angle = atan2(TurnEf.x, TurnEf.z);
-	//m_rotation.SetRotation(CVector3::AxisY, angle);
-	//m_rotation.SetRotationDeg(CVector3::AxisZ, -180.0);
 }
+
 
 void BossAfterBurn::Update()
 {
 	Move();
-	effect->SetPosition(m_position);
-	effect->SetScale(m_scale);
-	effect->SetRotation(m_rotation);
+	
+	
+		effect->SetPosition(m_position);
+		effect->SetScale(m_scale);
+		effect->SetRotation(m_rotation);
+	
 }
