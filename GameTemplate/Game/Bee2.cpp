@@ -34,7 +34,7 @@ void Bee2::Move()
 	else {
 		CVector3 playerBEE = m_player->m_position - m_position;
 		playerBEE.Normalize();
-		playerBEE *= 2.0f;
+		playerBEE *= 1.0f;
 		m_position += playerBEE;
 	
 		m_skinModelRender->SetPosition(m_position);
@@ -65,7 +65,7 @@ void Bee2::BeeAtack()
 		beeBallet->m_position = m_position;
 		CVector3 Beemae = { 0, 0, 1 };
 		m_rotation.Apply(Beemae);
-		beeBallet->m_moveSpeed = Beemae * 20.0;
+		beeBallet->m_moveSpeed = Beemae * 10.0;
 
 		m_timer = 0;
 	}
@@ -73,10 +73,12 @@ void Bee2::BeeAtack()
 
 void Bee2::Deth()
 {
-	Game* game = nullptr;
+	
 	if (game == nullptr) {
 		game = FindGO<Game>("Game");
-		//prefab::CSoundSource* ss;
+	}
+	else {
+		prefab::CSoundSource* ss;
 
 		QueryGOs<Tama>("Tama", [&](Tama* tama)->bool {
 			CVector3 tamaBee = tama->m_position - m_position;
@@ -92,18 +94,18 @@ void Bee2::Deth()
 				effect->SetPosition(emitPos);
 				effect->SetScale(emitScale);
 				//”š”­‰¹‚ð–Â‚ç‚·
-				//ss = NewGO<prefab::CSoundSource>(0);
-				//ss->Init(L"sound/bakuhatu.wav");
-				//ss->Play(false);
+				ss = NewGO<prefab::CSoundSource>(0);
+				ss->Init(L"sound/bakuhatu.wav");
+				ss->Play(false);
 				game->dethCount++;
 				DeleteGO(this);
 				return false;
 			}
 
 			return true;
-			});
-
-	}
+		});
+	} 
+	
 }
 
 void Bee2::Update()

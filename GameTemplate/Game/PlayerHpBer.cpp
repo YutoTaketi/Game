@@ -43,7 +43,7 @@ void PlayerHpBer::GageGensyou()
 		QueryGOs<BeeBallet>("BeeBallet", [&](BeeBallet* beeBallet)->bool {
 			BalletPlayer = beeBallet->m_position - player->m_position;
 			if (BalletPlayer.Length() < 100.0f) {
-				w = w - 5;
+				w = w - 3;
 				HpGage->Init(L"sprite/Hp.dds", w, 34);
 			
 			}
@@ -52,20 +52,20 @@ void PlayerHpBer::GageGensyou()
 		
 		//ボスの攻撃にあったらHPゲージ減少
 		//第一段階
-		/*QueryGOs<BossSlash>("BossSlash", [&](BossSlash* bossSlash)->bool {
+		QueryGOs<BossSlash>("BossSlash", [&](BossSlash* bossSlash)->bool {
 			SlashPlayer = bossSlash->m_position - player->m_position;
 			if (SlashPlayer.Length() < 100.0f) {
-				w = w - 10;
+				w = w - 5;
 				HpGage->Init(L"sprite/Hp.dds", w, 34);
 			}
 			return true;
-		});*/
+		});
 
 		//第二段階
 		QueryGOs<BossBall>("Ball", [&](BossBall* bossBall)->bool {
 			BallPlayer = bossBall->m_position - player->m_position;
 			if (BallPlayer.Length() < 100.0f) {
-				w = w - 20;
+				w = w - 10;
 				HpGage->Init(L"sprite/Hp.dds", w, 34);
 			}
 			return true;

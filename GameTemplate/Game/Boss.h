@@ -6,6 +6,7 @@ class BossSlash;
 class BossBall;
 class BossAfterBurn;
 class BossAfterBurnB;
+class Game;
 class Boss : public IGameObject
 {
 public:
@@ -42,12 +43,14 @@ public:
 	 int life = 600; //ボスのライフ
 	 int AttackTime = 0;
 	 int boostHantei = 0; //
+	 int MoveTimer = 0;  //スポーンしてから数秒後に動く
 	Player* m_player = nullptr;
+	Game* game = nullptr;
 	BossAfterBurn* BurnEf = nullptr;  //赤いアフターバーナー
 	BossAfterBurnB* BurnEfB = nullptr; //青いアフターバーナー
 	BossBall* bossBall[4] = { nullptr }; //ボール攻撃
 	prefab::CSoundSource* m_bgmSoundSource = nullptr;	//BGM用のサウンドソース。
-
+	prefab::CSoundSource* BossNakigoeSS;
 
 };
 

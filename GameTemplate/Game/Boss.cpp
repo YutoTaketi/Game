@@ -48,10 +48,17 @@ bool Boss::Start()
 	effect->SetPosition(SpornEfPos);
 	effect->SetScale(SpornEfscale);
 
+	//ボスの鳴き声を再生
+	BossNakigoeSS = NewGO<prefab::CSoundSource>(0);
+	BossNakigoeSS->Init(L"sound/BossNakigoe.wav");
+	BossNakigoeSS->SetVolume(2.0);
+	BossNakigoeSS->Play(false);
+
+
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Boss.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisZ);
 	m_position.y = 800.0;
-	m_scale = { 2.5, 2.5, 2.5 };
+	m_scale = { 3.0, 3.0, 3.0 };
 
 	BurnEf = NewGO<BossAfterBurn>(0, "AfterBurn");
 	
@@ -67,7 +74,7 @@ void Boss::Move()
 	else {
 		CVector3 playerBoss = m_player->m_position - m_position;
 		playerBoss.Normalize();
-		playerBoss *= 3.0f;
+		playerBoss *= 2.0f;
 		m_position += playerBoss;
 
 		//m_skinModelRender->SetPosition(m_position);
@@ -117,8 +124,8 @@ void Boss::Attack()
 	}
 
 	//ライフが一定以下だと攻撃が変わる。
-	if (life <= 500) {
-		if (AttackTime == 60) {
+	if (life <= 400) {
+		if (AttackTime == 70) {
 			CVector3 Bossmae = { 0, 0, 1 };
 			m_rotation.Apply(Bossmae);
 			bossBall[0] = NewGO<BossBall>(0, "Ball");
@@ -154,11 +161,12 @@ void Boss::Attack()
 //アフターバーナーの色が変わる。
 void Boss::Boost()
 {
-	if (life <= 500)
+	if (life <= 400)
 	{
 		if (boostHantei == 0) {
 			DeleteGOs("AfterBurn");
 			BurnEfB = NewGO<BossAfterBurnB>(0, "AfterBurnB");
+			//鳴き声が鳴る
 			boostHantei = 1;
 		}
 	}
@@ -166,10 +174,11 @@ void Boss::Boost()
 //被弾判定
 void Boss::Hidan()
 {
-	Game* game = nullptr;
+	
 	if (game == nullptr) {
 		game = FindGO<Game>("Game");
-		
+	}
+	else {
 		QueryGOs<Tama>("Tama", [&](Tama* tama)->bool {
 			CVector3 tamaBee = tama->m_position - m_position;
 			if (tamaBee.Length() < 50.0f)
@@ -188,10 +197,12 @@ void Boss::Hidan()
 //ライフ0で消滅
 void Boss::Deth()
 {
-	Game* game = nullptr;
+	
 	if (game == nullptr)
 	{
 		game = FindGO<Game>("Game");
+	}
+	else {
 		if (life <= 0)
 		{
 			game->clearHantei = 1;
@@ -205,24 +216,34 @@ void Boss::Deth()
 			effect->SetScale(DethEfPos);
 			//デスBGMを再生
 			prefab::CSoundSource* BossDethS;
-				BossDethS = NewGO<prefab::CSoundSource>(0);
-				BossDethS->Init(L"sound/BossDeth.wav");
-				BossDethS->Play(false);
+			BossDethS = NewGO<prefab::CSoundSource>(0);
+			BossDethS->Init(L"sound/BossDeth.wav");
+			BossDethS->Play(false);
 			DeleteGO(this);
 		}
-		
+
 	}
-	
+		
 }
 
 void Boss::Update()
 {
-	//Move();
-	//Turn();
-	Attack();
-	Boost();
+	MoveTimer++;
+	if (MoveTimer >= 10) {
+		Move();
+		Turn();
+		Attack();
+		Boost();
+		
+	}
 	Hidan();
 	Deth();
+	//Move();
+	//Turn();
+	//Attack();
+	//Boost();
+	//Hidan();
+	//Deth();
 	m_skinModelRender->SetPosition(m_position);//ボス
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);

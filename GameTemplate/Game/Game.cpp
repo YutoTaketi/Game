@@ -103,6 +103,7 @@ void Game::Update()
 		m_boss = NewGO<Boss>(0, "Boss");
 		BossFlag = 1;
 		}
+	  //ボスバトルBGMに切り替わる
 	}
 
 	//m_bee = FindGO<Bee>("Bee");
@@ -110,7 +111,7 @@ void Game::Update()
 	if ( clearHantei == 1)
 	{ 
 		gameEndTimer++;
-		if (gameEndTimer == 500) {
+		if (gameEndTimer == 200) {
 			NewGO<GameClear>(0, "GameClear");
 			DeleteGO(this);
 			DeleteGO(gameSS);
