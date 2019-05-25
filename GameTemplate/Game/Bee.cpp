@@ -12,6 +12,7 @@ Bee::Bee()
 Bee::~Bee()
 {
 	DeleteGO(m_skinModelRender);
+	DeleteGOs("BeeBallet");
 }
 
 

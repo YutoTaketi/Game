@@ -79,7 +79,7 @@ void Boss::Move()
 
 		//m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
-		if (m_position.y <= 200) {
+		if (m_position.y <= 400) {
 			m_position = oldPos;
 			m_position.y = 400;
 		}

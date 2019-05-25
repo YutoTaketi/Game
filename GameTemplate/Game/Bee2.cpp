@@ -14,6 +14,7 @@ Bee2::Bee2()
 Bee2::~Bee2()
 {
 	DeleteGO(m_skinModelRender);
+	DeleteGOs("BeeBallet");
 }
 
 bool Bee2::Start()
@@ -39,7 +40,7 @@ void Bee2::Move()
 	
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
-		if (m_position.y <= 300) {
+		if (m_position.y <= 400) {
 			m_position = oldPos;
 			m_position.y = 400;
 		}
