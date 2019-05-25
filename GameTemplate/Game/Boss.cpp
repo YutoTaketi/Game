@@ -74,14 +74,14 @@ void Boss::Move()
 	else {
 		CVector3 playerBoss = m_player->m_position - m_position;
 		playerBoss.Normalize();
-		playerBoss *= 2.0f;
+		playerBoss *= 1.5f;
 		m_position += playerBoss;
 
 		//m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
-		if (m_position.y <= 100) {
+		if (m_position.y <= 200) {
 			m_position = oldPos;
-			m_position.y = 300;
+			m_position.y = 400;
 		}
 		
 	}

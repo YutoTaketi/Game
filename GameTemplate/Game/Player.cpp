@@ -59,14 +59,14 @@ void Player::Move()
 	m_moveSpeed.x = 0.0f;
 	m_moveSpeed.z = 0.0f;
 	m_moveSpeed.y -= 980.0f * GameTime().GetFrameDeltaTime();
-	m_moveSpeed += cameraForward * lStick_y * 250.0f;
-	m_moveSpeed += cameraRight * lStick_x * 250.0f;
+	m_moveSpeed += cameraForward * lStick_y * 260.0f;
+	m_moveSpeed += cameraRight * lStick_x * 260.0f;
 
 	//ジャンプ
 	if (Pad(0).IsTrigger(enButtonA)
 		&& m_charaCon.IsOnGround())
 	{
-		m_moveSpeed.y = 400.0f;
+		m_moveSpeed.y = 500.0f;
 	}
 	//キャラクターコントローラー
 	m_position = m_charaCon.Execute(m_moveSpeed, GameTime().GetFrameDeltaTime());

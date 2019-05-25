@@ -36,7 +36,7 @@ void CircleCharge::GageGensyou()
 	Player* player = FindGO<Player>("Player");
 	if (player->CircleSummon() == true)
 	{
-		w = w - 50;
+		w = w - 40;
 		CircleGage->Init(L"sprite/circlegage.dds", w, 34);
 	}
 

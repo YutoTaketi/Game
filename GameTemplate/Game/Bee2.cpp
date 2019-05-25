@@ -39,9 +39,9 @@ void Bee2::Move()
 	
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
-		if (m_position.y <= 100) {
+		if (m_position.y <= 300) {
 			m_position = oldPos;
-			m_position.y = 300;
+			m_position.y = 400;
 		}
 	}
 
