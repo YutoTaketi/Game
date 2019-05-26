@@ -1907,6 +1907,9 @@
     <CustomBuild Include="Assets\effect\BollAttack.efk">
       <FileType>Document</FileType>
     </CustomBuild>
+    <CustomBuild Include="Assets\effect\BeeTama.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
     <None Include="Assets\effect\Tama.efk" />
     <None Include="Assets\level\DemoStage.tkl" />
     <CustomBuild Include="Assets\level\DemoStage2.tkl">

@@ -4,9 +4,15 @@
     <Name>Root</Name>
     <Children>
       <Node>
+        <CommonValues>
+          <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+        </CommonValues>
         <Name>Node</Name>
         <Children>
           <Node>
+            <CommonValues>
+              <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+            </CommonValues>
             <RotationValues>
               <Type>2</Type>
               <Easing>
@@ -37,6 +43,9 @@
             <Name>Node</Name>
             <Children>
               <Node>
+                <CommonValues>
+                  <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+                </CommonValues>
                 <ScalingValues>
                   <Fixed>
                     <Scale>
@@ -84,12 +93,18 @@
             </Children>
           </Node>
           <Node>
+            <CommonValues>
+              <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+            </CommonValues>
             <DrawingValues>
               <Type>0</Type>
             </DrawingValues>
             <Name>Node</Name>
             <Children>
               <Node>
+                <CommonValues>
+                  <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+                </CommonValues>
                 <RotationValues>
                   <Type>2</Type>
                   <Fixed>
@@ -138,6 +153,9 @@
                 <Name>Node</Name>
                 <Children>
                   <Node>
+                    <CommonValues>
+                      <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
+                    </CommonValues>
                     <ScalingValues>
                       <Fixed>
                         <Scale>
