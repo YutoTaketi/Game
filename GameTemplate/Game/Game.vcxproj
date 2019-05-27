@@ -1783,6 +1783,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerHpBer.cpp" />
+    <ClCompile Include="SpornSinden.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -1827,6 +1828,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerHpBer.h" />
     <CLInclude Include="resource.h" />
+    <ClInclude Include="SpornSinden.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Tama.h" />
@@ -1848,6 +1850,7 @@
     <MeshContentTask Include="Assets\modelData\Sinden.FBX" />
     <MeshContentTask Include="Assets\modelData\Sinden2.FBX" />
     <MeshContentTask Include="Assets\modelData\Sinden3.FBX" />
+    <MeshContentTask Include="Assets\modelData\SpornSinden.FBX" />
     <MeshContentTask Include="Assets\modelData\Tama.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono2.FBX" />

@@ -8,8 +8,9 @@
 #include "DemoBall.h"
 #include "Bee.h"
 #include "Bee2.h"
-#include "Boss.h"   //お試し
+#include "Boss.h"   
 #include "Capsule.h"
+#include "SpornSinden.h"
 #include "CircleCharge.h"
 #include "PlayerHpBer.h"
 #include "GameClear.h"
@@ -88,7 +89,14 @@ bool Game::Start()
 			return true;
 		}
 
-		
+		else if (objData.EqualObjectName(L"SpornSinden") == true) {
+			//スポーン神殿のインスタンスを生成
+			SpornSinden* spornSinden = NewGO<SpornSinden>(0, "SpornSinden");
+			spornSinden->m_position = objData.position;
+			spornSinden->m_rotation = objData.rotation;
+			spornSinden->m_scale = objData.scale;
+			return true;
+		}
 		return false;
 		
 	});

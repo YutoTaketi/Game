@@ -108,7 +108,7 @@ void Boss::Attack()
 	AttackTime++;
 	//攻撃のリキャストタイム
 	//m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
-	if (life >= 500) {
+	if (life > 400) {
 		if (AttackTime == 60) {
 			m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
 			BossSlash* slash = NewGO<BossSlash>(0, "BossSlash");

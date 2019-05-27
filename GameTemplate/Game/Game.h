@@ -12,6 +12,7 @@ class DemoBall;
 class Bee;
 class Bee2;
 class Capsule;
+class SpornSinden;
 class CircleCharge;
 class GameClear;
 class PlayerHpBer;

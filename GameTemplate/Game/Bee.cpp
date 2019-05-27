@@ -22,6 +22,11 @@ bool Bee::Start()
 	m_skinModelRender->Init(L"modelData/Bee.cmo");
 	m_rotation.SetRotationDeg(CVector3::AxisY, 90.0);
 	//BeeAtack();
+	/*m_charaCon.Init(
+		50.0,
+		50.0f,
+		m_position
+	);*/
 	
 	return true;
 }
@@ -38,15 +43,16 @@ void Bee::Move()
 		playerBEE.Normalize();
 		playerBEE *= 2.0f;
 		m_position += playerBEE;
+	
 		
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
-		if (m_position.y <= 300) {
+		if (m_position.y <= 400) {
 			m_position = oldPos;
 			m_position.y = 400;
 		}
 	}
-	
+	//m_position = m_charaCon.Execute(m_moveSpeed, GameTime().GetFrameDeltaTime());
 		
 }
 void Bee::Turn()

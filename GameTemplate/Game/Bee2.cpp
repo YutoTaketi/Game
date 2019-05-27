@@ -22,6 +22,11 @@ bool Bee2::Start()
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Bee2.cmo");
 	m_rotation.SetRotationDeg(CVector3::AxisY, 90.0);
+	/*m_charaCon.Init(
+		50.0,
+		50.0f,
+		m_position
+	);*/
 	return true;
 }
 
@@ -45,7 +50,7 @@ void Bee2::Move()
 			m_position.y = 400;
 		}
 	}
-
+	//m_position = m_charaCon.Execute(m_moveSpeed, GameTime().GetFrameDeltaTime());
 }
 
 void Bee2::Turn()
