@@ -17,8 +17,7 @@ public:
 	void BeeAtack();
 	void Deth();
 	void Update();
-private:
-	const int balletCount = 3;
+
 	
 
 public:

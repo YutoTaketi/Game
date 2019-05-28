@@ -34,6 +34,7 @@ Game::~Game()
 	DeleteGOs("Boss");
 	DeleteGOs("Capsule");
 	DeleteGOs("DemoCircle");
+	DeleteGOs("SpornSinden");
 	DeleteGO(m_bgmSoundSource);
 	//DeleteGO(m_level);
 	
@@ -97,6 +98,7 @@ bool Game::Start()
 			spornSinden->m_scale = objData.scale;
 			return true;
 		}
+
 		return false;
 		
 	});

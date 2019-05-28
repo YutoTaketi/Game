@@ -1766,6 +1766,7 @@
   <ItemGroup>
     <ClCompile Include="Bee.cpp" />
     <ClCompile Include="Bee2.cpp" />
+    <ClCompile Include="Bee3.cpp" />
     <ClCompile Include="BeeBallet.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossAfterBurn.cpp" />
@@ -1811,6 +1812,7 @@
   <ItemGroup>
     <ClInclude Include="Bee.h" />
     <ClInclude Include="Bee2.h" />
+    <ClInclude Include="Bee3.h" />
     <ClInclude Include="BeeBallet.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="BossAfterBurn.h" />
@@ -1838,6 +1840,7 @@
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\Bee.FBX" />
     <MeshContentTask Include="Assets\modelData\Bee2.FBX" />
+    <MeshContentTask Include="Assets\modelData\Bee3.FBX" />
     <MeshContentTask Include="Assets\modelData\BeeBallet.FBX" />
     <MeshContentTask Include="Assets\modelData\Boss.fbx" />
     <MeshContentTask Include="Assets\modelData\Capsule.FBX" />

@@ -1,4 +1,9 @@
 #pragma once
+//#include "tkEngine/physics/tkPhysicsStaticObject.h"
+
+class Game;
+class Bee3;
+
 class SpornSinden : public IGameObject
 {
 public:
@@ -6,11 +11,18 @@ public:
 	~SpornSinden();
 
 	bool Start();
+	void BeeSporn();
 	void Update();
 
+	int spornCount = 0;
+	int SpornTimer = 0;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;
 	CVector3 m_position = CVector3::Zero;
 	CVector3 m_scale = CVector3::One;
 	CQuaternion m_rotation = CQuaternion::Identity;
+	Game* game = nullptr;
+	Bee3* bee3 = nullptr;
+
+	//CPhysicsStaticObject m_phyStaticObject;	//静的物理オブジェクト
 };
 

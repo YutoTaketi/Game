@@ -52,6 +52,7 @@
     <ClCompile Include="BossAfterBurnB.cpp" />
     <ClCompile Include="BossBall.cpp" />
     <ClCompile Include="SpornSinden.cpp" />
+    <ClCompile Include="Bee3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -80,6 +81,7 @@
     <ClInclude Include="BossAfterBurnB.h" />
     <ClInclude Include="BossBall.h" />
     <ClInclude Include="SpornSinden.h" />
+    <ClInclude Include="Bee3.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -142,6 +144,9 @@
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\SpornSinden.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Bee3.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>
