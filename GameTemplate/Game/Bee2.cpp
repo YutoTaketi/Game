@@ -38,10 +38,18 @@ void Bee2::Move()
 		m_player = FindGO<Player>("Player");
 	}
 	else {
-		CVector3 playerBEE = m_player->m_position - m_position;
+		playerLen = m_player->m_position - m_position;
+		if (playerLen.Length() >= 50) {
+			CVector3 playerBEE = m_player->m_position - m_position;
+			playerBEE.Normalize();
+			playerBEE *= 1.0f;
+			m_position += playerBEE;
+
+		}
+		/*CVector3 playerBEE = m_player->m_position - m_position;
 		playerBEE.Normalize();
 		playerBEE *= 1.0f;
-		m_position += playerBEE;
+		m_position += playerBEE;*/
 	
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;

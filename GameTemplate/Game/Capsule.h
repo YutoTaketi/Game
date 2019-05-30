@@ -2,6 +2,7 @@
 class Player;
 class Game;
 class CircleCharge;
+class PlayerHpBer;
 
 class Capsule : public IGameObject
 {
@@ -18,6 +19,7 @@ public:
 	CQuaternion m_rotation = CQuaternion::Identity;
 	Player* m_player = nullptr;
 	CircleCharge* m_charge = nullptr;
+	PlayerHpBer* hpBer = nullptr;
 	CVector3 get = CVector3::Zero;
 };
 

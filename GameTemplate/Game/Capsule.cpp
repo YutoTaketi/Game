@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Game.h"
 #include "CircleCharge.h"
+#include "PlayerHpBer.h"
 
 
 Capsule::Capsule()
@@ -30,6 +31,7 @@ void Capsule::CapsuleGet()
 		game = FindGO<Game>("Game");
 		m_player = FindGO<Player>("Player");
 		m_charge = FindGO<CircleCharge>("CircleCharge");
+		hpBer = FindGO<PlayerHpBer>("HpBer");
 		if (m_player == nullptr)
 		{
 			//m_player = FindGO<Player>("Player");

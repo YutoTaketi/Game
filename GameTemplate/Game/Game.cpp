@@ -108,7 +108,7 @@ bool Game::Start()
 void Game::Update()
 {
 	//Beeを一定数倒したらBoss(カマキリ)出現
-	if (dethCount == 4) {
+	if (dethCount == 8) {
 	  if (BossFlag == 0) {
 		m_boss = NewGO<Boss>(0, "Boss");
 		BossFlag = 1;

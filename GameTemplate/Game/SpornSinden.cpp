@@ -11,6 +11,7 @@ SpornSinden::SpornSinden()
 SpornSinden::~SpornSinden()
 {
 	DeleteGO(m_skinModelRender);
+	DeleteGOs("Bee3");
 }
 
 bool SpornSinden::Start()
@@ -31,12 +32,13 @@ void SpornSinden::BeeSporn()
 		{
 			SpornTimer++;
 			
-				if (SpornTimer == 80 && spornCount <= 5) {
+				if (SpornTimer == 80 +i && spornCount <= 5) {
 					bee3 = NewGO<Bee3>(0, "Bee3");
 					bee3->m_position = m_position;
 					bee3->m_position.y += 500.0;
 					spornCount += 1;
 					SpornTimer = 0;
+					i += 200;
 				}
 				
 			
@@ -50,5 +52,5 @@ void SpornSinden::Update()
 	m_skinModelRender->SetPosition(m_position);
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);
-	//m_phyStaticObject.CreateCommon( m_position, m_rotation);
+	//m_phyStaticObject->CreateCommon( m_position, m_rotation);
 }

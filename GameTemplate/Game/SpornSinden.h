@@ -22,7 +22,7 @@ public:
 	CQuaternion m_rotation = CQuaternion::Identity;
 	Game* game = nullptr;
 	Bee3* bee3 = nullptr;
-
-	//CPhysicsStaticObject m_phyStaticObject;	//静的物理オブジェクト
+	int i = 0;
+	//CPhysicsStaticObject m_phyStaticObject = nullptr;	//静的物理オブジェクト
 };
 

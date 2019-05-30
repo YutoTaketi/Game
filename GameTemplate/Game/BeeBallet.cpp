@@ -10,7 +10,6 @@ BeeBallet::BeeBallet()
 
 BeeBallet::~BeeBallet()
 {
-	//DeleteGO(m_skinModelRender);
 	DeleteGO(effect);
 }
 
@@ -42,7 +41,7 @@ void BeeBallet::Update()
 	effect->SetPosition(m_position);
 	effect->SetScale(m_scale);
 	effect->SetRotation(m_rotation);
-	//m_skinModelRender->SetPosition(m_position);
+	
 	m_timer++;
 	if (m_timer == 120) {
 		DeleteGO(this);

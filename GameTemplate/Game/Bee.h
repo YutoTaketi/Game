@@ -32,6 +32,7 @@ public:
 	Player* m_player = nullptr;
 	Game* game = nullptr;
 	prefab::CSoundSource* m_bgmSoundSource = nullptr;
+	CVector3 playerLen = CVector3::Zero;
 
 	//CCharacterController m_charaCon;		//キャラクターコントローラー。
 

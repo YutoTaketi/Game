@@ -72,10 +72,18 @@ void Boss::Move()
 		m_player = FindGO<Player>("Player");
 	}
 	else {
-		CVector3 playerBoss = m_player->m_position - m_position;
+		playerLen = m_player->m_position - m_position;
+		if (playerLen.Length() >= 900) {
+			CVector3 playerBoss = m_player->m_position - m_position;
+			playerBoss.Normalize();
+			playerBoss *= 1.5f;
+			m_position += playerBoss;
+
+		}
+		/*CVector3 playerBoss = m_player->m_position - m_position;
 		playerBoss.Normalize();
 		playerBoss *= 1.5f;
-		m_position += playerBoss;
+		m_position += playerBoss;*/
 
 		//m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
@@ -108,50 +116,52 @@ void Boss::Attack()
 	AttackTime++;
 	//攻撃のリキャストタイム
 	//m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
-	if (life > 400) {
-		if (AttackTime == 60) {
-			m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
-			BossSlash* slash = NewGO<BossSlash>(0, "BossSlash");
-			slash->m_position = m_position;
-			slash->m_position.y += 100.0;
-			slash->m_rotation = m_rotation;
-			CVector3 Bossmae = { 0, 0, 1 };
-			m_rotation.Apply(Bossmae);
-			slash->m_moveSpeed = Bossmae * 20.0;
+	//playerLen = m_player->m_position - m_position;
 
-			AttackTime = 0;
-		}
+  if (life > 300) {
+	if (AttackTime == 60) {
+		m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
+		BossSlash* slash = NewGO<BossSlash>(0, "BossSlash");
+		slash->m_position = m_position;
+		slash->m_position.y += 100.0;
+		slash->m_rotation = m_rotation;
+		CVector3 Bossmae = { 0, 0, 1 };
+		m_rotation.Apply(Bossmae);
+		slash->m_moveSpeed = Bossmae * 20.0;
+
+		AttackTime = 0;
 	}
+  }
 
-	//ライフが一定以下だと攻撃が変わる。
-	if (life <= 400) {
-		if (AttackTime == 70) {
-			CVector3 Bossmae = { 0, 0, 1 };
-			m_rotation.Apply(Bossmae);
-			bossBall[0] = NewGO<BossBall>(0, "Ball");
-			bossBall[0]->m_position = m_position;
-			bossBall[0]->m_position.y += 50.0;
-			bossBall[0]->m_moveSpeed = Bossmae * 20.0;
+		//ライフが一定以下だと攻撃が変わる。
+		if (life <= 300) {
+			if (AttackTime == 70) {
+				CVector3 Bossmae = { 0, 0, 1 };
+				m_rotation.Apply(Bossmae);
+				bossBall[0] = NewGO<BossBall>(0, "Ball");
+				bossBall[0]->m_position = m_position;
+				bossBall[0]->m_position.y += 50.0;
+				bossBall[0]->m_moveSpeed = Bossmae * 20.0;
 
-			bossBall[1] = NewGO<BossBall>(0, "Ball");
-			bossBall[1]->m_position = m_position;
-			bossBall[1]->m_position.y += 170.0;
-			bossBall[1]->m_moveSpeed = Bossmae * 20.0;
+				bossBall[1] = NewGO<BossBall>(0, "Ball");
+				bossBall[1]->m_position = m_position;
+				bossBall[1]->m_position.y += 170.0;
+				bossBall[1]->m_moveSpeed = Bossmae * 20.0;
 
-			bossBall[2] = NewGO<BossBall>(0, "Ball");
-			bossBall[2]->m_position = m_position;
-			bossBall[2]->m_position.x += 60.0;
-			bossBall[2]->m_position.y += 100.0;
-			bossBall[2]->m_moveSpeed = Bossmae * 20.0;
+				bossBall[2] = NewGO<BossBall>(0, "Ball");
+				bossBall[2]->m_position = m_position;
+				bossBall[2]->m_position.x += 60.0;
+				bossBall[2]->m_position.y += 100.0;
+				bossBall[2]->m_moveSpeed = Bossmae * 20.0;
 
-			bossBall[3] = NewGO<BossBall>(0, "Ball");
-			bossBall[3]->m_position = m_position;
-			bossBall[3]->m_position.x -= 60.0;
-			bossBall[3]->m_position.y += 100.0;
-			bossBall[3]->m_moveSpeed = Bossmae * 20.0;
-			AttackTime = 0;
+				bossBall[3] = NewGO<BossBall>(0, "Ball");
+				bossBall[3]->m_position = m_position;
+				bossBall[3]->m_position.x -= 60.0;
+				bossBall[3]->m_position.y += 100.0;
+				bossBall[3]->m_moveSpeed = Bossmae * 20.0;
+				AttackTime = 0;
+			}
 		}
-	}
 	
 	
 }
@@ -161,7 +171,7 @@ void Boss::Attack()
 //アフターバーナーの色が変わる。
 void Boss::Boost()
 {
-	if (life <= 400)
+	if (life <= 300)
 	{
 		if (boostHantei == 0) {
 			DeleteGOs("AfterBurn");

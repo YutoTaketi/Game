@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Game.h"
 #include "Tama.h"
+#include "Bee3Ballet.h"
 
 Bee3::Bee3()
 {
@@ -12,6 +13,7 @@ Bee3::Bee3()
 Bee3::~Bee3()
 {
 	DeleteGO(m_skinModelRender);
+	DeleteGOs("Bee3Ballet");
 }
 
 bool Bee3::Start()
@@ -29,10 +31,18 @@ void Bee3::Move()
 		m_player = FindGO<Player>("Player");
 	}
 	else {
+		StartUp++;
 		CVector3 playerBEE = m_player->m_position - m_position;
 		playerBEE.Normalize();
-		playerBEE *= 2.0f;
-		m_position += playerBEE;
+		if (StartUp <= 300) {
+			playerBEE *= 5.0f;
+			m_position += playerBEE;
+		}
+		else {
+			playerBEE *= 2.0f;
+			m_position += playerBEE;
+		}
+		
 
 
 		m_skinModelRender->SetPosition(m_position);
@@ -46,10 +56,29 @@ void Bee3::Move()
 
 void Bee3::Turn()
 {
-	m_player = FindGO<Player>("Player");
+	if (m_player == nullptr) {
+		m_player = FindGO<Player>("Player");
+	}
+	
 	CVector3 playerBEE = m_player->m_position - m_position;
 	float angle = atan2(playerBEE.x, playerBEE.z);
 	m_rotation.SetRotation(CVector3::AxisY, angle);
+}
+
+void Bee3::Attack()
+{
+	m_timer++;
+
+	if (m_timer == 60) {
+
+		Bee3Ballet* bee3Ballet = NewGO<Bee3Ballet>(0, "Bee3Ballet");
+		bee3Ballet->m_position = m_position;
+		CVector3 Bee3mae = { 0, 0, 1 };
+		m_rotation.Apply(Bee3mae);
+		bee3Ballet->m_moveSpeed = Bee3mae * 20.0;
+
+		m_timer = 0;
+	}
 }
 
 void Bee3::Deth()
@@ -58,32 +87,32 @@ void Bee3::Deth()
 		game = FindGO<Game>("Game");
 	}
 	else {
-		prefab::CSoundSource* ss;
+		prefab::CSoundSource* Bee3dethss;
 
 		QueryGOs<Tama>("Tama", [&](Tama* tama)->bool {
-			CVector3 tamaBee = tama->m_position - m_position;
-			if (tamaBee.Length() < 50.0f)
+			CVector3 tamaBee3 = tama->m_position - m_position;
+			if (tamaBee3.Length() < 50.0f)
 			{
 
 				//エフェクトを作成
-				prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
+				 effect = NewGO<prefab::CEffect>(0);
 				//エフェクトを再生
 				effect->Play(L"effect/Burn.efk");
-				CVector3 emitPos = m_position;
-				CVector3 emitScale = { 2.0, 2.0, 2.0 };
-				effect->SetPosition(emitPos);
-				effect->SetScale(emitScale);
+				CVector3 dethEFPos = m_position;
+				CVector3 dethEFScale = { 2.0, 2.0, 2.0 };
+				effect->SetPosition(dethEFPos);
+				effect->SetScale(dethEFScale);
 				//爆発音を鳴らす
-				ss = NewGO<prefab::CSoundSource>(0);
-				ss->Init(L"sound/bakuhatu.wav");
-				ss->Play(false);
-				game->dethCount++;
+				Bee3dethss = NewGO<prefab::CSoundSource>(0);
+				Bee3dethss->Init(L"sound/bakuhatu.wav");
+				Bee3dethss->Play(false);
+				
 				DeleteGO(this);
 				return false;
 			}
 
 			return true;
-			});
+		});
 	}
 }
 
@@ -91,6 +120,7 @@ void Bee3::Update()
 {
 	Move();
 	Turn();
+	Attack();
 	Deth();
 	m_skinModelRender->SetPosition(m_position);
 	m_skinModelRender->SetRotation(m_rotation);

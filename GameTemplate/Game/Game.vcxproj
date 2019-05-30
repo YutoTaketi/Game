@@ -1767,6 +1767,7 @@
     <ClCompile Include="Bee.cpp" />
     <ClCompile Include="Bee2.cpp" />
     <ClCompile Include="Bee3.cpp" />
+    <ClCompile Include="Bee3Ballet.cpp" />
     <ClCompile Include="BeeBallet.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossAfterBurn.cpp" />
@@ -1813,6 +1814,7 @@
     <ClInclude Include="Bee.h" />
     <ClInclude Include="Bee2.h" />
     <ClInclude Include="Bee3.h" />
+    <ClInclude Include="Bee3Ballet.h" />
     <ClInclude Include="BeeBallet.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="BossAfterBurn.h" />
@@ -1914,6 +1916,9 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="Assets\effect\BeeTama.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\Bee3Tama.efk">
       <FileType>Document</FileType>
     </CustomBuild>
     <None Include="Assets\effect\Tama.efk" />
