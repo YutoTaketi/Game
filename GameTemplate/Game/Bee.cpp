@@ -83,7 +83,7 @@ void Bee::BeeAtack()
 		CVector3 Beemae = { 0, 0, 1 };
 		m_rotation.Apply(Beemae);
 		beeBallet->m_moveSpeed = Beemae * 20.0;
-		
+		beeBallet->m_moveSpeed.y -= 3.0;
 		m_timer = 0;
 	}
 }

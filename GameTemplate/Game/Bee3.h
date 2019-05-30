@@ -19,6 +19,7 @@ public:
 
 	int m_timer = 0;
 	int StartUp = 0;
+	int Bee3dethCount = 0;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;
 	CVector3 m_position = CVector3::Zero;
 	CVector3 m_scale = CVector3::One;

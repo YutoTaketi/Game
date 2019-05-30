@@ -69,7 +69,7 @@ void Bee3::Attack()
 {
 	m_timer++;
 
-	if (m_timer == 60) {
+	if (m_timer == 80) {
 
 		Bee3Ballet* bee3Ballet = NewGO<Bee3Ballet>(0, "Bee3Ballet");
 		bee3Ballet->m_position = m_position;
@@ -106,7 +106,7 @@ void Bee3::Deth()
 				Bee3dethss = NewGO<prefab::CSoundSource>(0);
 				Bee3dethss->Init(L"sound/bakuhatu.wav");
 				Bee3dethss->Play(false);
-				
+				Bee3dethCount += 1;
 				DeleteGO(this);
 				return false;
 			}

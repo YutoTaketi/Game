@@ -57,7 +57,7 @@ bool Boss::Start()
 
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Boss.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisZ);
-	m_position.y = 800.0;
+	m_position.y = 1500.0;
 	m_scale = { 3.0, 3.0, 3.0 };
 
 	BurnEf = NewGO<BossAfterBurn>(0, "AfterBurn");
@@ -140,7 +140,7 @@ void Boss::Attack()
 				m_rotation.Apply(Bossmae);
 				bossBall[0] = NewGO<BossBall>(0, "Ball");
 				bossBall[0]->m_position = m_position;
-				bossBall[0]->m_position.y += 50.0;
+				bossBall[0]->m_position.y += 10.0;
 				bossBall[0]->m_moveSpeed = Bossmae * 20.0;
 
 				bossBall[1] = NewGO<BossBall>(0, "Ball");
@@ -150,15 +150,15 @@ void Boss::Attack()
 
 				bossBall[2] = NewGO<BossBall>(0, "Ball");
 				bossBall[2]->m_position = m_position;
-				bossBall[2]->m_position.x += 60.0;
+				bossBall[2]->m_position.x += 90.0;
 				bossBall[2]->m_position.y += 100.0;
-				bossBall[2]->m_moveSpeed = Bossmae * 20.0;
+				bossBall[2]->m_moveSpeed = Bossmae * 30.0;
 
 				bossBall[3] = NewGO<BossBall>(0, "Ball");
 				bossBall[3]->m_position = m_position;
-				bossBall[3]->m_position.x -= 60.0;
+				bossBall[3]->m_position.x -= 90.0;
 				bossBall[3]->m_position.y += 100.0;
-				bossBall[3]->m_moveSpeed = Bossmae * 20.0;
+				bossBall[3]->m_moveSpeed = Bossmae * 40.0;
 				AttackTime = 0;
 			}
 		}
@@ -174,9 +174,14 @@ void Boss::Boost()
 	if (life <= 300)
 	{
 		if (boostHantei == 0) {
+
 			DeleteGOs("AfterBurn");
 			BurnEfB = NewGO<BossAfterBurnB>(0, "AfterBurnB");
 			//ñ¬Ç´ê∫Ç™ñ¬ÇÈ
+			BossNakigoeSS = NewGO<prefab::CSoundSource>(0);
+			BossNakigoeSS->Init(L"sound/BossNakigoe.wav");
+			BossNakigoeSS->SetVolume(2.0);
+			BossNakigoeSS->Play(false);
 			boostHantei = 1;
 		}
 	}
@@ -194,7 +199,7 @@ void Boss::Hidan()
 			if (tamaBee.Length() < 50.0f)
 			{
 				//ÉâÉCÉtå∏è≠
-				life -= 10;
+				life -= 17;
 
 				return false;
 			}

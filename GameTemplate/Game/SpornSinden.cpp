@@ -32,10 +32,10 @@ void SpornSinden::BeeSporn()
 		{
 			SpornTimer++;
 			
-				if (SpornTimer == 80 +i && spornCount <= 5) {
+				if (SpornTimer == 80 +i && spornCount <= 2) {
 					bee3 = NewGO<Bee3>(0, "Bee3");
 					bee3->m_position = m_position;
-					bee3->m_position.y += 500.0;
+					bee3->m_position.y += 900.0;
 					spornCount += 1;
 					SpornTimer = 0;
 					i += 200;
