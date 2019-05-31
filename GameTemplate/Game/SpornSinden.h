@@ -12,6 +12,7 @@ public:
 
 	bool Start();
 	void BeeSporn();
+	void BeeReSporn();
 	void Update();
 
 	int spornCount = 0;

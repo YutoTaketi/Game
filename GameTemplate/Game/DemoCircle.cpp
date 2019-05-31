@@ -35,7 +35,7 @@ void DemoCircle::Update()
 		m_player->m_moveSpeed.y = 1000.0f;
 	}
 
-	if (m_timer == 150) {
+	if (m_timer == 180) {
 		DeleteGO(this);
 		m_timer = 0;
 	}

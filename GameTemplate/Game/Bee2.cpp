@@ -42,7 +42,7 @@ void Bee2::Move()
 		if (playerLen.Length() >= 50) {
 			CVector3 playerBEE = m_player->m_position - m_position;
 			playerBEE.Normalize();
-			playerBEE *= 1.0f;
+			playerBEE *= 2.0f;
 			m_position += playerBEE;
 
 		}
@@ -79,7 +79,7 @@ void Bee2::BeeAtack()
 		beeBallet->m_position = m_position;
 		CVector3 Beemae = { 0, 0, 1 };
 		m_rotation.Apply(Beemae);
-		beeBallet->m_moveSpeed = Beemae * 10.0;
+		beeBallet->m_moveSpeed = Beemae * 20.0;
 
 		m_timer = 0;
 	}

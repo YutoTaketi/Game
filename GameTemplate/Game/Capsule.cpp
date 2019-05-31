@@ -41,7 +41,7 @@ void Capsule::CapsuleGet()
 		{
 	    get = m_player->m_position - m_position;
 		get.Length();
-		if (get.Length() < 70.0f) {
+		if (get.Length() < 80.0f) {
 			DeleteGO(this);
 			m_charge->capsuleget = 1;
 		}

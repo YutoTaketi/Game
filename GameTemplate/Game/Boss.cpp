@@ -44,7 +44,7 @@ bool Boss::Start()
 	effect->Play(L"effect/BossSporn.efk");
 	CVector3 SpornEfPos = m_position;
 	CVector3 SpornEfscale = { 7.0, 7.0, 7.0 };
-	SpornEfPos.y += 800.0f;
+	SpornEfPos.y += 1500.0f;
 	effect->SetPosition(SpornEfPos);
 	effect->SetScale(SpornEfscale);
 
@@ -58,7 +58,7 @@ bool Boss::Start()
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Boss.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisZ);
 	m_position.y = 1500.0;
-	m_scale = { 3.0, 3.0, 3.0 };
+	m_scale = { 3.5, 3.5, 3.5 };
 
 	BurnEf = NewGO<BossAfterBurn>(0, "AfterBurn");
 	
@@ -73,7 +73,7 @@ void Boss::Move()
 	}
 	else {
 		playerLen = m_player->m_position - m_position;
-		if (playerLen.Length() >= 900) {
+		if (playerLen.Length() >= 500) {
 			CVector3 playerBoss = m_player->m_position - m_position;
 			playerBoss.Normalize();
 			playerBoss *= 1.5f;
@@ -116,7 +116,7 @@ void Boss::Attack()
 	AttackTime++;
 	//攻撃のリキャストタイム
 	//m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
-	//playerLen = m_player->m_position - m_position;
+	
 
   if (life > 300) {
 	if (AttackTime == 60) {
@@ -127,8 +127,9 @@ void Boss::Attack()
 		slash->m_rotation = m_rotation;
 		CVector3 Bossmae = { 0, 0, 1 };
 		m_rotation.Apply(Bossmae);
-		slash->m_moveSpeed = Bossmae * 20.0;
-
+		slash->m_moveSpeed = Bossmae * 25.0;
+		slash->m_moveSpeed.y -= 2.0;
+		
 		AttackTime = 0;
 	}
   }
@@ -142,23 +143,28 @@ void Boss::Attack()
 				bossBall[0]->m_position = m_position;
 				bossBall[0]->m_position.y += 10.0;
 				bossBall[0]->m_moveSpeed = Bossmae * 20.0;
+				bossBall[0]->m_moveSpeed.y -= 3.0;
 
 				bossBall[1] = NewGO<BossBall>(0, "Ball");
 				bossBall[1]->m_position = m_position;
 				bossBall[1]->m_position.y += 170.0;
 				bossBall[1]->m_moveSpeed = Bossmae * 20.0;
+				bossBall[1]->m_moveSpeed.y -= 2.0;
 
 				bossBall[2] = NewGO<BossBall>(0, "Ball");
 				bossBall[2]->m_position = m_position;
 				bossBall[2]->m_position.x += 90.0;
 				bossBall[2]->m_position.y += 100.0;
 				bossBall[2]->m_moveSpeed = Bossmae * 30.0;
+				bossBall[2]->m_moveSpeed.y -= 3.0;
 
 				bossBall[3] = NewGO<BossBall>(0, "Ball");
 				bossBall[3]->m_position = m_position;
 				bossBall[3]->m_position.x -= 90.0;
 				bossBall[3]->m_position.y += 100.0;
 				bossBall[3]->m_moveSpeed = Bossmae * 40.0;
+				bossBall[3]->m_moveSpeed.y -= 2.0;
+				
 				AttackTime = 0;
 			}
 		}
@@ -174,7 +180,7 @@ void Boss::Boost()
 	if (life <= 300)
 	{
 		if (boostHantei == 0) {
-
+			
 			DeleteGOs("AfterBurn");
 			BurnEfB = NewGO<BossAfterBurnB>(0, "AfterBurnB");
 			//鳴き声が鳴る
@@ -184,6 +190,7 @@ void Boss::Boost()
 			BossNakigoeSS->Play(false);
 			boostHantei = 1;
 		}
+		
 	}
 }
 //被弾判定

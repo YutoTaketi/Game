@@ -44,7 +44,7 @@ void Bee::Move()
 		{
 			CVector3 playerBEE = m_player->m_position - m_position;
 			playerBEE.Normalize();
-			playerBEE *= 2.0f;
+			playerBEE *= 1.8f;
 			m_position += playerBEE;
 		}
 		/*CVector3 playerBEE = m_player->m_position - m_position;
@@ -55,9 +55,9 @@ void Bee::Move()
 		
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
-		if (m_position.y <= 400) {
+		if (m_position.y <= 600) {
 			m_position = oldPos;
-			m_position.y = 400;
+			m_position.y = 600;
 		}
 	}
 	//m_position = m_charaCon.Execute(m_moveSpeed, GameTime().GetFrameDeltaTime());
@@ -76,13 +76,17 @@ void Bee::BeeAtack()
 {
 	m_timer++;
 	
- 	if (m_timer == 60) {
-		
+ 	if (m_timer == 65) {
+		/*prefab::CSoundSource* ATss;
+		ATss = NewGO<prefab::CSoundSource>(0);
+		ATss->Init(L"sound/beeShot.wav");
+		ATss->Play(false);*/
+
 		BeeBallet* beeBallet = NewGO<BeeBallet>(0, "BeeBallet");
 		beeBallet->m_position = m_position;
 		CVector3 Beemae = { 0, 0, 1 };
 		m_rotation.Apply(Beemae);
-		beeBallet->m_moveSpeed = Beemae * 20.0;
+		beeBallet->m_moveSpeed = Beemae * 25.0;
 		beeBallet->m_moveSpeed.y -= 3.0;
 		m_timer = 0;
 	}
@@ -113,6 +117,7 @@ void Bee::Deth()
 				//”š”­‰¹‚ð–Â‚ç‚·
 				ss = NewGO<prefab::CSoundSource>(0);
 				ss->Init(L"sound/bakuhatu.wav");
+				ss->SetVolume(1.5);
 				ss->Play(false);
 				game->dethCount++;
 				DeleteGO(this);
