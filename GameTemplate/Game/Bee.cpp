@@ -44,7 +44,7 @@ void Bee::Move()
 		{
 			CVector3 playerBEE = m_player->m_position - m_position;
 			playerBEE.Normalize();
-			playerBEE *= 1.8f;
+			playerBEE *= 1.9f;
 			m_position += playerBEE;
 		}
 		/*CVector3 playerBEE = m_player->m_position - m_position;
@@ -75,21 +75,27 @@ void Bee::Turn()
 void Bee::BeeAtack()
 {
 	m_timer++;
-	
- 	if (m_timer == 65) {
-		/*prefab::CSoundSource* ATss;
-		ATss = NewGO<prefab::CSoundSource>(0);
-		ATss->Init(L"sound/beeShot.wav");
-		ATss->Play(false);*/
-
-		BeeBallet* beeBallet = NewGO<BeeBallet>(0, "BeeBallet");
-		beeBallet->m_position = m_position;
-		CVector3 Beemae = { 0, 0, 1 };
-		m_rotation.Apply(Beemae);
-		beeBallet->m_moveSpeed = Beemae * 25.0;
-		beeBallet->m_moveSpeed.y -= 3.0;
-		m_timer = 0;
+	if (m_player == nullptr)
+	{
+		m_player = FindGO<Player>("Player");
 	}
+	else {
+		if (m_timer == 65) {
+			/*prefab::CSoundSource* ATss;
+			ATss = NewGO<prefab::CSoundSource>(0);
+			ATss->Init(L"sound/beeShot.wav");
+			ATss->Play(false);*/
+
+			BeeBallet* beeBallet = NewGO<BeeBallet>(0, "BeeBallet");
+			beeBallet->m_position = m_position;
+			CVector3 Beemae = { 0, 0, 1 };
+			m_rotation.Apply(Beemae);
+			beeBallet->m_moveSpeed = Beemae * 30.0;
+			m_timer = 0;
+		}
+		//if (m_position > m_player->m_position)
+	}
+ 	
 }
 
 
@@ -117,7 +123,7 @@ void Bee::Deth()
 				//”š”­‰¹‚ð–Â‚ç‚·
 				ss = NewGO<prefab::CSoundSource>(0);
 				ss->Init(L"sound/bakuhatu.wav");
-				ss->SetVolume(1.5);
+				ss->SetVolume(2.0);
 				ss->Play(false);
 				game->dethCount++;
 				DeleteGO(this);

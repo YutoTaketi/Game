@@ -240,6 +240,7 @@ void Boss::Deth()
 			prefab::CSoundSource* BossDethS;
 			BossDethS = NewGO<prefab::CSoundSource>(0);
 			BossDethS->Init(L"sound/BossDeth.wav");
+			BossDethS->SetVolume(2.0);
 			BossDethS->Play(false);
 			DeleteGO(this);
 		}

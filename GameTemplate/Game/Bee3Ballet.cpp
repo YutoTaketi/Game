@@ -17,7 +17,7 @@ bool Bee3Ballet::Start()
 	effect = NewGO<prefab::CEffect>(0);
 	//エフェクトを再生
 	effect->Play(L"effect/Bee3Tama.efk");
-	m_scale = { 3.0, 3.0, 3.0 };
+	m_scale = { 2.5, 2.5, 2.5 };
 	return true;
 }
 

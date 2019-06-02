@@ -42,7 +42,7 @@ void Bee2::Move()
 		if (playerLen.Length() >= 50) {
 			CVector3 playerBEE = m_player->m_position - m_position;
 			playerBEE.Normalize();
-			playerBEE *= 2.0f;
+			playerBEE *= 2.5f;
 			m_position += playerBEE;
 
 		}
@@ -110,6 +110,7 @@ void Bee2::Deth()
 				//”š”­‰¹‚ð–Â‚ç‚·
 				ss = NewGO<prefab::CSoundSource>(0);
 				ss->Init(L"sound/bakuhatu.wav");
+				ss->SetVolume(2.0);
 				ss->Play(false);
 				game->dethCount++;
 				DeleteGO(this);
@@ -126,7 +127,7 @@ void Bee2::Update()
 {
 	m_player = FindGO<Player>("Player");
 	CVector3 PlayertonoKyori = m_player->m_position - m_position;
-	if (PlayertonoKyori.Length() < 1000)
+	if (PlayertonoKyori.Length() < 1500)
 	{
 		Move();
 		Turn();

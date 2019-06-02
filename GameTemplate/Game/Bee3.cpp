@@ -105,6 +105,7 @@ void Bee3::Deth()
 				//”š”­‰¹‚ð–Â‚ç‚·
 				Bee3dethss = NewGO<prefab::CSoundSource>(0);
 				Bee3dethss->Init(L"sound/bakuhatu.wav");
+				Bee3dethss->SetVolume(2.0);
 				Bee3dethss->Play(false);
 				Bee3dethCount += 1;
 				DeleteGO(this);

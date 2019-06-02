@@ -254,6 +254,9 @@
     <CustomBuild Include="Assets\sound\beeShot.wav">
       <Filter>Assets\sound</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\sound\click.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\sprite\sky.jpg">

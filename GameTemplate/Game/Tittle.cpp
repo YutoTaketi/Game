@@ -29,6 +29,13 @@ void Tittle::Update()
 {
 	
 	if (Pad(0).IsTrigger(enButtonA)) {
+		//ƒNƒŠƒbƒN‰¹‚ð—¬‚·
+		prefab::CSoundSource* Ass;
+		Ass = NewGO<prefab::CSoundSource>(0);
+		Ass->Init(L"sound/click.wav");
+		Ass->Play(false);
+		Ass->SetVolume(2.0);
+
 		NewGO<Game>(0, "Game");
 		DeleteGO(this);
 		DeleteGO(tittleSS);
