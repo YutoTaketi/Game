@@ -52,7 +52,7 @@ void SpornSinden::BeeReSporn()
 	{
 		game = FindGO<Game>("Game");
 	}
-	if (bee3->Bee3dethCount == 3)
+	if (bee3->Bee3dethCount == 4)
 	{
 		SpornTimer++;
 

@@ -118,7 +118,7 @@ void Boss::Attack()
 	//m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
 	
 
-  if (life > 300) {
+  if (life > 125) {
 	if (AttackTime == 60) {
 		m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
 		BossSlash* slash = NewGO<BossSlash>(0, "BossSlash");
@@ -135,7 +135,7 @@ void Boss::Attack()
   }
 
 		//ライフが一定以下だと攻撃が変わる。
-		if (life <= 300) {
+		if (life <= 125) {
 			if (AttackTime == 70) {
 				CVector3 Bossmae = { 0, 0, 1 };
 				m_rotation.Apply(Bossmae);
@@ -177,7 +177,7 @@ void Boss::Attack()
 //アフターバーナーの色が変わる。
 void Boss::Boost()
 {
-	if (life <= 300)
+	if (life <= 125)
 	{
 		if (boostHantei == 0) {
 			

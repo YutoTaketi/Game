@@ -20,6 +20,7 @@ bool GameOver::Start()
 	m_spriteRender->Init(L"sprite/GameOver.dds", 1800.0f, 1000.0f);
 	overSS = NewGO<prefab::CSoundSource>(0);
 	overSS->Init(L"sound/OverBGM.wav");
+	overSS->SetVolume(0.5);
 	overSS->Play(false);
 	return true;
 }

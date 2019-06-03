@@ -126,10 +126,18 @@ void Player::Attack()
 	
 
 	if (Pad(0).IsTrigger(enButtonRB2)) {
-		m_tama = NewGO<Tama>(0, "Tama");
+		attacktimer++;
+		if (attacktimer == 2) {
+			m_tama = NewGO<Tama>(0, "Tama");
+			m_tama->m_position = m_position;
+
+			m_tama->m_position.y += 70.0;
+			attacktimer = 0;
+		}
+		/*m_tama = NewGO<Tama>(0, "Tama");
 		m_tama->m_position = m_position;
 		
-		m_tama->m_position.y += 70.0;
+		m_tama->m_position.y += 70.0;*/
 		
 	}
 }

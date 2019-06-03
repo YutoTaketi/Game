@@ -21,6 +21,7 @@ bool Tittle::Start()
 	//prefab::CSoundSource* tittleSS;
 	tittleSS = NewGO<prefab::CSoundSource>(0);
 	tittleSS->Init(L"sound/TitleSound.wav");
+	tittleSS->SetVolume(0.5);
 	tittleSS->Play(false);
 	return true;
 }

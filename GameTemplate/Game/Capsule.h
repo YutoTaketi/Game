@@ -21,5 +21,6 @@ public:
 	CircleCharge* m_charge = nullptr;
 	PlayerHpBer* hpBer = nullptr;
 	CVector3 get = CVector3::Zero;
+	prefab::CSoundSource* m_bgmSoundSource = nullptr;
 };
 

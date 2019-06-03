@@ -54,7 +54,7 @@ void PlayerHpBer::GageGensyou()
 		QueryGOs<Bee3Ballet>("Bee3Ballet", [&](Bee3Ballet* bee3Ballet)->bool {
 			Ballet3Player = bee3Ballet->m_position - player->m_position;
 			if (Ballet3Player.Length() < 100.0f) {
-				w = w - 2;
+				w = w - 1;
 				HpGage->Init(L"sprite/Hp.dds", w, 34);
 
 			}
@@ -65,7 +65,7 @@ void PlayerHpBer::GageGensyou()
 		QueryGOs<BossSlash>("BossSlash", [&](BossSlash* bossSlash)->bool {
 			SlashPlayer = bossSlash->m_position - player->m_position;
 			if (SlashPlayer.Length() < 100.0f) {
-				w = w - 3;
+				w = w - 2;
 				HpGage->Init(L"sprite/Hp.dds", w, 34);
 			}
 			return true;
@@ -75,7 +75,7 @@ void PlayerHpBer::GageGensyou()
 		QueryGOs<BossBall>("Ball", [&](BossBall* bossBall)->bool {
 			BallPlayer = bossBall->m_position - player->m_position;
 			if (BallPlayer.Length() < 100.0f) {
-				w = w - 6;
+				w = w - 4;
 				HpGage->Init(L"sprite/Hp.dds", w, 34);
 			}
 			return true;

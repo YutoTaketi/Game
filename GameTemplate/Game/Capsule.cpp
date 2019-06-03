@@ -42,6 +42,11 @@ void Capsule::CapsuleGet()
 	    get = m_player->m_position - m_position;
 		get.Length();
 		if (get.Length() < 80.0f) {
+			prefab::CSoundSource* CapsulegetSS;
+			CapsulegetSS = NewGO<prefab::CSoundSource>(0);
+			CapsulegetSS->Init(L"sound/circleCharge.wav");
+			CapsulegetSS->SetVolume(1.0);
+			CapsulegetSS->Play(false);
 			DeleteGO(this);
 			m_charge->capsuleget = 1;
 		}

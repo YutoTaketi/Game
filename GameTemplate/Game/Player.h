@@ -31,6 +31,7 @@ public:
 
 
 	int m_timer = 0;
+	int attacktimer = 0;
 	//int HitHantei = 0;
 	CAnimationClip m_animationClip[enAnimationClip_num];	//アニメーションクリップ。
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;	//スキンモデルレンダラー。
