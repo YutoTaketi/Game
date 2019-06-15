@@ -1595,10 +1595,12 @@
       <ContentOutput>%(RelativeDir)/%(Filename).dds</ContentOutput>
     </ImageContentTask>
     <CustomBuild>
-      <Command>call $(ProjectDir)..\tkTools\tkContentTools.bat %(Identity) $(OutDir)</Command>
+      <Command>
+      </Command>
     </CustomBuild>
     <CustomBuild>
-      <Message>tkContentTools</Message>
+      <Message>
+      </Message>
     </CustomBuild>
     <CustomBuild>
       <Outputs>$(OutDir)\%(Identity)</Outputs>
@@ -1926,6 +1928,7 @@
     <CustomBuild Include="Assets\level\DemoStage2.tkl">
       <FileType>Document</FileType>
     </CustomBuild>
+    <None Include="Assets\level\Stage1.tkl" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\sound\bakuhatu.wav">

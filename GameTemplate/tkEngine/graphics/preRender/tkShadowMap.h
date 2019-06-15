@@ -93,6 +93,7 @@ namespace tkEngine{
 		{
 			return m_softShadowLevel;
 		}
+		CVector3 CalcLightPosition(float lightHeight, CVector3 viewFrustomCenterPosition);
 	private:
 		/*!
 		 *@brief	この中身を変更したら、modelCB.hのShadowCbも変更するように。

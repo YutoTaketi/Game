@@ -70,13 +70,19 @@ void Bee3::Attack()
 	m_timer++;
 
 	if (m_timer == 80) {
-
+		m_player = FindGO<Player>("Player");
 		Bee3Ballet* bee3Ballet = NewGO<Bee3Ballet>(0, "Bee3Ballet");
 		bee3Ballet->m_position = m_position;
 		CVector3 Bee3mae = { 0, 0, 1 };
 		m_rotation.Apply(Bee3mae);
 		bee3Ballet->m_moveSpeed = Bee3mae * 20.0;
-
+		if (m_player->m_position.y > m_position.y)
+		{
+			bee3Ballet->m_moveSpeed.y += 3.0;
+		}
+		else {
+			bee3Ballet->m_moveSpeed.y -= 2.0;
+		}
 		m_timer = 0;
 	}
 }

@@ -31,7 +31,7 @@ namespace {
 		//Bloom
 		initParam.graphicsConfing.bloomConfig.isEnable = true;
 		//tonemap
-		initParam.graphicsConfing.tonemapConfig.isEnable = true;
+		initParam.graphicsConfing.tonemapConfig.isEnable = false;
 		//SSR
 		initParam.graphicsConfing.ssrConfig.isEnable = false;
 		//ディザ
@@ -66,14 +66,14 @@ namespace {
 		initParam.graphicsConfing.bloomConfig.isEnable = true;
 		//tonemap
 		initParam.graphicsConfing.tonemapConfig.isEnable = true;
-		initParam.graphicsConfing.tonemapConfig.luminance = 0.56f;
+		initParam.graphicsConfing.tonemapConfig.luminance = 0.36f;
 
 		//SSR
 		initParam.graphicsConfing.ssrConfig.isEnable = true;
 		//ディザ
 		initParam.graphicsConfing.ditheringConfig.isEnable = false;
 		//dof
-		initParam.graphicsConfing.dofConfig.isEnable = true;
+		initParam.graphicsConfing.dofConfig.isEnable = false;
 	}
 	/*!
 	*@brief	高スペックPC向けにtkEngineのConfigを設定する。
@@ -87,9 +87,9 @@ namespace {
 		initParam.frameBufferHeight = 1080;
 		//影の設定。
 		initParam.graphicsConfing.shadowRenderConfig.isEnable = true;
-		initParam.graphicsConfing.shadowRenderConfig.shadowMapWidth = 2048;
-		initParam.graphicsConfing.shadowRenderConfig.shadowMapHeight = 2048;
-		initParam.graphicsConfing.shadowRenderConfig.lightHeight = UnitM(10.0f);
+		initParam.graphicsConfing.shadowRenderConfig.shadowMapWidth = 4096;
+		initParam.graphicsConfing.shadowRenderConfig.shadowMapHeight = 4096;
+		initParam.graphicsConfing.shadowRenderConfig.lightHeight = UnitM(20.0f);
 		initParam.graphicsConfing.shadowRenderConfig.depthOffset[0] = 0.001f;
 		initParam.graphicsConfing.shadowRenderConfig.depthOffset[1] = 0.001f;
 		initParam.graphicsConfing.shadowRenderConfig.depthOffset[2] = 0.002f;
@@ -101,13 +101,13 @@ namespace {
 		initParam.graphicsConfing.bloomConfig.isEnable = true;
 		//tonemap
 		initParam.graphicsConfing.tonemapConfig.isEnable = true;
-		initParam.graphicsConfing.tonemapConfig.luminance = 0.56f;
+		initParam.graphicsConfing.tonemapConfig.luminance = 0.36f;
 		//SSR
 		initParam.graphicsConfing.ssrConfig.isEnable = true;
 		//ディザ
 		initParam.graphicsConfing.ditheringConfig.isEnable = true;
 		//dof
-		initParam.graphicsConfing.dofConfig.isEnable = true;
+		initParam.graphicsConfing.dofConfig.isEnable = false;
 	}
 }
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow)

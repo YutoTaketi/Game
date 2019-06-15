@@ -36,6 +36,7 @@ Game::~Game()
 	DeleteGOs("DemoCircle");
 	DeleteGOs("SpornSinden");
 	DeleteGO(m_bgmSoundSource);
+	DeleteGO(m_directionLig);
 	//DeleteGO(m_level);
 	
 }
@@ -45,7 +46,13 @@ bool Game::Start()
 	m_player = NewGO<Player>(0, "Player");
 	//ゲームカメラのインスタンスを生成
 	m_gameCameraPl = NewGO<GameCameraPl>(0, "GameCameraPl");
-	
+	//平行光源を設定する。
+	m_directionLig = NewGO<prefab::CDirectionLight>(0);
+	m_directionLig->SetDirection({ 0.707f, -0.707f, 0.0f });
+	m_directionLig->SetColor({10.0f, 10.0f, 10.0f, 1.0f});
+
+	GraphicsEngine().GetShadowMap().SetLightDirection({ 0.707f, -0.707f, 0.0f });
+
 	//サークルチャージのインスタンスを生成
 	m_circleCharge = NewGO<CircleCharge>(0, "CircleCharge");
 	//プレイヤーのHPバーを表示
@@ -61,7 +68,7 @@ bool Game::Start()
 	////蜂のインスタンスを生成
 	//m_bee = NewGO<Bee>(0, "Bee");
 	//レベルを構築
-	m_level.Init(L"level/DemoStage2.tkl", [&](LevelObjectData& objData) {
+	m_level.Init(L"level/Stage1.tkl", [&](LevelObjectData& objData) {
 		
 		
 		if (objData.EqualObjectName(L"Bee") == true) {
@@ -130,7 +137,7 @@ void Game::Update()
 		
 	}
 	PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
-	if (HpBer->w <= 0)
+	if (HpBer->w <= 0 && clearHantei == 0)
 	{
 		NewGO<GameOver>(0, "GameOver");
 		DeleteGO(this);

@@ -273,5 +273,8 @@
     <None Include="Assets\effect\Tama.efk">
       <Filter>Assets\effect</Filter>
     </None>
+    <None Include="Assets\level\Stage1.tkl">
+      <Filter>Assets\level</Filter>
+    </None>
   </ItemGroup>
 </Project>

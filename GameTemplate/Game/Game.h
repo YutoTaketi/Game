@@ -45,5 +45,6 @@ public:
 	CLevel m_level;  //レベル
 
 	int gameEndTimer = 0;  //ボスが死んで数秒後にクリア画面
+	prefab::CDirectionLight* m_directionLig = nullptr;
 };
 

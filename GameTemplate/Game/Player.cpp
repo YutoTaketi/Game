@@ -39,6 +39,8 @@ bool Player::Start()
 	//スキンモデルレンダラーを作成
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/unityChan.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisY );
+	m_skinModelRender->SetShadowCasterFlag(true);
+	m_skinModelRender->SetShadowReceiverFlag(true);
 	return true;
 }
 

@@ -91,6 +91,13 @@ void Bee::BeeAtack()
 			CVector3 Beemae = { 0, 0, 1 };
 			m_rotation.Apply(Beemae);
 			beeBallet->m_moveSpeed = Beemae * 30.0;
+			if (m_player->m_position.y > m_position.y)
+			{
+				beeBallet->m_moveSpeed.y += 3.0;
+			}
+			else {
+				beeBallet->m_moveSpeed.y -= 2.0;
+			}
 			m_timer = 0;
 		}
 		//if (m_position > m_player->m_position)

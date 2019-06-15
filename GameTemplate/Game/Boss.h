@@ -41,7 +41,7 @@ public:
 	CQuaternion emitRot = CQuaternion::Identity;  //エフェクトの回転
 	CVector3 emitScale = CVector3::One;   //エフェクトのスケール
 	CVector3 playerLen = CVector3::Zero;  //プレイヤーとの距離
-	 int life = 350; //ボスのライフ
+	 int life = 500; //ボスのライフ
 	 int AttackTime = 0;
 	 int boostHantei = 0; //
 	 int MoveTimer = 0;  //スポーンしてから数秒後に動く
