@@ -1784,6 +1784,7 @@
     <ClCompile Include="GameCameraPl.cpp" />
     <ClCompile Include="GameClear.cpp" />
     <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="LoadGamen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerHpBer.cpp" />
@@ -1831,6 +1832,7 @@
     <ClInclude Include="GameCameraPl.h" />
     <ClInclude Include="GameClear.h" />
     <ClInclude Include="GameOver.h" />
+    <ClInclude Include="LoadGamen.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerHpBer.h" />
     <CLInclude Include="resource.h" />
@@ -1884,6 +1886,7 @@
     <ImageContentTask Include="Assets\sprite\Hp.png" />
     <ImageContentTask Include="Assets\sprite\GameOver.png" />
     <ImageContentTask Include="Assets\sprite\Game Clear.png" />
+    <ImageContentTask Include="Assets\sprite\Load1.png" />
     <Image Include="Assets\sprite\sky.jpg" />
   </ItemGroup>
   <ItemGroup>

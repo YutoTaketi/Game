@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Tittle.h"
 #include "Game.h"
+#include "LoadGamen.h"
 
 
 Tittle::Tittle()
@@ -37,7 +38,8 @@ void Tittle::Update()
 		Ass->Play(false);
 		Ass->SetVolume(2.0);
 
-		NewGO<Game>(0, "Game");
+		//NewGO<Game>(0, "Game");
+		NewGO<LoadGamen>(0, "LoadGamen");
 		DeleteGO(this);
 		DeleteGO(tittleSS);
 	}

@@ -54,6 +54,7 @@
     <ClCompile Include="SpornSinden.cpp" />
     <ClCompile Include="Bee3.cpp" />
     <ClCompile Include="Bee3Ballet.cpp" />
+    <ClCompile Include="LoadGamen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -84,6 +85,7 @@
     <ClInclude Include="SpornSinden.h" />
     <ClInclude Include="Bee3.h" />
     <ClInclude Include="Bee3Ballet.h" />
+    <ClInclude Include="LoadGamen.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -172,6 +174,9 @@
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
     <ImageContentTask Include="Assets\sprite\Game Clear.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Load1.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
   </ItemGroup>
