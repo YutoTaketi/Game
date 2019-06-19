@@ -1781,10 +1781,12 @@
     <ClCompile Include="DemoBall.cpp" />
     <ClCompile Include="DemoCircle.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Game2.cpp" />
     <ClCompile Include="GameCameraPl.cpp" />
     <ClCompile Include="GameClear.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="LoadGamen.cpp" />
+    <ClCompile Include="LoadGamen2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerHpBer.cpp" />
@@ -1829,10 +1831,12 @@
     <ClInclude Include="DemoBall.h" />
     <ClInclude Include="DemoCircle.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Game2.h" />
     <ClInclude Include="GameCameraPl.h" />
     <ClInclude Include="GameClear.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="LoadGamen.h" />
+    <ClInclude Include="LoadGamen2.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerHpBer.h" />
     <CLInclude Include="resource.h" />
@@ -1860,6 +1864,12 @@
     <MeshContentTask Include="Assets\modelData\Sinden2.FBX" />
     <MeshContentTask Include="Assets\modelData\Sinden3.FBX" />
     <MeshContentTask Include="Assets\modelData\SpornSinden.FBX" />
+    <MeshContentTask Include="Assets\modelData\Stage2Biru.FBX" />
+    <MeshContentTask Include="Assets\modelData\Stage2Biru2.FBX" />
+    <MeshContentTask Include="Assets\modelData\Stage2Biru3.FBX" />
+    <MeshContentTask Include="Assets\modelData\Stage2Biru4.FBX" />
+    <MeshContentTask Include="Assets\modelData\Stage2Biru5.FBX" />
+    <MeshContentTask Include="Assets\modelData\Stage2Yuka.FBX" />
     <MeshContentTask Include="Assets\modelData\Tama.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono2.FBX" />
@@ -1887,6 +1897,7 @@
     <ImageContentTask Include="Assets\sprite\GameOver.png" />
     <ImageContentTask Include="Assets\sprite\Game Clear.png" />
     <ImageContentTask Include="Assets\sprite\Load1.png" />
+    <ImageContentTask Include="Assets\sprite\Load2.png" />
     <Image Include="Assets\sprite\sky.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -1931,7 +1942,12 @@
     <CustomBuild Include="Assets\level\DemoStage2.tkl">
       <FileType>Document</FileType>
     </CustomBuild>
-    <None Include="Assets\level\Stage1.tkl" />
+    <CustomBuild Include="Assets\level\Stage1.tkl">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\level\Stage2.tkl">
+      <FileType>Document</FileType>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\sound\bakuhatu.wav">

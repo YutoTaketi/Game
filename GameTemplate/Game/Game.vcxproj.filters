@@ -55,6 +55,8 @@
     <ClCompile Include="Bee3.cpp" />
     <ClCompile Include="Bee3Ballet.cpp" />
     <ClCompile Include="LoadGamen.cpp" />
+    <ClCompile Include="LoadGamen2.cpp" />
+    <ClCompile Include="Game2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -86,6 +88,8 @@
     <ClInclude Include="Bee3.h" />
     <ClInclude Include="Bee3Ballet.h" />
     <ClInclude Include="LoadGamen.h" />
+    <ClInclude Include="LoadGamen2.h" />
+    <ClInclude Include="Game2.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -153,6 +157,24 @@
     <MeshContentTask Include="Assets\modelData\Bee3.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Stage2Yuka.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Stage2Biru.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Stage2Biru2.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Stage2Biru3.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Stage2Biru4.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Stage2Biru5.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
@@ -177,6 +199,9 @@
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
     <ImageContentTask Include="Assets\sprite\Load1.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Load2.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
   </ItemGroup>
@@ -265,6 +290,12 @@
     <CustomBuild Include="Assets\sound\circleCharge.wav">
       <Filter>Assets\sound</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\level\Stage2.tkl">
+      <Filter>Assets\level</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\level\Stage1.tkl">
+      <Filter>Assets\level</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\sprite\sky.jpg">
@@ -277,9 +308,6 @@
     </None>
     <None Include="Assets\effect\Tama.efk">
       <Filter>Assets\effect</Filter>
-    </None>
-    <None Include="Assets\level\Stage1.tkl">
-      <Filter>Assets\level</Filter>
     </None>
   </ItemGroup>
 </Project>

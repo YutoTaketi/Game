@@ -6,6 +6,8 @@ public:
 	~GameClear();
 	bool Start();
 	void Update();
+
+	int clearTimer = 0;
 	prefab::CSpriteRender* m_spriteRender = nullptr;
 	prefab::CSoundSource* m_bgmSoundSource = nullptr;
 	prefab::CSoundSource* clearSS;

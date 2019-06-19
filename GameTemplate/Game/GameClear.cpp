@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "GameClear.h"
 #include "Tittle.h"
+#include "LoadGamen2.h"
 
 
 GameClear::GameClear()
@@ -26,9 +27,17 @@ bool GameClear::Start()
 
 void GameClear::Update()
 {
-	if (Pad(0).IsTrigger(enButtonA)) {
-		NewGO<Tittle>(0, "Tittle");
+	clearTimer++;
+	if (clearTimer == 60) {
+		NewGO<LoadGamen2>(0, "LoadGamen2");
 		DeleteGO(this);
 		DeleteGO(clearSS);
 	}
+	
+	/*if (Pad(0).IsTrigger(enButtonA)) {
+		NewGO<Tittle>(0, "Tittle");
+		DeleteGO(this);
+		DeleteGO(clearSS);
+	}*/
+
 }
