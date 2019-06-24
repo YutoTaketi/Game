@@ -4,6 +4,7 @@ class Bee3Ballet;
 class BossSlash;
 class BossBall;
 class Player;
+class StageNumber;
 class PlayerHpBer : public IGameObject
 {
 public:
@@ -23,5 +24,7 @@ public:
 	CVector3 Ballet3Player = CVector3::Zero;
 	CVector3 GagePos;
 	float w = 286;
+
+	StageNumber* stagenumber = nullptr;
 };
 

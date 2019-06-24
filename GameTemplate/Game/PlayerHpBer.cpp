@@ -6,6 +6,7 @@
 #include "Bee3Ballet.h"
 #include "Player.h"
 #include "Game.h"
+#include "StageNumber.h"
 
 
 PlayerHpBer::PlayerHpBer()

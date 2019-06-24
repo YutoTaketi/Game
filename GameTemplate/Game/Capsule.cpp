@@ -2,8 +2,10 @@
 #include "Capsule.h"
 #include "Player.h"
 #include "Game.h"
+#include "Game2.h"
 #include "CircleCharge.h"
 #include "PlayerHpBer.h"
+#include "StageNumber.h"
 
 
 Capsule::Capsule()
@@ -18,38 +20,87 @@ Capsule::~Capsule()
 
 bool Capsule::Start()
 {
-	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
-	m_skinModelRender->Init(L"modelData/Capsule.cmo");
+	stagenumber = &StageNumber::GetInstance();
+	switch (stagenumber->GetStageNumber())
+	{
+	 case StageNumber::enState_Stage1:
+		//ステージ1の時
+		m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
+		m_skinModelRender->Init(L"modelData/Capsule.cmo");
+		break;
+
+	 case StageNumber::enState_Stage2:
+		 m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
+		 m_skinModelRender->Init(L"modelData/Capsule2.cmo");
+		 break;
+	}
+	//m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
+	//m_skinModelRender->Init(L"modelData/Capsule.cmo");
 	return true;
 }
 
 void Capsule::CapsuleGet()
 {
-	Game* game = nullptr;
-	if (game == nullptr)
-	{
-		game = FindGO<Game>("Game");
-		m_player = FindGO<Player>("Player");
-		m_charge = FindGO<CircleCharge>("CircleCharge");
-		hpBer = FindGO<PlayerHpBer>("HpBer");
-		if (m_player == nullptr)
+	stagenumber = &StageNumber::GetInstance();
+	//ステージ1の時
+	if (stagenumber->GetStageNumber() == StageNumber::enState_Stage1) {
+		Game* game = nullptr;
+		if (game == nullptr)
 		{
-			//m_player = FindGO<Player>("Player");
-			//m_charge = FindGO<CircleCharge>("CircleCharge");
+			game = FindGO<Game>("Game");
+			m_player = FindGO<Player>("Player");
+			m_charge = FindGO<CircleCharge>("CircleCharge");
+			//hpBer = FindGO<PlayerHpBer>("HpBer");
+			if (m_player == nullptr)
+			{
+				//m_player = FindGO<Player>("Player");
+				//m_charge = FindGO<CircleCharge>("CircleCharge");
+			}
+			else
+			{
+				get = m_player->m_position - m_position;
+				get.Length();
+				if (get.Length() < 80.0f) {
+					prefab::CSoundSource* CapsulegetSS;
+					CapsulegetSS = NewGO<prefab::CSoundSource>(0);
+					CapsulegetSS->Init(L"sound/circleCharge.wav");
+					CapsulegetSS->SetVolume(1.0);
+					CapsulegetSS->Play(false);
+					DeleteGO(this);
+					m_charge->capsuleget = 1;
+				}
+			}
 		}
-		else
+	}
+
+	//ステージ2の時
+	if (stagenumber->GetStageNumber() == StageNumber::enState_Stage2) {
+		Game2* game = nullptr;
+		if (game == nullptr)
 		{
-	    get = m_player->m_position - m_position;
-		get.Length();
-		if (get.Length() < 80.0f) {
-			prefab::CSoundSource* CapsulegetSS;
-			CapsulegetSS = NewGO<prefab::CSoundSource>(0);
-			CapsulegetSS->Init(L"sound/circleCharge.wav");
-			CapsulegetSS->SetVolume(1.0);
-			CapsulegetSS->Play(false);
-			DeleteGO(this);
-			m_charge->capsuleget = 1;
-		}
+			game = FindGO<Game2>("Game2");
+			m_player = FindGO<Player>("Player");
+			m_charge = FindGO<CircleCharge>("CircleCharge");
+			//hpBer = FindGO<PlayerHpBer>("HpBer");
+			if (m_player == nullptr)
+			{
+				//m_player = FindGO<Player>("Player");
+				//m_charge = FindGO<CircleCharge>("CircleCharge");
+			}
+			else
+			{
+				get = m_player->m_position - m_position;
+				get.Length();
+				if (get.Length() < 80.0f) {
+					prefab::CSoundSource* CapsulegetSS;
+					CapsulegetSS = NewGO<prefab::CSoundSource>(0);
+					CapsulegetSS->Init(L"sound/circleCharge.wav");
+					CapsulegetSS->SetVolume(1.0);
+					CapsulegetSS->Play(false);
+					DeleteGO(this);
+					m_charge->capsuleget = 1;
+				}
+			}
 		}
 	}
 	

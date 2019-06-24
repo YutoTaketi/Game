@@ -1,8 +1,10 @@
 #pragma once
 class Player;
 class Game;
+class Game2;
 class CircleCharge;
 class PlayerHpBer;
+class StageNumber;
 
 class Capsule : public IGameObject
 {
@@ -20,6 +22,7 @@ public:
 	Player* m_player = nullptr;
 	CircleCharge* m_charge = nullptr;
 	PlayerHpBer* hpBer = nullptr;
+	StageNumber* stagenumber = nullptr;
 	CVector3 get = CVector3::Zero;
 	prefab::CSoundSource* m_bgmSoundSource = nullptr;
 };

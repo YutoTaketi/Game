@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "LoadGamen2.h"
 #include "Game2.h"
+#include "StageNumber.h"
 
 
 LoadGamen2::LoadGamen2()
@@ -16,6 +17,8 @@ LoadGamen2::~LoadGamen2()
 bool LoadGamen2::Start()
 {
 	//ステージ2のロード画面を表示
+	stagenumber = &StageNumber::GetInstance();
+	stagenumber->SetStage(StageNumber::enState_Stage2 );
 	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
 	m_spriteRender->Init(L"sprite/Load2.dds", 1300.0, 700.0);
 	return true;

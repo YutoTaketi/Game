@@ -1792,6 +1792,7 @@
     <ClCompile Include="PlayerHpBer.cpp" />
     <ClCompile Include="SpornSinden.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="StageNumber.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Middle|Win32'">Create</PrecompiledHeader>
@@ -1842,6 +1843,7 @@
     <CLInclude Include="resource.h" />
     <ClInclude Include="SpornSinden.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="StageNumber.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Tama.h" />
     <ClInclude Include="Tittle.h" />
@@ -1854,6 +1856,7 @@
     <MeshContentTask Include="Assets\modelData\BeeBallet.FBX" />
     <MeshContentTask Include="Assets\modelData\Boss.fbx" />
     <MeshContentTask Include="Assets\modelData\Capsule.FBX" />
+    <MeshContentTask Include="Assets\modelData\Capsule2.FBX" />
     <MeshContentTask Include="Assets\modelData\Demo.FBX" />
     <MeshContentTask Include="Assets\modelData\DemoBall.FBX" />
     <MeshContentTask Include="Assets\modelData\DemoBoll.FBX" />
@@ -1870,6 +1873,7 @@
     <MeshContentTask Include="Assets\modelData\Stage2Biru4.FBX" />
     <MeshContentTask Include="Assets\modelData\Stage2Biru5.FBX" />
     <MeshContentTask Include="Assets\modelData\Stage2Yuka.FBX" />
+    <MeshContentTask Include="Assets\modelData\Stage2Yuka2.FBX" />
     <MeshContentTask Include="Assets\modelData\Tama.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono2.FBX" />

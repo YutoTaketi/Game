@@ -104,6 +104,7 @@ void Player::AnimationController()
 //もしR2トリガーが押されたら、サークルを出す。
 bool Player::CircleSummon()
 {
+	
 	CircleCharge* ciclecharge = FindGO<CircleCharge>("CircleCharge");
 		//もし6つ設置したら、設置できない
 	//もしR2トリガーが押されたら、サークルを出す。

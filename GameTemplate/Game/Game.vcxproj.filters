@@ -57,6 +57,7 @@
     <ClCompile Include="LoadGamen.cpp" />
     <ClCompile Include="LoadGamen2.cpp" />
     <ClCompile Include="Game2.cpp" />
+    <ClCompile Include="StageNumber.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -90,6 +91,7 @@
     <ClInclude Include="LoadGamen.h" />
     <ClInclude Include="LoadGamen2.h" />
     <ClInclude Include="Game2.h" />
+    <ClInclude Include="StageNumber.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -173,6 +175,12 @@
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\Stage2Biru5.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Stage2Yuka2.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Capsule2.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>

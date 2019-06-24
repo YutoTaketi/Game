@@ -1,4 +1,5 @@
 #pragma once
+class StageNumber;
 class LoadGamen2 : public IGameObject
 {
 public:
@@ -9,5 +10,7 @@ public:
 
 	int LoadTimer = 0;
 	prefab::CSpriteRender* m_spriteRender = nullptr;
+
+	StageNumber* stagenumber = nullptr;
 };
 
