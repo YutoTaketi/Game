@@ -1785,6 +1785,8 @@
     <ClCompile Include="GameCameraPl.cpp" />
     <ClCompile Include="GameClear.cpp" />
     <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="Kabuto.cpp" />
+    <ClCompile Include="KabutoBallet.cpp" />
     <ClCompile Include="LoadGamen.cpp" />
     <ClCompile Include="LoadGamen2.cpp" />
     <ClCompile Include="main.cpp" />
@@ -1815,6 +1817,10 @@
     </ClCompile>
     <ClCompile Include="Tama.cpp" />
     <ClCompile Include="Tittle.cpp" />
+    <ClCompile Include="Tombo.cpp" />
+    <ClCompile Include="TomboAttack1.cpp" />
+    <ClCompile Include="TomboAttack2.cpp" />
+    <ClCompile Include="TomboAttackState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bee.h" />
@@ -1836,6 +1842,8 @@
     <ClInclude Include="GameCameraPl.h" />
     <ClInclude Include="GameClear.h" />
     <ClInclude Include="GameOver.h" />
+    <ClInclude Include="Kabuto.h" />
+    <ClInclude Include="KabutoBallet.h" />
     <ClInclude Include="LoadGamen.h" />
     <ClInclude Include="LoadGamen2.h" />
     <ClInclude Include="Player.h" />
@@ -1847,6 +1855,10 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Tama.h" />
     <ClInclude Include="Tittle.h" />
+    <ClInclude Include="Tombo.h" />
+    <ClInclude Include="TomboAttack1.h" />
+    <ClInclude Include="TomboAttack2.h" />
+    <ClInclude Include="TomboAttackState.h" />
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
@@ -1863,6 +1875,7 @@
     <MeshContentTask Include="Assets\modelData\DemoCircle.FBX" />
     <MeshContentTask Include="Assets\modelData\Iseki2.FBX" />
     <MeshContentTask Include="Assets\modelData\Iseki3.FBX" />
+    <MeshContentTask Include="Assets\modelData\Kabuto.FBX" />
     <MeshContentTask Include="Assets\modelData\Sinden.FBX" />
     <MeshContentTask Include="Assets\modelData\Sinden2.FBX" />
     <MeshContentTask Include="Assets\modelData\Sinden3.FBX" />
@@ -1877,6 +1890,7 @@
     <MeshContentTask Include="Assets\modelData\Tama.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono2.FBX" />
+    <MeshContentTask Include="Assets\modelData\Tombo.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
   </ItemGroup>
   <ItemGroup>
@@ -1941,7 +1955,22 @@
     <CustomBuild Include="Assets\effect\Bee3Tama.efk">
       <FileType>Document</FileType>
     </CustomBuild>
+    <CustomBuild Include="Assets\effect\KabutoBall.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\KabutoTossin.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
     <None Include="Assets\effect\Tama.efk" />
+    <CustomBuild Include="Assets\effect\TomboBeam0.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboBeamNemoto.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboBeam.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
     <None Include="Assets\level\DemoStage.tkl" />
     <CustomBuild Include="Assets\level\DemoStage2.tkl">
       <FileType>Document</FileType>

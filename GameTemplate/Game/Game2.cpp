@@ -4,10 +4,11 @@
 #include "GameCameraPl.h"
 #include "Player.h"
 #include "CircleCharge.h"
-//#include "PlayerHpBer.h"
+#include "PlayerHpBer.h"
 #include "Capsule.h"
 #include "StageNumber.h"
-
+#include "Kabuto.h"  //敵
+#include "Tombo.h"   //敵
 
 
 
@@ -18,7 +19,10 @@ Game2::Game2()
 
 Game2::~Game2()
 {
-
+	DeleteGO(m_player);
+	DeleteGO(m_gameCameraPl);
+	DeleteGO(m_HpBer);
+	DeleteGOs("Capsule");
 }
 
 bool Game2::Start()
@@ -34,6 +38,12 @@ bool Game2::Start()
 
 	m_circleCharge = NewGO<CircleCharge>(0, "CircleCharge");
 	GraphicsEngine().GetShadowMap().SetLightDirection({ 0.707f, -0.707f, 0.0f });
+	
+	//プレイヤーのHPバーを表示
+	m_HpBer = NewGO<PlayerHpBer>(0, "HpBer");
+
+	//トンボのインスタンスを生成
+	m_tombo = NewGO<Tombo>(0, "Tombo");
 	//レベルを構築
 	m_level.Init(L"level/Stage2.tkl", [&](LevelObjectData& objData) {
 
@@ -44,8 +54,16 @@ bool Game2::Start()
 			capsule->m_rotation = objData.rotation;
 			capsule->m_scale = objData.scale;
 			return true;
-		}
+		 }
 		
+		 else if (objData.EqualObjectName(L"Kabuto") == true) {
+			 //カブトのオブジェクト
+			 Kabuto* kabuto = NewGO<Kabuto>(0, "Kabuto");
+			 kabuto->m_position = objData.position;
+			 kabuto->m_rotation = objData.rotation;
+			 kabuto->m_scale = objData.scale;
+			 return true;
+		 }
 
 		return false;
 

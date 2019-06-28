@@ -38,51 +38,56 @@ bool PlayerHpBer::Start()
 
 void PlayerHpBer::GageGensyou()
 {
-	Game* game = FindGO<Game>("Game");
-	Player* player = FindGO<Player>("Player");
-	//PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
-	if (player != nullptr) {
-		QueryGOs<BeeBallet>("BeeBallet", [&](BeeBallet* beeBallet)->bool {
-			BalletPlayer = beeBallet->m_position - player->m_position;
-			if (BalletPlayer.Length() < 100.0f) {
-				w = w - 0.5;
-				HpGage->Init(L"sprite/Hp.dds", w, 34);
-			
-			}
-			return true;
-	     });
-		
-		QueryGOs<Bee3Ballet>("Bee3Ballet", [&](Bee3Ballet* bee3Ballet)->bool {
-			Ballet3Player = bee3Ballet->m_position - player->m_position;
-			if (Ballet3Player.Length() < 100.0f) {
-				w = w - 1;
-				HpGage->Init(L"sprite/Hp.dds", w, 34);
+	stagenumber = &StageNumber::GetInstance();
+	if (stagenumber->GetStageNumber() == StageNumber::enState_Stage1) {
+		Game* game = FindGO<Game>("Game");
+		Player* player = FindGO<Player>("Player");
+		//PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
+		if (player != nullptr) {
+			QueryGOs<BeeBallet>("BeeBallet", [&](BeeBallet* beeBallet)->bool {
+				BalletPlayer = beeBallet->m_position - player->m_position;
+				if (BalletPlayer.Length() < 100.0f) {
+					w = w - 0.5;
+					HpGage->Init(L"sprite/Hp.dds", w, 34);
 
-			}
-			return true;
-			});
-		//ボスの攻撃にあったらHPゲージ減少
-		//第一段階
-		QueryGOs<BossSlash>("BossSlash", [&](BossSlash* bossSlash)->bool {
-			SlashPlayer = bossSlash->m_position - player->m_position;
-			if (SlashPlayer.Length() < 100.0f) {
-				w = w - 2;
-				HpGage->Init(L"sprite/Hp.dds", w, 34);
-			}
-			return true;
-		});
+				}
+				return true;
+				});
 
-		//第二段階
-		QueryGOs<BossBall>("Ball", [&](BossBall* bossBall)->bool {
-			BallPlayer = bossBall->m_position - player->m_position;
-			if (BallPlayer.Length() < 100.0f) {
-				w = w - 4;
-				HpGage->Init(L"sprite/Hp.dds", w, 34);
-			}
-			return true;
-		});
+			QueryGOs<Bee3Ballet>("Bee3Ballet", [&](Bee3Ballet* bee3Ballet)->bool {
+				Ballet3Player = bee3Ballet->m_position - player->m_position;
+				if (Ballet3Player.Length() < 100.0f) {
+					w = w - 1;
+					HpGage->Init(L"sprite/Hp.dds", w, 34);
 
+				}
+				return true;
+				});
+			//ボスの攻撃にあったらHPゲージ減少
+			//第一段階
+			QueryGOs<BossSlash>("BossSlash", [&](BossSlash* bossSlash)->bool {
+				SlashPlayer = bossSlash->m_position - player->m_position;
+				if (SlashPlayer.Length() < 100.0f) {
+					w = w - 2;
+					HpGage->Init(L"sprite/Hp.dds", w, 34);
+				}
+				return true;
+				});
+
+			//第二段階
+			QueryGOs<BossBall>("Ball", [&](BossBall* bossBall)->bool {
+				BallPlayer = bossBall->m_position - player->m_position;
+				if (BallPlayer.Length() < 100.0f) {
+					w = w - 4;
+					HpGage->Init(L"sprite/Hp.dds", w, 34);
+				}
+				return true;
+				});
+
+		}
 	}
+
+
 }
 
 void PlayerHpBer::Update()

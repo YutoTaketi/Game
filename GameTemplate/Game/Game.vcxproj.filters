@@ -58,6 +58,12 @@
     <ClCompile Include="LoadGamen2.cpp" />
     <ClCompile Include="Game2.cpp" />
     <ClCompile Include="StageNumber.cpp" />
+    <ClCompile Include="Kabuto.cpp" />
+    <ClCompile Include="Tombo.cpp" />
+    <ClCompile Include="TomboAttackState.cpp" />
+    <ClCompile Include="TomboAttack1.cpp" />
+    <ClCompile Include="KabutoBallet.cpp" />
+    <ClCompile Include="TomboAttack2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -92,6 +98,12 @@
     <ClInclude Include="LoadGamen2.h" />
     <ClInclude Include="Game2.h" />
     <ClInclude Include="StageNumber.h" />
+    <ClInclude Include="Kabuto.h" />
+    <ClInclude Include="Tombo.h" />
+    <ClInclude Include="TomboAttackState.h" />
+    <ClInclude Include="TomboAttack1.h" />
+    <ClInclude Include="KabutoBallet.h" />
+    <ClInclude Include="TomboAttack2.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -181,6 +193,12 @@
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\Capsule2.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Kabuto.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Tombo.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>
@@ -303,6 +321,21 @@
     </CustomBuild>
     <CustomBuild Include="Assets\level\Stage1.tkl">
       <Filter>Assets\level</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboBeam0.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboBeamNemoto.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\KabutoBall.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboBeam.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\KabutoTossin.efk">
+      <Filter>Assets\effect</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

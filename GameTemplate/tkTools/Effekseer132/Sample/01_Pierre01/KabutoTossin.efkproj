@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EffekseerProject>
+  <Root>
+    <Name>Root</Name>
+    <Children>
+      <Node>
+        <ScalingValues>
+          <Fixed>
+            <Scale>
+              <X>2</X>
+              <Y>2</Y>
+              <Z>2</Z>
+            </Scale>
+          </Fixed>
+        </ScalingValues>
+        <DrawingValues>
+          <Type>4</Type>
+          <Ring>
+            <OuterColor_Fixed>
+              <R>251</R>
+              <G>132</G>
+              <B>242</B>
+            </OuterColor_Fixed>
+            <CenterColor_Fixed>
+              <R>204</R>
+              <G>19</G>
+              <B>190</B>
+            </CenterColor_Fixed>
+          </Ring>
+        </DrawingValues>
+        <Name>Node</Name>
+        <Children />
+      </Node>
+    </Children>
+  </Root>
+  <ToolVersion>1.32</ToolVersion>
+  <Version>3</Version>
+  <StartFrame>0</StartFrame>
+  <EndFrame>120</EndFrame>
+  <IsLoop>True</IsLoop>
+</EffekseerProject>

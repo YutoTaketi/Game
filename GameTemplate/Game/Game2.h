@@ -3,6 +3,9 @@ class Player;
 class GameCameraPl;
 class CircleCharge;
 class StageNumber;
+class PlayerHpBer;
+class Kabuto;
+class Tombo;
 class Game2 : public IGameObject
 {
 public:
@@ -16,7 +19,8 @@ public:
 	GameCameraPl* m_gameCameraPl = nullptr;
 	CircleCharge* m_circleCharge = nullptr;
 	StageNumber* stagenumber = nullptr;
-
+	PlayerHpBer* m_HpBer = nullptr;
+	Tombo* m_tombo = nullptr;
 	prefab::CDirectionLight* m_directionLig = nullptr;
 
 };
