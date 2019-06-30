@@ -2,6 +2,8 @@
 
 class Player;
 class TomboAttackState;
+class Tama;
+class Game2;
 
 class Tombo : public IGameObject
 {
@@ -13,6 +15,8 @@ public:
 	void Turn();
 	void Attack();
 	void Bunsin();
+	void Hidan();
+	void Deth();
 	void Update();
 
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;
@@ -23,6 +27,8 @@ public:
 	CVector3 playerLen = CVector3::Zero;
 
 	TomboAttackState* tomboAttackState = nullptr;
+	Game2* game2 = nullptr;
 	int AttackTimer = 0;
+	int Life = 500;
 };
 

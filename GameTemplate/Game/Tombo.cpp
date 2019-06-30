@@ -4,6 +4,8 @@
 #include "TomboAttackState.h"
 #include "TomboAttack1.h"
 #include "TomboAttack2.h"
+#include "Tama.h"
+#include "Game2.h"
 
 
 Tombo::Tombo()
@@ -90,7 +92,13 @@ void Tombo::Attack()
 
 			//AttackTimer = 0;
 
-			TomboAttack2* attack2 = NewGO<TomboAttack2>(0, "Attack2");
+			
+		}
+	}
+
+	/*if (tomboAttackState->GetAttackNumber() == TomboAttackState::enState_Attack2)
+	{
+	  TomboAttack2* attack2 = NewGO<TomboAttack2>(0, "Attack2");
 			attack2->m_position = m_position;
 			attack2->m_position.y += 25.0;
 			attack2->m_rotation = m_rotation;
@@ -98,14 +106,11 @@ void Tombo::Attack()
 			m_rotation.Apply(Tombomae);
 			attack2->m_moveSpeed = Tombomae * 1.0; 
 			AttackTimer = 0;
-		}
-	}
-
-	/*if (tomboAttackState->GetAttackNumber() == TomboAttackState::enState_Attack2)
-	{
-
 	}*/
 
+	/*if (tomboAttackState->GetAttackNumber() == TomboAttackState::enState_Attack3) {
+
+	}*/
 }
 
 //ˆê’èŽžŠÔŒo‰ßŒã
@@ -115,11 +120,44 @@ void Tombo::Bunsin()
 
 }
 
+void Tombo::Hidan()
+{
+	if (game2 == nullptr) {
+		game2 = FindGO<Game2>("Game2");
+	}
+	else {
+		QueryGOs<Tama>("Tama", [&](Tama* tama)->bool {
+			CVector3 tamaTombo = tama->m_position - m_position;
+			if (tamaTombo.Length() < 50.0f)
+			{
+				//ƒ‰ƒCƒtŒ¸­
+				Life -= 500;
+
+				return false;
+			}
+
+			return true;
+		});
+
+	}
+}
+
+void Tombo::Deth()
+{
+
+	if (Life == 0) {
+		DeleteGO(this);
+	}
+	
+}
+
 void Tombo::Update()
 {
 	Move();
 	Turn();
 	Attack();
+	Hidan();
+	Deth();
 	m_skinModelRender->SetPosition(m_position);
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);

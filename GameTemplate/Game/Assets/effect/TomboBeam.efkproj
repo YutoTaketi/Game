@@ -66,31 +66,31 @@
           <Easing>
             <Start>
               <X>
-                <Center>5</Center>
-                <Max>5</Max>
-                <Min>5</Min>
+                <Center>7</Center>
+                <Max>7</Max>
+                <Min>7</Min>
               </X>
               <Z>
-                <Center>5</Center>
-                <Max>5</Max>
-                <Min>5</Min>
+                <Center>7</Center>
+                <Max>7</Max>
+                <Min>7</Min>
               </Z>
             </Start>
             <End>
               <X>
-                <Center>7</Center>
-                <Max>7</Max>
-                <Min>7</Min>
+                <Center>10</Center>
+                <Max>10</Max>
+                <Min>10</Min>
               </X>
               <Y>
-                <Center>400</Center>
-                <Max>400</Max>
-                <Min>400</Min>
+                <Center>500</Center>
+                <Max>500</Max>
+                <Min>500</Min>
               </Y>
               <Z>
-                <Center>7</Center>
-                <Max>7</Max>
-                <Min>7</Min>
+                <Center>10</Center>
+                <Max>10</Max>
+                <Min>10</Min>
               </Z>
             </End>
           </Easing>
