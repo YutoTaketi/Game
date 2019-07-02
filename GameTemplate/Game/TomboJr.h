@@ -1,22 +1,18 @@
 #pragma once
-
 class Player;
-class TomboAttackState;
-class Tama;
+class Tombo;
 class Game2;
-class TomboJr;
+class Tama;
 
-class Tombo : public IGameObject
+class TomboJr : public IGameObject
 {
 public:
-	Tombo();
-	~Tombo();
+	TomboJr();
+	~TomboJr();
 	bool Start();
 	void Move();
 	void Turn();
 	void Attack();
-	void Bunsin();
-	void Hidan();
 	void Deth();
 	void Update();
 
@@ -25,15 +21,10 @@ public:
 	CVector3 m_scale = CVector3::One;
 	CQuaternion m_rotation = CQuaternion::Identity;
 	Player* m_player = nullptr;
+	Tombo* tombo = nullptr;
+	Game2* game2 = nullptr;
 	CVector3 playerLen = CVector3::Zero;
 
-	TomboAttackState* tomboAttackState = nullptr;
-	Game2* game2 = nullptr;
-	TomboJr* tomboJr[2] = { nullptr };
 	int AttackTimer = 0;
-	int Life = 500;
-	int AttackChangeCount = 0;
-	int bunsinHantei = 0;  //分身の判定
-	int bunsinStartTimer = 0;  //分身開始タイマー
 };
 

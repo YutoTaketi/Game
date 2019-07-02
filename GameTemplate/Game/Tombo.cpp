@@ -6,6 +6,8 @@
 #include "TomboAttack2.h"
 #include "Tama.h"
 #include "Game2.h"
+#include "TomboJr.h"
+
 
 
 Tombo::Tombo()
@@ -70,33 +72,41 @@ void Tombo::Attack()
 	if (tomboAttackState->GetAttackNumber() == TomboAttackState::enState_Attack1)
 	{
 		AttackTimer++;
-		if (AttackTimer == 70) {
-			/*TomboAttack1* attack1 = NewGO<TomboAttack1>(0, "Attack1");
-			attack1->m_position = m_position;
-			attack1->m_position2 = m_position;
-			attack1->m_position.y += 25.0;
-			attack1->m_position.y += 60.0;
-			attack1->m_rotation = m_rotation;
-			attack1->m_rotation2 = m_rotation;
-			CVector3 Tombomae = { 0, 0, 1 };
-			m_rotation.Apply(Tombomae);
-			attack1->m_moveSpeed = Tombomae * 25.0;*/
-			//attack1->m_moveSpeed.y -= 2.0;
-			/*if (m_player->m_position.y > m_position.y)
-			{
+		/*if (Life <= 300)
+		{
+			tomboAttackState->SetAttackNumber(TomboAttackState::enState_Attack3);
+		}*/
+			if (AttackTimer == 70) {
+				TomboAttack1* attack1 = NewGO<TomboAttack1>(0, "Attack1");
+				attack1->m_position = m_position;
+				attack1->m_position2 = m_position;
+				attack1->m_position.y += 25.0;
+				attack1->m_position.y += 60.0;
+				attack1->m_rotation = m_rotation;
+				attack1->m_rotation2 = m_rotation;
+				CVector3 Tombomae = { 0, 0, 1 };
+				m_rotation.Apply(Tombomae);
+				attack1->m_moveSpeed = Tombomae * 25.0;
+				//attack1->m_moveSpeed.y -= 2.0;
+				/*if (m_player->m_position.y > m_position.y)
+				{
 				attack1->m_moveSpeed.y += 3.0;
-			}
-			else {
+				}
+				else {
 				attack1->m_moveSpeed.y -= 2.0;
-			}*/
+				}*/
 
-			//AttackTimer = 0;
+				AttackTimer = 0;
+				AttackChangeCount += 1;
 
-			
+			}
+		
+		if (AttackChangeCount == 10) {
+			tomboAttackState->SetAttackNumber(TomboAttackState::enState_Attack2);
 		}
 	}
 
-	/*if (tomboAttackState->GetAttackNumber() == TomboAttackState::enState_Attack2)
+	if (tomboAttackState->GetAttackNumber() == TomboAttackState::enState_Attack2)
 	{
 	  TomboAttack2* attack2 = NewGO<TomboAttack2>(0, "Attack2");
 			attack2->m_position = m_position;
@@ -105,11 +115,12 @@ void Tombo::Attack()
 			CVector3 Tombomae = { 0, 0, 1 };
 			m_rotation.Apply(Tombomae);
 			attack2->m_moveSpeed = Tombomae * 1.0; 
-			AttackTimer = 0;
-	}*/
+			AttackChangeCount = 0;
+			tomboAttackState->SetAttackNumber(TomboAttackState::enState_Attack1);
+	}
 
 	/*if (tomboAttackState->GetAttackNumber() == TomboAttackState::enState_Attack3) {
-
+	    
 	}*/
 }
 
@@ -117,7 +128,19 @@ void Tombo::Attack()
 //ï™êgÇ∑ÇÈ
 void Tombo::Bunsin()
 {
-
+	if (Life <= 300 && bunsinHantei== 0)
+	{
+		tomboJr[0] = NewGO<TomboJr>(0, "TomboJr1");
+		tomboJr[0]->m_position = m_position;
+		tomboJr[1] = NewGO<TomboJr>(0, "TomboJr2");
+		tomboJr[1]->m_position = m_position;
+		bunsinHantei = 1;
+		//tomboJr->m_position.y = m_position.y + 100;
+		for (bunsinStartTimer; bunsinStartTimer < 180; bunsinStartTimer++) {
+			tomboJr[0]->m_position.y++;
+			tomboJr[0]->m_position.x++;
+		}
+	}
 }
 
 void Tombo::Hidan()
@@ -131,7 +154,7 @@ void Tombo::Hidan()
 			if (tamaTombo.Length() < 50.0f)
 			{
 				//ÉâÉCÉtå∏è≠
-				Life -= 500;
+				Life -= 10;
 
 				return false;
 			}
@@ -146,6 +169,12 @@ void Tombo::Deth()
 {
 
 	if (Life == 0) {
+		prefab::CSoundSource* TomboDethSS;
+		TomboDethSS = NewGO<prefab::CSoundSource>(0);
+		TomboDethSS->Init(L"sound/TomboBakuhatu.wav");
+		TomboDethSS->SetVolume(2.0);
+		TomboDethSS->Play(false);
+		
 		DeleteGO(this);
 	}
 	
@@ -157,6 +186,7 @@ void Tombo::Update()
 	Turn();
 	Attack();
 	Hidan();
+	Bunsin();
 	Deth();
 	m_skinModelRender->SetPosition(m_position);
 	m_skinModelRender->SetRotation(m_rotation);

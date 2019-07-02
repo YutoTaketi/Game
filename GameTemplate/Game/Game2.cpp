@@ -74,5 +74,7 @@ bool Game2::Start()
 
 void Game2::Update()
 {
-
+	//if (dethCount == 10) {
+		                //ボススポーン
+	//}
 }

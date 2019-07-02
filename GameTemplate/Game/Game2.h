@@ -23,5 +23,7 @@ public:
 	Tombo* m_tombo = nullptr;
 	prefab::CDirectionLight* m_directionLig = nullptr;
 
+	int dethCount = 0;
+	int BossFlag = 0;
 };
 

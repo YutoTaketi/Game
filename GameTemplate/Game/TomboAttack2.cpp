@@ -17,6 +17,11 @@ bool TomboAttack2::Start()
 	effect = NewGO<prefab::CEffect>(0);
 	effect->Play(L"effect/TomboBeam0.efk");
 	m_scale = { 8.0, 8.0, 10.0 };
+	prefab::CSoundSource* HiBeamss;
+	HiBeamss = NewGO<prefab::CSoundSource>(0);
+	HiBeamss->Init(L"sound/TomboHiBeam.wav");
+	HiBeamss->SetVolume(2.0);
+	HiBeamss->Play(false);
 	return true;
 }
 

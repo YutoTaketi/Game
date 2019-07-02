@@ -33,7 +33,7 @@ void Kabuto::Move()
 		if (playerLen.Length() >= 50) {
 			CVector3 playerKabuto = m_player->m_position - m_position;
 			playerKabuto.Normalize();
-			playerKabuto *= 1.5f;
+			playerKabuto *= 2.5f;
 			m_position += playerKabuto;
 
 		}
@@ -65,7 +65,7 @@ void Kabuto::Attack()
 	AttackTimer++;
 	
 	CVector3 KabutoPlayer = m_player->m_position - m_position;
-	if (KabutoPlayer.Length() < 600.0)
+	if (KabutoPlayer.Length() < 500.0f)
 	{
 		TossinHantei = 1;
 		//“Ëi
@@ -83,6 +83,11 @@ void Kabuto::Attack()
 		KabutoPlayer.Normalize();
 		KabutoPlayer *= 3.5;
 		m_position += KabutoPlayer;
+		CVector3 TossinAfter = m_position;
+		if (KabutoPlayer.Length() <= 50.0)
+		{
+			m_position = TossinAfter;
+		}
 	}
 	if (AttackTimer == 70 && KabutoPlayer.Length() >= 500.0) {
 		
@@ -114,7 +119,7 @@ void Kabuto::Deth()
 		game2 = FindGO<Game2>("Game2");
 	}
 	else {
-		//prefab::CSoundSource* ss;
+		prefab::CSoundSource* ss;
 
 		QueryGOs<Tama>("Tama", [&](Tama* tama)->bool {
 			CVector3 tamaBee = tama->m_position - m_position;
@@ -130,10 +135,10 @@ void Kabuto::Deth()
 				effect->SetPosition(emitPos);
 				effect->SetScale(emitScale);*/
 				//”š”­‰¹‚ð–Â‚ç‚·
-				/*ss = NewGO<prefab::CSoundSource>(0);
-				ss->Init(L"sound/bakuhatu.wav");
+				ss = NewGO<prefab::CSoundSource>(0);
+				ss->Init(L"sound/KabutoBakuhatu.wav");
 				ss->SetVolume(2.0);
-				ss->Play(false);*/
+				ss->Play(false);
 				
 				DeleteGO(this);
 				return false;

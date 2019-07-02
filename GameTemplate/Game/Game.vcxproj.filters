@@ -64,6 +64,7 @@
     <ClCompile Include="TomboAttack1.cpp" />
     <ClCompile Include="KabutoBallet.cpp" />
     <ClCompile Include="TomboAttack2.cpp" />
+    <ClCompile Include="TomboJr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -104,6 +105,7 @@
     <ClInclude Include="TomboAttack1.h" />
     <ClInclude Include="KabutoBallet.h" />
     <ClInclude Include="TomboAttack2.h" />
+    <ClInclude Include="TomboJr.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -199,6 +201,9 @@
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\Tombo.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\TomboJr.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>
@@ -336,6 +341,18 @@
     </CustomBuild>
     <CustomBuild Include="Assets\effect\KabutoTossin.efk">
       <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\KabutoBakuhatu.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\TomboHiBeam.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\TomboJrBakuhatu.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\TomboBakuhatu.wav">
+      <Filter>Assets\sound</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

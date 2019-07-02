@@ -6,6 +6,10 @@
 #include "Bee3Ballet.h"
 #include "Player.h"
 #include "Game.h"
+#include "Game2.h"
+#include "TomboAttack1.h"
+#include "TomboAttack2.h"
+#include "KabutoBallet.h"
 #include "StageNumber.h"
 
 
@@ -39,6 +43,7 @@ bool PlayerHpBer::Start()
 void PlayerHpBer::GageGensyou()
 {
 	stagenumber = &StageNumber::GetInstance();
+	//ステージ１のダメージ判定
 	if (stagenumber->GetStageNumber() == StageNumber::enState_Stage1) {
 		Game* game = FindGO<Game>("Game");
 		Player* player = FindGO<Player>("Player");
@@ -52,7 +57,7 @@ void PlayerHpBer::GageGensyou()
 
 				}
 				return true;
-				});
+			});
 
 			QueryGOs<Bee3Ballet>("Bee3Ballet", [&](Bee3Ballet* bee3Ballet)->bool {
 				Ballet3Player = bee3Ballet->m_position - player->m_position;
@@ -82,12 +87,49 @@ void PlayerHpBer::GageGensyou()
 					HpGage->Init(L"sprite/Hp.dds", w, 34);
 				}
 				return true;
-				});
+			});
 
 		}
 	}
 
+	//ステージ
+	if (stagenumber->GetStageNumber() == StageNumber::enState_Stage2)
+	{
+		Game2* game2 = FindGO<Game2>("Game2");
+		Player* player = FindGO<Player>("Player");
+		//if (player == nullptr) {
+		
+			/*QueryGOs<KabutoBallet>("KabutoBallet", [&](KabutoBallet* kabutoBallet)->bool {
+				KabutoBalletPlayer = kabutoBallet->m_position - player->m_position;
+				if (KabutoBalletPlayer.Length() < 50.0f) {
+					w = w - 0.5;
+					HpGage->Init(L"sprite/Hp.dds", w, 34);
 
+				}
+				return true;
+			});*/
+
+			QueryGOs<TomboAttack1>("Attack1", [&](TomboAttack1* tomboAttack1)->bool {
+				TomboBeamPlayer = tomboAttack1->m_position - player->m_position;
+				if (TomboBeamPlayer.Length() < 50.0f) {
+					w = w - 0.5;
+					HpGage->Init(L"sprite/Hp.dds", w, 34);
+
+				}
+				return true;
+			});
+
+			QueryGOs<TomboAttack2>("Attack2", [&](TomboAttack2* tomboAttack2)->bool {
+				TomboBeam2Player = tomboAttack2->m_position - player->m_position;
+				if (TomboBeam2Player.Length() < 50.0f) {
+					w = w - 1.0;
+					HpGage->Init(L"sprite/Hp.dds", w, 34);
+
+				}
+				return true;
+				});
+		//}
+	}
 }
 
 void PlayerHpBer::Update()

@@ -15,7 +15,7 @@ public:
 		enState_Attack2,
 		enState_Attack3
 	};
-	void SetStage(const AttackState& number)
+	void SetAttackNumber(const AttackState& number)
 	{
 		m_AttackNo = number;
 	}

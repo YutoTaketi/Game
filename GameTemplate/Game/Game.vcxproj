@@ -1821,6 +1821,7 @@
     <ClCompile Include="TomboAttack1.cpp" />
     <ClCompile Include="TomboAttack2.cpp" />
     <ClCompile Include="TomboAttackState.cpp" />
+    <ClCompile Include="TomboJr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bee.h" />
@@ -1859,6 +1860,7 @@
     <ClInclude Include="TomboAttack1.h" />
     <ClInclude Include="TomboAttack2.h" />
     <ClInclude Include="TomboAttackState.h" />
+    <ClInclude Include="TomboJr.h" />
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
@@ -1891,6 +1893,7 @@
     <MeshContentTask Include="Assets\modelData\Tatemono.FBX" />
     <MeshContentTask Include="Assets\modelData\Tatemono2.FBX" />
     <MeshContentTask Include="Assets\modelData\Tombo.FBX" />
+    <MeshContentTask Include="Assets\modelData\TomboJr.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
   </ItemGroup>
   <ItemGroup>
@@ -2037,6 +2040,24 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\sound\circleCharge.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\KabutoBakuhatu.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\TomboHiBeam.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\TomboBakuhatu.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\TomboJrBakuhatu.wav">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
