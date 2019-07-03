@@ -26,7 +26,7 @@ bool Tombo::Start()
 {
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Tombo.cmo");
-	m_scale = { 3.0f, 3.0f, 3.0f };
+	m_scale = { 3.5f, 3.5f, 3.5f };
 	return true;
 }
 
@@ -115,6 +115,10 @@ void Tombo::Attack()
 			CVector3 Tombomae = { 0, 0, 1 };
 			m_rotation.Apply(Tombomae);
 			attack2->m_moveSpeed = Tombomae * 1.0; 
+			
+			/*if (m_position.y >= player->m_position.y) {
+				attack2->m_rotation.SetRotation(CVector3::AxisZ, -30.0);
+			}*/
 			AttackChangeCount = 0;
 			tomboAttackState->SetAttackNumber(TomboAttackState::enState_Attack1);
 	}
@@ -136,9 +140,11 @@ void Tombo::Bunsin()
 		tomboJr[1]->m_position = m_position;
 		bunsinHantei = 1;
 		//tomboJr->m_position.y = m_position.y + 100;
-		for (bunsinStartTimer; bunsinStartTimer < 180; bunsinStartTimer++) {
+		for (bunsinStartTimer; bunsinStartTimer < 300; bunsinStartTimer++) {
 			tomboJr[0]->m_position.y++;
 			tomboJr[0]->m_position.x++;
+			tomboJr[0]->m_position.y--;
+			tomboJr[0]->m_position.x--;
 		}
 	}
 }
@@ -174,6 +180,14 @@ void Tombo::Deth()
 		TomboDethSS->Init(L"sound/TomboBakuhatu.wav");
 		TomboDethSS->SetVolume(2.0);
 		TomboDethSS->Play(false);
+
+		prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
+		//エフェクトを再生
+		effect->Play(L"effect/TomboDeth.efk");
+		CVector3 emitPos = m_position;
+		CVector3 emitScale = { 8.0f, 8.0f, 8.0f };
+		effect->SetPosition(emitPos);
+		effect->SetScale(emitScale);
 		
 		DeleteGO(this);
 	}

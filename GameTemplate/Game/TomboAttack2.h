@@ -1,4 +1,6 @@
 #pragma once
+class Tombo;
+class Player;
 class TomboAttack2 : public IGameObject
 {
 public:

@@ -15,6 +15,7 @@ TomboJr::TomboJr()
 TomboJr::~TomboJr()
 {
 	DeleteGO(m_skinModelRender);
+	
 }
 
 bool TomboJr::Start()
@@ -103,19 +104,20 @@ void TomboJr::Deth()
 			{
 
 				//エフェクトを作成
-				//prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
+				prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
 				//エフェクトを再生
-				/*effect->Play(L"effect/Burn.efk");
+				effect->Play(L"effect/TomboJrDeth.efk");
 				CVector3 emitPos = m_position;
 				CVector3 emitScale = { 2.0, 2.0, 2.0 };
 				effect->SetPosition(emitPos);
-				effect->SetScale(emitScale);*/
+				effect->SetScale(emitScale);
 				//爆発音を鳴らす
 				TomboJrDethSS = NewGO<prefab::CSoundSource>(0);
 				TomboJrDethSS->Init(L"sound/TomboJrBakuhatu.wav");
 				TomboJrDethSS->SetVolume(2.0);
 				TomboJrDethSS->Play(false);
 
+				//DeleteGO(effect);
 				DeleteGO(this);
 				return false;
 			}

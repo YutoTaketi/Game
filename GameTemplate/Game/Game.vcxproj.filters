@@ -17,14 +17,14 @@
     <Filter Include="Assets\animData">
       <UniqueIdentifier>{2a4ed218-0a16-4670-89fb-89fbf0c8fa7c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Assets\level">
-      <UniqueIdentifier>{ec31e36b-68f9-44b9-920f-c67cb98234c9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Assets\effect">
       <UniqueIdentifier>{9e4cb285-a2cd-4b26-bc5d-9b928a89628f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Assets\sound">
       <UniqueIdentifier>{7597ac34-9ff7-4892-a0d1-e3407aa7634a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="level">
+      <UniqueIdentifier>{ec31e36b-68f9-44b9-920f-c67cb98234c9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -247,7 +247,7 @@
       <Filter>Assets\animData</Filter>
     </CustomBuild>
     <CustomBuild Include="Assets\level\DemoStage2.tkl">
-      <Filter>Assets\level</Filter>
+      <Filter>level</Filter>
     </CustomBuild>
     <CustomBuild Include="Assets\effect\Burn.efk">
       <Filter>Assets\effect</Filter>
@@ -322,10 +322,10 @@
       <Filter>Assets\sound</Filter>
     </CustomBuild>
     <CustomBuild Include="Assets\level\Stage2.tkl">
-      <Filter>Assets\level</Filter>
+      <Filter>level</Filter>
     </CustomBuild>
     <CustomBuild Include="Assets\level\Stage1.tkl">
-      <Filter>Assets\level</Filter>
+      <Filter>level</Filter>
     </CustomBuild>
     <CustomBuild Include="Assets\effect\TomboBeam0.efk">
       <Filter>Assets\effect</Filter>
@@ -354,6 +354,15 @@
     <CustomBuild Include="Assets\sound\TomboBakuhatu.wav">
       <Filter>Assets\sound</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\effect\KabutoDeth.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboDeth.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboJrDeth.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\sprite\sky.jpg">
@@ -362,7 +371,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\level\DemoStage.tkl">
-      <Filter>Assets\level</Filter>
+      <Filter>level</Filter>
     </None>
     <None Include="Assets\effect\Tama.efk">
       <Filter>Assets\effect</Filter>

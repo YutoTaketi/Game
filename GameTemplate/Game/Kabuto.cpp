@@ -127,13 +127,13 @@ void Kabuto::Deth()
 			{
 
 				//エフェクトを作成
-				//prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
+				prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
 				//エフェクトを再生
-				/*effect->Play(L"effect/Burn.efk");
+				effect->Play(L"effect/KabutoDeth.efk");
 				CVector3 emitPos = m_position;
 				CVector3 emitScale = { 2.0, 2.0, 2.0 };
 				effect->SetPosition(emitPos);
-				effect->SetScale(emitScale);*/
+				effect->SetScale(emitScale);
 				//爆発音を鳴らす
 				ss = NewGO<prefab::CSoundSource>(0);
 				ss->Init(L"sound/KabutoBakuhatu.wav");

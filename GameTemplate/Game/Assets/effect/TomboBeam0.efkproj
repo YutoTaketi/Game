@@ -71,9 +71,9 @@
                 <Min>2</Min>
               </X>
               <Y>
-                <Center>40</Center>
-                <Max>40</Max>
-                <Min>40</Min>
+                <Center>25</Center>
+                <Max>25</Max>
+                <Min>25</Min>
               </Y>
               <Z>
                 <Center>2</Center>
@@ -88,9 +88,9 @@
                 <Min>2</Min>
               </X>
               <Y>
-                <Center>40</Center>
-                <Max>40</Max>
-                <Min>40</Min>
+                <Center>25</Center>
+                <Max>25</Max>
+                <Min>25</Min>
               </Y>
               <Z>
                 <Center>2</Center>

@@ -1964,6 +1964,9 @@
     <CustomBuild Include="Assets\effect\KabutoTossin.efk">
       <FileType>Document</FileType>
     </CustomBuild>
+    <CustomBuild Include="Assets\effect\KabutoDeth.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
     <None Include="Assets\effect\Tama.efk" />
     <CustomBuild Include="Assets\effect\TomboBeam0.efk">
       <FileType>Document</FileType>
@@ -1972,6 +1975,12 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="Assets\effect\TomboBeam.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboDeth.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboJrDeth.efk">
       <FileType>Document</FileType>
     </CustomBuild>
     <None Include="Assets\level\DemoStage.tkl" />

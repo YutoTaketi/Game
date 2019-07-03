@@ -30,6 +30,7 @@ public:
 	TomboAttackState* tomboAttackState = nullptr;
 	Game2* game2 = nullptr;
 	TomboJr* tomboJr[2] = { nullptr };
+	Player* player = nullptr;
 	int AttackTimer = 0;
 	int Life = 500;
 	int AttackChangeCount = 0;
