@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "KabutoBallet.h"
+#include "Kabuto.h"
+#include "Player.h"
+#include "Kabuto2.h"
 
 
 KabutoBallet::KabutoBallet()
@@ -22,7 +25,9 @@ bool KabutoBallet::Start()
 
 void KabutoBallet::Update()
 {
+	
 	m_position += m_moveSpeed;
+	
 	effect->SetPosition(m_position);
 	effect->SetRotation(m_rotation);
 	effect->SetScale(m_scale);

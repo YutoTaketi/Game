@@ -20,7 +20,7 @@ bool LoadGamen2::Start()
 	stagenumber = &StageNumber::GetInstance();
 	stagenumber->SetStage(StageNumber::enState_Stage2 );
 	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
-	m_spriteRender->Init(L"sprite/Load2.dds", 1300.0, 700.0);
+	m_spriteRender->Init(L"sprite/Load2.dds", 1300.0, 750.0);
 	return true;
 }
 

@@ -28,6 +28,7 @@ void Kabuto::Move()
 	if (m_player == nullptr) {
 		m_player = FindGO<Player>("Player");
 	}
+	//プレイヤーに向かって移動
 	else {
 		playerLen = m_player->m_position - m_position;
 		if (playerLen.Length() >= 50) {
@@ -41,10 +42,13 @@ void Kabuto::Move()
 
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
-		if (m_position.y <= 400) {
-			m_position = oldPos;
-			m_position.y = 400;
+		if (TossinHantei == 0) {
+			if (m_position.y <= 400) {
+				m_position = oldPos;
+				m_position.y = 400;
+			}
 		}
+		
 	}
 }
 
@@ -53,7 +57,7 @@ void Kabuto::Turn()
 	if (m_player == nullptr) {
 		m_player = FindGO<Player>("Player");
 	}
-
+	//プレイヤーに向かって回転
 	CVector3 playerBEE = m_player->m_position - m_position;
 	float angle = atan2(playerBEE.x, playerBEE.z);
 	m_rotation.SetRotation(CVector3::AxisY, angle);
@@ -86,8 +90,14 @@ void Kabuto::Attack()
 		CVector3 TossinAfter = m_position;
 		if (KabutoPlayer.Length() <= 50.0)
 		{
-			m_position = TossinAfter;
+			TossinStopTimer++;
+			if (TossinStopTimer < 180) {
+				m_position = TossinAfter;
+
+			}
+			
 		}
+		TossinStopTimer = 0;
 	}
 	if (AttackTimer == 70 && KabutoPlayer.Length() >= 500.0) {
 		
@@ -100,14 +110,13 @@ void Kabuto::Attack()
 		m_rotation.Apply(Kabutomae);
 		kabutoBallet->m_moveSpeed = Kabutomae * 25.0;
 		//slash->m_moveSpeed.y -= 2.0;
-		/*if (m_player->m_position.y > m_position.y)
+		if (m_player->m_position.y < m_position.y)
 		{
-		attack1->m_moveSpeed.y += 3.0;
+		   kabutoBallet->m_moveSpeed.y -= 3.0;
+		 
+		   
 		}
-		else {
-		attack1->m_moveSpeed.y -= 2.0;
-		}*/
-
+		
 		AttackTimer = 0;
 	}
 
@@ -139,7 +148,7 @@ void Kabuto::Deth()
 				ss->Init(L"sound/KabutoBakuhatu.wav");
 				ss->SetVolume(2.0);
 				ss->Play(false);
-				
+				game2->KabutoDethCount++;
 				DeleteGO(this);
 				return false;
 			}

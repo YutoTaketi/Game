@@ -22,11 +22,7 @@ bool Bee2::Start()
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Bee2.cmo");
 	m_rotation.SetRotationDeg(CVector3::AxisY, 90.0);
-	/*m_charaCon.Init(
-		50.0,
-		50.0f,
-		m_position
-	);*/
+
 	return true;
 }
 
@@ -39,17 +35,32 @@ void Bee2::Move()
 	}
 	else {
 		playerLen = m_player->m_position - m_position;
-		if (playerLen.Length() >= 50) {
+		if (playerLen.Length() >= 1000) {
 			CVector3 playerBEE = m_player->m_position - m_position;
 			playerBEE.Normalize();
 			playerBEE *= 2.5f;
 			m_position += playerBEE;
 
 		}
-		/*CVector3 playerBEE = m_player->m_position - m_position;
-		playerBEE.Normalize();
-		playerBEE *= 1.0f;
-		m_position += playerBEE;*/
+		else {
+			moveTimer++;
+			if (moveTimer <= 80 && moveState == 0) {
+				m_position.x++;
+		    }
+			else if (moveTimer > 80 && moveState ==0){
+				moveState = 1;
+				moveTimer = 0;
+			}
+			if (moveTimer <= 80 && moveState == 1)
+			{
+				m_position.x--;
+			}
+			else if (moveTimer > 80 && moveState == 1){
+				moveState = 0;
+				moveTimer = 0;
+			}
+		}
+		
 	
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
@@ -58,11 +69,12 @@ void Bee2::Move()
 			m_position.y = 400;
 		}
 	}
-	//m_position = m_charaCon.Execute(m_moveSpeed, GameTime().GetFrameDeltaTime());
+	
 }
 
 void Bee2::Turn()
 {
+	//プレイヤーに向けて回転させる
 	m_player = FindGO<Player>("Player");
 	CVector3 playerBEE = m_player->m_position - m_position;
 	float angle = atan2(playerBEE.x, playerBEE.z);
@@ -72,24 +84,22 @@ void Bee2::Turn()
 void Bee2::BeeAtack()
 {
 	m_timer++;
-
-	if (m_timer == 60) {
-		m_player = FindGO<Player>("Player");
-		BeeBallet* beeBallet = NewGO<BeeBallet>(0, "BeeBallet");
-		beeBallet->m_position = m_position;
-		CVector3 Beemae = { 0, 0, 1 };
-		m_rotation.Apply(Beemae);
-		beeBallet->m_moveSpeed = Beemae * 20.0;
-		if (m_player->m_position.y > m_position.y)
-		{
-			beeBallet->m_moveSpeed.y += 3.0;
+	if (m_skinModelRender != nullptr)
+	{
+		//弾を出す
+		if (m_timer == 60) {
+			m_player = FindGO<Player>("Player");
+			BeeBallet* beeBallet = NewGO<BeeBallet>(0, "BeeBallet");
+			beeBallet->m_position = m_position;
+			CVector3 Beemae = { 0, 0, 1 };
+			m_rotation.Apply(Beemae);
+			beeBallet->m_moveSpeed = Beemae * 20.0;
+			
+			m_timer = 0;
 		}
-		else {
-			beeBallet->m_moveSpeed.y -= 2.0;
-		}
-		m_timer = 0;
 	}
 }
+	
 
 void Bee2::Deth()
 {
@@ -135,6 +145,7 @@ void Bee2::Update()
 	CVector3 PlayertonoKyori = m_player->m_position - m_position;
 	if (PlayertonoKyori.Length() < 1500)
 	{
+		//プレイヤーとの距離が近くなったら動き出す。
 		Move();
 		Turn();
 		BeeAtack();

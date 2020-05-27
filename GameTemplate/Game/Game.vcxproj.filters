@@ -65,6 +65,10 @@
     <ClCompile Include="KabutoBallet.cpp" />
     <ClCompile Include="TomboAttack2.cpp" />
     <ClCompile Include="TomboJr.cpp" />
+    <ClCompile Include="Kabuto2.cpp" />
+    <ClCompile Include="SpornBiru.cpp" />
+    <ClCompile Include="Koukasasu.cpp" />
+    <ClCompile Include="Setumei.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -106,6 +110,10 @@
     <ClInclude Include="KabutoBallet.h" />
     <ClInclude Include="TomboAttack2.h" />
     <ClInclude Include="TomboJr.h" />
+    <ClInclude Include="Kabuto2.h" />
+    <ClInclude Include="SpornBiru.h" />
+    <ClInclude Include="Koukasasu.h" />
+    <ClInclude Include="Setumei.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -206,6 +214,24 @@
     <MeshContentTask Include="Assets\modelData\TomboJr.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Kabuto2.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\SpornBiru.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Koukasasu.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Stage2Ball.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Player.fbx">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\Player2.fbx">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png">
@@ -235,6 +261,58 @@
     <ImageContentTask Include="Assets\sprite\Load2.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Tittle2.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Tittle3.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Gurabisu.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Tittle.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\HpMp.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Clear.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Stage1obi.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\ClearObi.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Clear2.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\ClearObi2.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\Stage2obi.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\GameObi.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\OverObi.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\GameOver2.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\HpMpbar.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\MpBar.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\modelData\PBR_Free_MS.png" />
+    <ImageContentTask Include="Assets\modelData\PBR_Free_NM.png" />
+    <ImageContentTask Include="Assets\sprite\Setumei.png" />
+    <ImageContentTask Include="Assets\sprite\SetumeiHaikei.png" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\animData\unityChan\idle.tka">
@@ -363,6 +441,54 @@
     <CustomBuild Include="Assets\effect\TomboJrDeth.efk">
       <Filter>Assets\effect</Filter>
     </CustomBuild>
+    <CustomBuild Include="Assets\sound\Stage2BGM.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\TomboDamage.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\TomboDamage2.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\PlayerHit.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\CircleJump .wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboDamege.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\PlayerShot.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\TomboNakigoe.wav">
+      <Filter>Assets\sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboSporn.efk">
+      <Filter>Assets\effect</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Idle_GunMiddle.anim">
+      <Filter>Assets\animData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Player_Idle.tka">
+      <Filter>Assets\animData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Player_Shot.tka">
+      <Filter>Assets\animData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Player_Jump.tka">
+      <Filter>Assets\animData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Player_Run.tka">
+      <Filter>Assets\animData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Player_Idle2.tka">
+      <Filter>Assets\animData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\PlayerKidou.wav" />
+    <CustomBuild Include="Assets\effect\Player_Burn.efk" />
+    <CustomBuild Include="Assets\sound\PlayerWalk.wav" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\sprite\sky.jpg">
@@ -375,6 +501,39 @@
     </None>
     <None Include="Assets\effect\Tama.efk">
       <Filter>Assets\effect</Filter>
+    </None>
+    <None Include="Assets\sound\CircleJump2 .wav">
+      <Filter>Assets\sound</Filter>
+    </None>
+    <None Include="Assets\animData\Player\Shoot_Auto.anim">
+      <Filter>Assets\animData</Filter>
+    </None>
+    <None Include="Assets\animData\Player\Shoot_single.anim">
+      <Filter>Assets\animData</Filter>
+    </None>
+    <None Include="Assets\animData\Player\WalkBack_Shoot.anim">
+      <Filter>Assets\animData</Filter>
+    </None>
+    <None Include="Assets\animData\Player\WalkForward_Shoot.anim">
+      <Filter>Assets\animData</Filter>
+    </None>
+    <None Include="Assets\animData\Player\WalkLeft_Shoot.anim">
+      <Filter>Assets\animData</Filter>
+    </None>
+    <None Include="Assets\animData\Player\WalkRight_Shoot.anim">
+      <Filter>Assets\animData</Filter>
+    </None>
+    <None Include="Assets\animData\Player\Die.anim">
+      <Filter>Assets\animData</Filter>
+    </None>
+    <None Include="Assets\animData\Player\Idle_Shoot.anim">
+      <Filter>Assets\animData</Filter>
+    </None>
+    <None Include="Assets\animData\Player\Run_Guard.anim">
+      <Filter>Assets\animData</Filter>
+    </None>
+    <None Include="Assets\animData\Player\Player_Run2.tka">
+      <Filter>Assets\animData</Filter>
     </None>
   </ItemGroup>
 </Project>

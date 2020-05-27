@@ -18,13 +18,13 @@ CircleCharge::~CircleCharge()
 bool CircleCharge::Start()
 {
 	CircleWaku = NewGO<prefab::CSpriteRender>(0);
-	CircleWaku->Init(L"sprite/hpmp_bar.dds",300, 60);
-	const CVector3 m_position = { 380.0, -250.0, 0.0 };
+	CircleWaku->Init(L"sprite/MpBar.dds",424, 150);
+	const CVector3 m_position = { 378.0, -240.0, 0.0 };
 	CircleWaku->SetPosition(m_position);
 
 	CircleGage = NewGO<prefab::CSpriteRender>(0);
-	CircleGage->Init(L"sprite/circlegage.dds", w, 34);
-	GagePos = { 236.0, -250.0, 0.0 };
+	CircleGage->Init(L"sprite/circlegage.dds", w, 48);
+	GagePos = { 230.0, -250.0, 0.0 };
 	CircleGage->SetPosition(GagePos);
 	CircleGage->SetPivot({ 0.0, 0.5 });
 	return true;
@@ -36,23 +36,19 @@ void CircleCharge::GageGensyou()
 	Player* player = FindGO<Player>("Player");
 	if (player->CircleSummon() == true)
 	{
-		w = w - 40;
-		CircleGage->Init(L"sprite/circlegage.dds", w, 34);
+		w = w - 52;
+		CircleGage->Init(L"sprite/circlegage.dds", w, 48);
 	}
 
 }
 
 void CircleCharge::GageCharge()
 {
-	//カプセルを取るとゲージが復活
-	/*Capsule* capsule = nullptr;
-	if (capsule == nullptr) {
-		capsule = FindGO<Capsule>("Capsule");
-	}*/
-	if (w <= 286 && capsuleget == 1)
+	//ゲージを回復
+	if (w <= 290 && capsuleget == 1)
 	{
-		w = 286;
-		CircleGage->Init(L"sprite/circlegage.dds", w, 34);
+		w = 290;
+		CircleGage->Init(L"sprite/circlegage.dds", w, 48);
 		capsuleget = 0;
 	}
 }

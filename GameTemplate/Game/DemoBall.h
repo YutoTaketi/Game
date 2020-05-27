@@ -8,9 +8,9 @@ public:
 	bool Start();
 	
 private:
-	prefab::CSkinModelRender* m_skinModelRender = nullptr;
+	prefab::CSkinModelRender* m_skinModelRender = nullptr;  //スキンモデル
 	CPhysicsStaticObject m_phyStaticObject; //静的物理オブジェクト
-	CVector3 m_position = CVector3::Zero;
+	CVector3 m_position = CVector3::Zero;   //座標
 
 };
 

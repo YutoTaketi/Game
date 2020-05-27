@@ -18,15 +18,10 @@ Bee::~Bee()
 
 bool Bee::Start()
 {
+	
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Bee.cmo");
 	m_rotation.SetRotationDeg(CVector3::AxisY, 90.0);
-	//BeeAtack();
-	/*m_charaCon.Init(
-		50.0,
-		50.0f,
-		m_position
-	);*/
 	
 	return true;
 }
@@ -47,12 +42,9 @@ void Bee::Move()
 			playerBEE *= 1.9f;
 			m_position += playerBEE;
 		}
-		/*CVector3 playerBEE = m_player->m_position - m_position;
-		playerBEE.Normalize();
-		playerBEE *= 2.0f;
-		m_position += playerBEE;*/
-	
 		
+	
+		//上昇処理
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
 		if (m_position.y <= 600) {
@@ -60,12 +52,13 @@ void Bee::Move()
 			m_position.y = 600;
 		}
 	}
-	//m_position = m_charaCon.Execute(m_moveSpeed, GameTime().GetFrameDeltaTime());
+	
 		
 }
 void Bee::Turn()
 {
-	/*Player**/ m_player = FindGO<Player>("Player");
+	//プレイヤーに向けて回転させる。
+	 m_player = FindGO<Player>("Player");
 	CVector3 playerBEE = m_player->m_position - m_position;
 	float angle = atan2(playerBEE.x, playerBEE.z);
 	m_rotation.SetRotation(CVector3::AxisY, angle);
@@ -80,27 +73,28 @@ void Bee::BeeAtack()
 		m_player = FindGO<Player>("Player");
 	}
 	else {
-		if (m_timer == 65) {
-			/*prefab::CSoundSource* ATss;
-			ATss = NewGO<prefab::CSoundSource>(0);
-			ATss->Init(L"sound/beeShot.wav");
-			ATss->Play(false);*/
-
-			BeeBallet* beeBallet = NewGO<BeeBallet>(0, "BeeBallet");
-			beeBallet->m_position = m_position;
-			CVector3 Beemae = { 0, 0, 1 };
-			m_rotation.Apply(Beemae);
-			beeBallet->m_moveSpeed = Beemae * 30.0;
-			if (m_player->m_position.y > m_position.y)
-			{
-				beeBallet->m_moveSpeed.y += 3.0;
+		if (m_skinModelRender != nullptr)
+		{
+			if (m_timer == 65) {
+				
+				//弾を出す
+				BeeBallet* beeBallet = NewGO<BeeBallet>(0, "BeeBallet");
+				beeBallet->m_position = m_position;
+				CVector3 Beemae = { 0, 0, 1 };
+				m_rotation.Apply(Beemae);
+				beeBallet->m_moveSpeed = Beemae * 30.0;
+				if (m_player->m_position.y > m_position.y)
+				{
+					beeBallet->m_moveSpeed.y += 3.0;
+				}
+				else {
+					beeBallet->m_moveSpeed.y -= 2.0;
+				}
+				m_timer = 0;
 			}
-			else {
-				beeBallet->m_moveSpeed.y -= 2.0;
-			}
-			m_timer = 0;
 		}
-		//if (m_position > m_player->m_position)
+		
+		
 	}
  	
 }

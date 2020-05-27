@@ -35,6 +35,8 @@ Game::~Game()
 	DeleteGOs("Capsule");
 	DeleteGOs("DemoCircle");
 	DeleteGOs("SpornSinden");
+	DeleteGOs("HpBer");
+	DeleteGOs("CircleCharge");
 	DeleteGO(m_bgmSoundSource);
 	DeleteGO(m_directionLig);
 	//DeleteGO(m_level);
@@ -58,8 +60,7 @@ bool Game::Start()
 	//プレイヤーのHPバーを表示
 	m_HpBer = NewGO<PlayerHpBer>(0, "HpBer");
 	
-	//ボスのインスタンス//お試し
-	//m_boss = NewGO<Boss>(0, "Boss");
+	/
 
 	gameSS = NewGO<prefab::CSoundSource>(0);
 	gameSS->Init(L"sound/GameSoundDemo.wav");
@@ -70,15 +71,15 @@ bool Game::Start()
 	//レベルを構築
 	m_level.Init(L"level/Stage1.tkl", [&](LevelObjectData& objData) {
 		
-		
 		if (objData.EqualObjectName(L"Bee") == true) {
-           //蜂のオブジェクト
-			Bee* bee = NewGO<Bee>(0,"Bee");
+			//蜂のオブジェクト
+			Bee* bee = NewGO<Bee>(0, "Bee");
 			bee->m_position = objData.position;
 			bee->m_rotation = objData.rotation;
 			bee->m_scale = objData.scale;
 			return true;
 		}
+		
 
 		else if (objData.EqualObjectName(L"Bee2") == true) {
 			//蜂のオブジェクト
@@ -124,8 +125,8 @@ void Game::Update()
 	  //ボスバトルBGMに切り替わる
 	}
 
-	//m_bee = FindGO<Bee>("Bee");
 	
+	//クリア画面に移る
 	if ( clearHantei == 1)
 	{ 
 		gameEndTimer++;
@@ -133,14 +134,19 @@ void Game::Update()
 			NewGO<GameClear>(0, "GameClear");
 			DeleteGO(this);
 			DeleteGO(gameSS);
+			BossFlag = 0;
+			dethCount = 0;
 		}
 		
 	}
-	/*PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
+	//ゲームオーバー画面に移る
+	PlayerHpBer* HpBer = FindGO<PlayerHpBer>("HpBer");
 	if (HpBer->w <= 0 && clearHantei == 0)
 	{
 		NewGO<GameOver>(0, "GameOver");
 		DeleteGO(this);
 		DeleteGO(gameSS);
-	}*/
+		BossFlag = 0;
+		dethCount = 0;
+	}
 }

@@ -27,6 +27,7 @@ void BossBall::Update()
 	effect->SetPosition(m_position);
 	effect->SetScale(m_scale);
 	m_timer++;
+	//è¡ñ≈
 	if (m_timer == 120) {
 		DeleteGO(this);
 	}

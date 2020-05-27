@@ -26,15 +26,25 @@ bool DemoCircle::Start()
 void DemoCircle::Update()
 {
 	m_timer++;
-	m_player = FindGO<Player>("Player");
-	//m_positon = m_player->m_position;
+	if (m_player == nullptr) {
+		m_player = FindGO<Player>("Player");
+	}
+	
+	
 	m_skinModelRender->SetPosition(m_position);
 	CVector3 Floatplayer = m_position - m_player->m_position;
+	//è„è∏Ç∑ÇÈ
+	//è„è∏âπÇñ¬ÇÁÇ∑
 	if (Floatplayer.Length() < 50.0f)
 	{
 		m_player->m_moveSpeed.y = 1000.0f;
+		prefab::CSoundSource* CircleJumpSS;
+		CircleJumpSS = NewGO<prefab::CSoundSource>(0);
+		CircleJumpSS->Init(L"sound/CircleJump4.wav");
+		CircleJumpSS->SetVolume(2.0);
+		CircleJumpSS->Play(false);
 	}
-
+	//ÉTÅ[ÉNÉãè¡ñ≈
 	if (m_timer == 180) {
 		DeleteGO(this);
 		m_timer = 0;

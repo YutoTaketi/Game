@@ -44,7 +44,7 @@ void Bee3::Move()
 		}
 		
 
-
+		//上昇処理
 		m_skinModelRender->SetPosition(m_position);
 		CVector3 oldPos = m_position;
 		if (m_position.y <= 400) {
@@ -56,6 +56,7 @@ void Bee3::Move()
 
 void Bee3::Turn()
 {
+	//プレイヤーに向けて回転させる
 	if (m_player == nullptr) {
 		m_player = FindGO<Player>("Player");
 	}
@@ -68,7 +69,7 @@ void Bee3::Turn()
 void Bee3::Attack()
 {
 	m_timer++;
-
+	//弾を出す
 	if (m_timer == 80) {
 		m_player = FindGO<Player>("Player");
 		Bee3Ballet* bee3Ballet = NewGO<Bee3Ballet>(0, "Bee3Ballet");

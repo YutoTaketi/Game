@@ -8,17 +8,17 @@ public:
 	CircleCharge();
 	~CircleCharge();
 	bool Start();
-	void GageGensyou();
+	void GageGensyou(); //ゲージ減少関数
 
-	void GageCharge();
+	void GageCharge(); //ゲージチャージ関数
 
 	void Update();
-	prefab::CSpriteRender* CircleWaku;
+	prefab::CSpriteRender* CircleWaku;  //ゲージ枠
 	
-	prefab::CSpriteRender* CircleGage;
-	CVector3 GagePos;
-	float w = 286;
-	int capsuleget = 0;
+	prefab::CSpriteRender* CircleGage;  //ゲージ
+	CVector3 GagePos = CVector3::Zero;  //ゲージ座標
+	float w = 290;                      //ゲージ最大値
+	int capsuleget = 0;                 //カプセルを取ったかの判定
 
 
 

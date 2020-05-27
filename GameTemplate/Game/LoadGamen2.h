@@ -6,11 +6,11 @@ public:
 	LoadGamen2();
 	~LoadGamen2();
 	bool Start();
-	void Update();
+	void Update();  //更新関数
 
-	int LoadTimer = 0;
-	prefab::CSpriteRender* m_spriteRender = nullptr;
+	int LoadTimer = 0;    //遷移するまでのタイマー
+	prefab::CSpriteRender* m_spriteRender = nullptr; //スプライト
 
-	StageNumber* stagenumber = nullptr;
+	StageNumber* stagenumber = nullptr; //ステージナンバー
 };
 

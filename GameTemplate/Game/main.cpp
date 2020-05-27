@@ -69,7 +69,7 @@ namespace {
 		initParam.graphicsConfing.tonemapConfig.luminance = 0.36f;
 
 		//SSR
-		initParam.graphicsConfing.ssrConfig.isEnable = true;
+		initParam.graphicsConfing.ssrConfig.isEnable = false;
 		//ディザ
 		initParam.graphicsConfing.ditheringConfig.isEnable = false;
 		//dof
@@ -103,7 +103,7 @@ namespace {
 		initParam.graphicsConfing.tonemapConfig.isEnable = true;
 		initParam.graphicsConfing.tonemapConfig.luminance = 0.36f;
 		//SSR
-		initParam.graphicsConfing.ssrConfig.isEnable = true;
+		initParam.graphicsConfing.ssrConfig.isEnable = false;
 		//ディザ
 		initParam.graphicsConfing.ditheringConfig.isEnable = true;
 		//dof

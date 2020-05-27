@@ -19,8 +19,7 @@ bool BeeBallet::Start()
 	//エフェクトを再生
 	effect->Play(L"effect/Tama.efk");
 	m_scale = { 3.5, 3.5, 3.5 };
-	//m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
-	//m_skinModelRender->Init(L"modelData/BeeBallet.cmo");
+	
 	
 	return true;
 }

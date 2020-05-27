@@ -29,6 +29,7 @@ void BossSlash::Update()
 	effect->SetScale(m_scale);
 	effect->SetRotation(m_rotation);
 	m_timer++;
+	//è¡ñ≈
 	if (m_timer == 120) {
 		DeleteGO(this);
 	}

@@ -23,7 +23,7 @@ bool SpornSinden::Start()
 
 void SpornSinden::BeeSporn()
 {
-	//もしボスが出現したらBee3が出てくる
+	//もしボスが出現したらハチ3が出てくる
 	if (game == nullptr) {
 		game = FindGO<Game>("Game");
 	}
@@ -32,13 +32,13 @@ void SpornSinden::BeeSporn()
 		{
 			SpornTimer++;
 			
-				if (SpornTimer == 80 +i && spornCount <= 2) {
+				if (SpornTimer == 80 +i && spornCount <= 3) {
 					bee3 = NewGO<Bee3>(0, "Bee3");
 					bee3->m_position = m_position;
-					bee3->m_position.y += 900.0;
+					bee3->m_position.y += 500.0f;
 					spornCount += 1;
 					SpornTimer = 0;
-					i += 200;
+					i = 100;
 				}
 				
 			
@@ -48,6 +48,7 @@ void SpornSinden::BeeSporn()
 
 void SpornSinden::BeeReSporn()
 {
+	//ハチ３が４体死んだら次のハチ３を出す
 	if (game == nullptr)
 	{
 		game = FindGO<Game>("Game");
@@ -56,13 +57,13 @@ void SpornSinden::BeeReSporn()
 	{
 		SpornTimer++;
 
-		if (SpornTimer == 80 + i && spornCount <= 1) {
+		if (SpornTimer == 80 + i && spornCount <= 2) {
 			bee3 = NewGO<Bee3>(0, "Bee3");
 			bee3->m_position = m_position;
-			bee3->m_position.y += 900.0;
+			bee3->m_position.y += 500.0;
 			spornCount += 1;
 			SpornTimer = 0;
-			i += 200;
+			i = 200;
 			bee3->Bee3dethCount = 0;
 		}
 
@@ -76,5 +77,5 @@ void SpornSinden::Update()
 	m_skinModelRender->SetPosition(m_position);
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);
-	//m_phyStaticObject->CreateCommon( m_position, m_rotation);
+	
 }

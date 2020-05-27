@@ -22,33 +22,69 @@ Player::~Player()
 bool Player::Start()
 {
 	//アニメーションクリップのロード
-	m_animationClip[enAnimationClip_idle].Load(L"animData/unityChan/idle.tka");
-	m_animationClip[enAnimationClip_run].Load(L"animData/unityChan/run.tka");
-	m_animationClip[enAnimationClip_jump].Load(L"animData/unityChan/jump.tka");
+	m_animationClip[enAnimationClip_Player_Idle].Load(L"animData/Player/Player_Idle2.tka");
+	m_animationClip[enAnimationClip_Player_Shot].Load(L"animData/Player/Player_Shot.tka");
+	m_animationClip[enAnimationClip_Player_Jump].Load(L"animData/Player/Player_Jump.tka");
+	m_animationClip[enAnimationClip_Player_Run].Load(L"animData/Player/Player_Run.tka");
+	/*m_animationClip[enAnimationClip_run].Load(L"animData/unityChan/run.tka");
+	m_animationClip[enAnimationClip_jump].Load(L"animData/unityChan/jump.tka");*/
 	//ループフラグの設定
-	m_animationClip[enAnimationClip_idle].SetLoopFlag(true);
-	m_animationClip[enAnimationClip_run].SetLoopFlag(true);
-	m_animationClip[enAnimationClip_jump].SetLoopFlag(false);
+	m_animationClip[enAnimationClip_Player_Idle].SetLoopFlag(false);
+	m_animationClip[enAnimationClip_Player_Shot].SetLoopFlag(true);
+	m_animationClip[enAnimationClip_Player_Jump].SetLoopFlag(false);
+	m_animationClip[enAnimationClip_Player_Run].SetLoopFlag(true);
+	//m_animationClip[enAnimationClip_run].SetLoopFlag(true);
+	//m_animationClip[enAnimationClip_jump].SetLoopFlag(false);
 
 	m_charaCon.Init(
 		20.0,
 		50.0f,
 		m_position
 	);
-
+	m_normalMap.CreateFromDDSTextureFromFile(L"modelData/PBR_Free_NM.dds");
+	m_specularMap.CreateFromDDSTextureFromFile(L"modelData/PBR_Free_MS.dds");
 	//スキンモデルレンダラーを作成
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
-	m_skinModelRender->Init(L"modelData/unityChan.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisY );
+	//m_skinModelRender->Init(L"modelData/unityChan.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisY );
+	m_skinModelRender->Init(L"modelData/Player.cmo" , m_animationClip, enAnimationClip_num, enFbxUpAxisZ);
 	m_skinModelRender->SetShadowCasterFlag(true);
 	m_skinModelRender->SetShadowReceiverFlag(true);
+	m_skinModelRender->FindMaterial([&](CModelEffect* mat) {
+		mat->SetNormalMap(m_normalMap);
+		mat->SetSpecularMap(m_specularMap);
+		});
+
+	//起動サウンドを再生
+	prefab::CSoundSource* KidouSS;
+	KidouSS = NewGO<prefab::CSoundSource>(0);
+	KidouSS->Init(L"sound/PlayerKidou.wav");
+	KidouSS->SetVolume(0.5);
+	KidouSS->Play(false);
 	return true;
 }
+
+
 
 void Player::Move()
 {
 	//左スティック入力量をうけとる
 	float lStick_x = Pad(0).GetLStickXF();
 	float lStick_y = Pad(0).GetLStickYF();
+	/*if (Pad(0).GetLStickXF() || Pad(0).GetLStickYF())
+	{
+		if (m_position.y <= 20) {
+			WalkTimer++;
+			if (WalkTimer == 9) {
+				prefab::CSoundSource* WalkSS;
+				WalkSS = NewGO<prefab::CSoundSource>(0);
+				WalkSS->Init(L"sound/PlayerWalk.wav");
+				WalkSS->SetVolume(0.5);
+				WalkSS->Play(false);
+				WalkTimer = 0;
+			}
+		}
+		
+	}*/
 	//カメラの前方方向と右方向を取得
 	CVector3 cameraForward = MainCamera().GetForward();
 	CVector3 cameraRight = MainCamera().GetRight();
@@ -70,6 +106,21 @@ void Player::Move()
 	{
 		m_moveSpeed.y = 500.0f;
 	}
+	else if(Pad(0).GetLStickXF() || Pad(0).GetLStickYF())
+	{
+		if (m_position.y <= 20) {
+			WalkTimer++;
+			if (WalkTimer == 9) {
+				prefab::CSoundSource* WalkSS;
+				WalkSS = NewGO<prefab::CSoundSource>(0);
+				WalkSS->Init(L"sound/PlayerWalk.wav");
+				WalkSS->SetVolume(0.5);
+				WalkSS->Play(false);
+				WalkTimer = 0;
+			}
+		}
+
+	}
 	//キャラクターコントローラー
 	m_position = m_charaCon.Execute(m_moveSpeed, GameTime().GetFrameDeltaTime());
 }
@@ -89,22 +140,21 @@ void Player::AnimationController()
 {
 	if (m_charaCon.IsJump() == false) {
 		if (Pad(0).GetLStickXF() || Pad(0).GetLStickYF()) {
-			m_skinModelRender->PlayAnimation(enAnimationClip_run, 0.0f);
+			m_skinModelRender->PlayAnimation(enAnimationClip_Player_Run, 0.0f);
 		}
 		else {
-			m_skinModelRender->PlayAnimation(enAnimationClip_idle, 0.0f);
+			m_skinModelRender->PlayAnimation(enAnimationClip_Player_Shot, 0.0f);
 
 		}
 	}
 	if (Pad(0).IsTrigger(enButtonA)) {
-		m_skinModelRender->PlayAnimation(enAnimationClip_jump, 0.0f);
+		m_skinModelRender->PlayAnimation(enAnimationClip_Player_Jump, 0.0f);
 	}
 }
 
 //もしR2トリガーが押されたら、サークルを出す。
 bool Player::CircleSummon()
 {
-	
 	CircleCharge* ciclecharge = FindGO<CircleCharge>("CircleCharge");
 		//もし6つ設置したら、設置できない
 	//もしR2トリガーが押されたら、サークルを出す。
@@ -120,8 +170,6 @@ bool Player::CircleSummon()
 	{
 		return false;
 	}
-	
-	
 }
 
 void Player::Attack()
@@ -130,11 +178,11 @@ void Player::Attack()
 
 	if (Pad(0).IsTrigger(enButtonRB2)) {
 		attacktimer++;
-		if (attacktimer == 2) {
+		if (attacktimer == 7) {
 			m_tama = NewGO<Tama>(0, "Tama");
 			m_tama->m_position = m_position;
 
-			m_tama->m_position.y += 70.0;
+			m_tama->m_position.y += 150.0;
 			attacktimer = 0;
 		}
 		/*m_tama = NewGO<Tama>(0, "Tama");
@@ -159,6 +207,7 @@ void Player::Deth()
 
 void Player::Update()
 {
+	
 	Move();
 	Turn();
 	AnimationController();
@@ -167,4 +216,5 @@ void Player::Update()
 	//Deth();
 	m_skinModelRender->SetPosition(m_position);
 	m_skinModelRender->SetRotation(m_rotation);
+	
 }

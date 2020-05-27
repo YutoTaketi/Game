@@ -33,7 +33,7 @@ bool Boss::Start()
 	m_animationClip[enAnimationClip_Atack].Load(L"animData/Boss/Atack.tka");
 	m_animationClip[enAnimationClip_Boost].Load(L"animData/Boss/Boost.tka");
 	//アニメーションフラグ設定
-	m_animationClip[enAnimationClip_Idle].SetLoopFlag(true);
+	m_animationClip[enAnimationClip_Idle].SetLoopFlag(false);
 	m_animationClip[enAnimationClip_Atack].SetLoopFlag(false);
 	m_animationClip[enAnimationClip_Boost].SetLoopFlag(false);
 
@@ -44,7 +44,7 @@ bool Boss::Start()
 	effect->Play(L"effect/BossSporn.efk");
 	CVector3 SpornEfPos = m_position;
 	CVector3 SpornEfscale = { 7.0, 7.0, 7.0 };
-	SpornEfPos.y += 1500.0f;
+	SpornEfPos.y += 1400.0f;
 	effect->SetPosition(SpornEfPos);
 	effect->SetScale(SpornEfscale);
 
@@ -57,7 +57,7 @@ bool Boss::Start()
 
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/Boss.cmo", m_animationClip, enAnimationClip_num, enFbxUpAxisZ);
-	m_position.y = 1500.0;
+	m_position.y = 1400.0;
 	m_scale = { 3.5, 3.5, 3.5 };
 
 	BurnEf = NewGO<BossAfterBurn>(0, "AfterBurn");
@@ -80,12 +80,8 @@ void Boss::Move()
 			m_position += playerBoss;
 
 		}
-		/*CVector3 playerBoss = m_player->m_position - m_position;
-		playerBoss.Normalize();
-		playerBoss *= 1.5f;
-		m_position += playerBoss;*/
 
-		//m_skinModelRender->SetPosition(m_position);
+		
 		CVector3 oldPos = m_position;
 		if (m_position.y <= 400) {
 			m_position = oldPos;
@@ -115,13 +111,13 @@ void Boss::Attack()
 {
 	AttackTime++;
 	//攻撃のリキャストタイム
-	//m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
+
 	
 
   if (life > 250) {
 	  m_player = FindGO<Player>("Player");
 	if (AttackTime == 60) {
-		m_skinModelRender->PlayAnimation(enAnimationClip_Atack, 0.0f);
+		
 		BossSlash* slash = NewGO<BossSlash>(0, "BossSlash");
 		slash->m_position = m_position;
 		slash->m_position.y += 100.0;
@@ -215,7 +211,18 @@ void Boss::Hidan()
 			{
 				//ライフ減少
 				life -= 17;
-
+				prefab::CEffect* damegeEF = NewGO<prefab::CEffect>(0, "tomboDamegeEF");
+				//エフェクトを再生
+				damegeEF->Play(L"effect/TomboDamege.efk");
+				CVector3 emitPos = m_position;
+				CVector3 emitScale = { 9.5f, 9.5f, 9.5f };
+				damegeEF->SetPosition(emitPos);
+				damegeEF->SetScale(emitScale);
+				prefab::CSoundSource* TomboDamageSS;
+				TomboDamageSS = NewGO<prefab::CSoundSource>(0);
+				TomboDamageSS->Init(L"sound/TomboDamage2.wav");
+				TomboDamageSS->SetVolume(2.0);
+				TomboDamageSS->Play(false);
 				return false;
 			}
 
@@ -269,12 +276,7 @@ void Boss::Update()
 	}
 	Hidan();
 	Deth();
-	//Move();
-	//Turn();
-	//Attack();
-	//Boost();
-	//Hidan();
-	//Deth();
+	
 	m_skinModelRender->SetPosition(m_position);//ボス
 	m_skinModelRender->SetRotation(m_rotation);
 	m_skinModelRender->SetScale(m_scale);

@@ -10,9 +10,9 @@
           </MaxGeneration>
           <RemoveWhenLifeIsExtinct>False</RemoveWhenLifeIsExtinct>
           <Life>
-            <Center>20</Center>
-            <Max>20</Max>
-            <Min>20</Min>
+            <Center>17</Center>
+            <Max>17</Max>
+            <Min>17</Min>
           </Life>
           <GenerationTimeOffset>
             <Center>10</Center>
@@ -162,6 +162,7 @@
             </Position_Fixed_LR>
           </Sprite>
         </DrawingValues>
+        <IsRendered>False</IsRendered>
         <Name>レーザー</Name>
         <Children />
       </Node>

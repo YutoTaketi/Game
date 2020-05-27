@@ -36,7 +36,7 @@ void GameCameraPl::Update()
 	//カメラ更新
 	//注視点計算
 	CVector3 target = m_player->m_position;
-	target.y += 80.0f;
+	target.y += 110.0f;
 	
 
 	CVector3 toCameraPosOld = m_toCameraPos;

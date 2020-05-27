@@ -1419,10 +1419,12 @@
       <ContentOutput>%(RelativeDir)/%(Filename).dds</ContentOutput>
     </ImageContentTask>
     <CustomBuild>
-      <Command>call $(ProjectDir)..\tkTools\tkContentTools.bat %(Identity) $(OutDir)</Command>
+      <Command>
+      </Command>
     </CustomBuild>
     <CustomBuild>
-      <Message>tkContentTools</Message>
+      <Message>
+      </Message>
     </CustomBuild>
     <CustomBuild>
       <Outputs>$(OutDir)\%(Identity)</Outputs>
@@ -1786,12 +1788,16 @@
     <ClCompile Include="GameClear.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Kabuto.cpp" />
+    <ClCompile Include="Kabuto2.cpp" />
     <ClCompile Include="KabutoBallet.cpp" />
+    <ClCompile Include="Koukasasu.cpp" />
     <ClCompile Include="LoadGamen.cpp" />
     <ClCompile Include="LoadGamen2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerHpBer.cpp" />
+    <ClCompile Include="Setumei.cpp" />
+    <ClCompile Include="SpornBiru.cpp" />
     <ClCompile Include="SpornSinden.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageNumber.cpp" />
@@ -1844,12 +1850,16 @@
     <ClInclude Include="GameClear.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Kabuto.h" />
+    <ClInclude Include="Kabuto2.h" />
     <ClInclude Include="KabutoBallet.h" />
+    <ClInclude Include="Koukasasu.h" />
     <ClInclude Include="LoadGamen.h" />
     <ClInclude Include="LoadGamen2.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerHpBer.h" />
     <CLInclude Include="resource.h" />
+    <ClInclude Include="Setumei.h" />
+    <ClInclude Include="SpornBiru.h" />
     <ClInclude Include="SpornSinden.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageNumber.h" />
@@ -1878,10 +1888,16 @@
     <MeshContentTask Include="Assets\modelData\Iseki2.FBX" />
     <MeshContentTask Include="Assets\modelData\Iseki3.FBX" />
     <MeshContentTask Include="Assets\modelData\Kabuto.FBX" />
+    <MeshContentTask Include="Assets\modelData\Kabuto2.FBX" />
+    <MeshContentTask Include="Assets\modelData\Koukasasu.FBX" />
+    <MeshContentTask Include="Assets\modelData\Player.fbx" />
+    <MeshContentTask Include="Assets\modelData\Player2.fbx" />
     <MeshContentTask Include="Assets\modelData\Sinden.FBX" />
     <MeshContentTask Include="Assets\modelData\Sinden2.FBX" />
     <MeshContentTask Include="Assets\modelData\Sinden3.FBX" />
+    <MeshContentTask Include="Assets\modelData\SpornBiru.FBX" />
     <MeshContentTask Include="Assets\modelData\SpornSinden.FBX" />
+    <MeshContentTask Include="Assets\modelData\Stage2Ball.FBX" />
     <MeshContentTask Include="Assets\modelData\Stage2Biru.FBX" />
     <MeshContentTask Include="Assets\modelData\Stage2Biru2.FBX" />
     <MeshContentTask Include="Assets\modelData\Stage2Biru3.FBX" />
@@ -1911,6 +1927,11 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ImageContentTask Include="Assets\sprite\Stage2obi.png" />
+    <ImageContentTask Include="Assets\sprite\Stage1obi.png" />
+    <ImageContentTask Include="Assets\sprite\Tittle.png" />
+    <ImageContentTask Include="Assets\sprite\Tittle3.png" />
+    <ImageContentTask Include="Assets\sprite\Tittle2.png" />
     <ImageContentTask Include="Assets\sprite\Start.png" />
     <ImageContentTask Include="Assets\sprite\hpmp_bar.png" />
     <ImageContentTask Include="Assets\sprite\circlegage.png" />
@@ -1919,6 +1940,21 @@
     <ImageContentTask Include="Assets\sprite\Game Clear.png" />
     <ImageContentTask Include="Assets\sprite\Load1.png" />
     <ImageContentTask Include="Assets\sprite\Load2.png" />
+    <ImageContentTask Include="Assets\sprite\Gurabisu.png" />
+    <ImageContentTask Include="Assets\sprite\HpMp.png" />
+    <ImageContentTask Include="Assets\sprite\Clear.png" />
+    <ImageContentTask Include="Assets\sprite\ClearObi.png" />
+    <ImageContentTask Include="Assets\sprite\Clear2.png" />
+    <ImageContentTask Include="Assets\sprite\ClearObi2.png" />
+    <ImageContentTask Include="Assets\sprite\GameObi.png" />
+    <ImageContentTask Include="Assets\sprite\OverObi.png" />
+    <ImageContentTask Include="Assets\sprite\GameOver2.png" />
+    <ImageContentTask Include="Assets\sprite\HpMpbar.png" />
+    <ImageContentTask Include="Assets\sprite\MpBar.png" />
+    <ImageContentTask Include="Assets\modelData\PBR_Free_MS.png" />
+    <ImageContentTask Include="Assets\modelData\PBR_Free_NM.png" />
+    <ImageContentTask Include="Assets\sprite\Setumei.png" />
+    <ImageContentTask Include="Assets\sprite\SetumeiHaikei.png" />
     <Image Include="Assets\sprite\sky.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -1967,6 +2003,37 @@
     <CustomBuild Include="Assets\effect\KabutoDeth.efk">
       <FileType>Document</FileType>
     </CustomBuild>
+    <None Include="Assets\animData\Player\Die.anim" />
+    <CustomBuild Include="Assets\animData\Player\Idle_GunMiddle.anim">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <None Include="Assets\animData\Player\Idle_Shoot.anim" />
+    <CustomBuild Include="Assets\animData\Player\Player_Idle.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Player_Idle2.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Player_Shot.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Player_Jump.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animData\Player\Player_Run.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <None Include="Assets\animData\Player\Player_Run2.tka" />
+    <None Include="Assets\animData\Player\Run_Guard.anim" />
+    <None Include="Assets\animData\Player\Shoot_Auto.anim" />
+    <None Include="Assets\animData\Player\Shoot_single.anim" />
+    <None Include="Assets\animData\Player\WalkBack_Shoot.anim" />
+    <None Include="Assets\animData\Player\WalkForward_Shoot.anim" />
+    <None Include="Assets\animData\Player\WalkLeft_Shoot.anim" />
+    <None Include="Assets\animData\Player\WalkRight_Shoot.anim" />
+    <CustomBuild Include="Assets\effect\Player_Burn.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
     <None Include="Assets\effect\Tama.efk" />
     <CustomBuild Include="Assets\effect\TomboBeam0.efk">
       <FileType>Document</FileType>
@@ -1981,6 +2048,12 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="Assets\effect\TomboJrDeth.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboDamege.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\effect\TomboSporn.efk">
       <FileType>Document</FileType>
     </CustomBuild>
     <None Include="Assets\level\DemoStage.tkl" />
@@ -2067,6 +2140,54 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="Assets\sound\TomboJrBakuhatu.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\Stage2BGM.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\sound\TomboDamage.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\TomboDamage2.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\PlayerHit.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\CircleJump .wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\sound\CircleJump2 .wav">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\PlayerShot.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\TomboNakigoe.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\PlayerKidou.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\PlayerWalk.wav">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>

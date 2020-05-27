@@ -24,27 +24,26 @@ public:
 	Game();
 	~Game();
 	bool Start();
-	void Update();
-	int dethCount = 0;
+	void Update();        //更新関数
+	int dethCount = 0;    //ハチが死んだ数
 	int BossFlag = 0;    //ボススポーンフラグ
-	int clearHantei = 0;
+	int clearHantei = 0;   //クリア判定
 	int DeleteHantei = false;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;		//スキンモデルレンダラー。
-	prefab::CSoundSource* m_bgmSoundSource = nullptr;
+	prefab::CSoundSource* m_bgmSoundSource = nullptr;            //サウンド
 	prefab::CSoundSource* gameSS;
-	Player* m_player = nullptr;
-	GameCameraPl* m_gameCameraPl = nullptr;
-	Stage* m_stage = nullptr;
-	DemoCircle* m_demoCircle = nullptr;
-	DemoBall* m_demoBall = nullptr;
-	CircleCharge* m_circleCharge = nullptr;
-	PlayerHpBer* m_HpBer = nullptr;
-	Boss* m_boss = nullptr; //お試し
-	/*Bee* m_bee = nullptr;*/
-	CQuaternion m_rotation = CQuaternion::Identity;
+	Player* m_player = nullptr;                                  //プレイヤーのポインタ
+	GameCameraPl* m_gameCameraPl = nullptr;                      //ゲームカメラのポインタ
+	Stage* m_stage = nullptr;                                    //ステージのポインタ
+	DemoCircle* m_demoCircle = nullptr;                          //サークルのポインタ
+	DemoBall* m_demoBall = nullptr;                              //
+	CircleCharge* m_circleCharge = nullptr;                      //サークルチャージのポインタ
+	PlayerHpBer* m_HpBer = nullptr;                              //Hpバーのポインタ
+	Boss* m_boss = nullptr;                                      //ボスのポインタ
+	
 	CLevel m_level;  //レベル
 
-	int gameEndTimer = 0;  //ボスが死んで数秒後にクリア画面
-	prefab::CDirectionLight* m_directionLig = nullptr;
+	int gameEndTimer = 0;                                        //ボスが死んで数秒後にクリア画面
+	prefab::CDirectionLight* m_directionLig = nullptr;           //ディレクションライト
 };
 

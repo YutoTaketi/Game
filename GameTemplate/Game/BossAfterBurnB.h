@@ -1,20 +1,21 @@
 #pragma once
 class Game;
 class Boss;
+//ボスのブースト状態のエフェクト
 class BossAfterBurnB : public IGameObject
 {
 public:
 	BossAfterBurnB();
 	~BossAfterBurnB();
 	bool Start();
-	void Move();
-	void Update();
+	void Move(); //移動関数
+	void Update(); //更新関数
 
-	prefab::CEffect* effect = nullptr;
-	CVector3 m_position = CVector3::Zero;
-	CVector3 m_scale = CVector3::One;
-	CQuaternion m_rotation = CQuaternion::Identity;
-	Boss* boss = nullptr;
-	Game* game = nullptr;
+	prefab::CEffect* effect = nullptr; //エフェクト
+	CVector3 m_position = CVector3::Zero; //座標
+	CVector3 m_scale = CVector3::One; //拡大率
+	CQuaternion m_rotation = CQuaternion::Identity; //回転
+	Boss* boss = nullptr; //ボスのポインタ
+	Game* game = nullptr; //Gameのポインタ
 };
 

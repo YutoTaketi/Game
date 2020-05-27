@@ -28,14 +28,14 @@ bool Capsule::Start()
 		m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 		m_skinModelRender->Init(L"modelData/Capsule.cmo");
 		break;
-
+		//ステージ２の時
 	 case StageNumber::enState_Stage2:
 		 m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 		 m_skinModelRender->Init(L"modelData/Capsule2.cmo");
 		 break;
 	}
-	//m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
-	//m_skinModelRender->Init(L"modelData/Capsule.cmo");
+	
+	
 	return true;
 }
 
@@ -50,7 +50,7 @@ void Capsule::CapsuleGet()
 			game = FindGO<Game>("Game");
 			m_player = FindGO<Player>("Player");
 			m_charge = FindGO<CircleCharge>("CircleCharge");
-			//hpBer = FindGO<PlayerHpBer>("HpBer");
+			
 			if (m_player == nullptr)
 			{
 				//m_player = FindGO<Player>("Player");
@@ -81,7 +81,7 @@ void Capsule::CapsuleGet()
 			game = FindGO<Game2>("Game2");
 			m_player = FindGO<Player>("Player");
 			m_charge = FindGO<CircleCharge>("CircleCharge");
-			//hpBer = FindGO<PlayerHpBer>("HpBer");
+			
 			if (m_player == nullptr)
 			{
 				//m_player = FindGO<Player>("Player");
@@ -89,6 +89,7 @@ void Capsule::CapsuleGet()
 			}
 			else
 			{
+				//カプセルを取ったら音を鳴らす
 				get = m_player->m_position - m_position;
 				get.Length();
 				if (get.Length() < 80.0f) {

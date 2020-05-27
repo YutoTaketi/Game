@@ -28,7 +28,9 @@ bool TomboAttack1::Start()
 
 void TomboAttack1::Update()
 {
+	//単発ビームのエフェクト
 	m_position += m_moveSpeed;
+
 	effect->SetPosition(m_position);
 	effect->SetScale(m_scale);
 	effect->SetRotation(m_rotation);
